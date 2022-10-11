@@ -1,3 +1,20 @@
+
+# FIWARE Smart Data Domains and Models 
+
+FIWARE Smart Data Domains and Models for matching participants to teams during the Hackathon: 
+
+https://github.com/rh-impact/fiware-hackathon-2023/blob/main/roles/fiware_domain/defaults/main.yml
+
+# Gitops for FIWARE on OpenShift Local
+
+For Local Development of FIWARE, associates can setup an OpenShift Local environment on Linux/MacOS/Windows. They can then run the GitOps setup during the FIWARE Innovation Labs Residency and also extended and actively being extended: 
+
+https://github.com/rh-impact/fiware-marinera/tree/main/kustomize
+
+# More to come....
+
+# The documentation below is still a WORK-IN-PROGRESS for this hackathon. It was copied from a previous hackathon. 
+
 # Setup the team19-hackathon-2021 project to setup Github project boards on MacOSX or Linux (Fedora, RHEL, CentOS)
 
 ## Install dependencies on Linux
