@@ -22,7 +22,6 @@
     line: |-
       
       - DOMAIN_NAME: {{ DOMAIN_DATA.DOMAIN_NAME }}
-        PROJECT_SRC: {{ DOMAIN_DATA.PROJECT_SRC }}
         REPO_URL: {{ DOMAIN_DATA.REPO_URL }}
         SUBMODULES:
     path: "{{ DOMAIN_DEFAULTS_PATH }}"

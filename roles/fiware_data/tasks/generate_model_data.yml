@@ -3,7 +3,6 @@
   lineinfile:
     line: |-2
               - MODEL_NAME: {{ MODEL_NAME }}
-                MODEL_SRC: {{ MODEL_SRC }}
     path: "{{ DOMAIN_DEFAULTS_PATH }}"
     insertbefore: EOF
 #- name: Get all models of {{ MODEL_NAME }}

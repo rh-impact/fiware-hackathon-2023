@@ -3,8 +3,6 @@
   lineinfile:
     line: |-2
           - SUBMODULE_SHORT_NAME: {{ SUBMODULE_SHORT_NAME }}
-            SUBMODULE_NAME: {{ SUBMODULE_NAME }}
-            SUBMODULE_SRC: {{ SUBMODULE_SRC }}
             MODELS:
     path: "{{ DOMAIN_DEFAULTS_PATH }}"
     insertbefore: EOF
