@@ -1,0 +1,9 @@
+---
+- name: Setup Inspire GitHub projects. 
+  hosts: localhost
+  connection: local
+  vars_files:
+    - "/usr/local/src/team19-hackathon-2021/vaults/{{ VAULT_ID }}/vault"
+  roles:
+    - inspire_hackathon
+

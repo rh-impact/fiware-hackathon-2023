@@ -1,0 +1,43 @@
+---
+- name: "Get issues"
+  uri:
+    timeout: 90
+    url: "https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}/issues?per_page=100"
+    return_content: true
+    headers:
+      Authorization: "token {{ GITHUB_TOKEN }}"
+      Accept: "application/vnd.github.inertia-preview+json"
+  register: ISSUES_JSON
+- name: "Setup GitHub issues JSON string"
+  set_fact: {"{{ ANSIBLE_PROJECT.PROJECT_NAME | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json | string }}"}
+- name: "Create issues"
+  include_role:
+    name: inspire_issue
+  vars: 
+    ISSUE_LABEL: "{{ ANSIBLE_ISSUE.ISSUE_LABEL }}"
+    ISSUE_TITLE: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }}"
+    ISSUE_BODY: "{{ ANSIBLE_ISSUE.ISSUE_BODY }}"
+    ISSUE_REPO_NAME: "{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}"
+    ISSUES: "{{ ISSUES_JSON.json }}"
+  loop: "{{ ANSIBLE_COLUMN.ANSIBLE_ISSUES }}"
+  loop_control:
+    loop_var: ANSIBLE_ISSUE
+- name: "Create issues"
+  include_role:
+    name: inspire_issue
+  vars: 
+    ISSUE_LABEL: "{{ ANSIBLE_ISSUE.ISSUE_LABEL }}"
+    ISSUE_TITLE: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }}"
+    ISSUE_BODY: "{{ ANSIBLE_ISSUE.ISSUE_BODY }}"
+    ISSUE_REPO_NAME: "{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}"
+    ISSUES: "{{ lookup('vars', ANSIBLE_PROJECT.PROJECT_NAME + '_ISSUES') }}"
+  loop: "{{ ANSIBLE_COLUMN.ANSIBLE_ISSUES }}"
+  loop_control:
+    loop_var: ANSIBLE_ISSUE
+- name: "Create mission impossible issues for column"
+  include_role:
+    name: inspire_mission_impossible
+  vars: 
+    CARDS: "{{ lookup('vars', PROJECT.name + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
+    ISSUES: "{{ lookup('vars', ANSIBLE_PROJECT.PROJECT_NAME + '_ISSUES') }}"
+  when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined

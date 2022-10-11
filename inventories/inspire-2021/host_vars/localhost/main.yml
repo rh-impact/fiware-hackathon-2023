@@ -1,0 +1,594 @@
+---
+ANSIBLE_INVENTORY_NAME: inspire-2021
+VAULT_ID: inspire-2021
+GITHUB_VAULT_PATH: /usr/local/src/team19-hackathon-2021/vaults/inspire-2021/vault
+GITHUB_REPO_NAME: team19-hackathon-2021
+ANSIBLE_PROJECTS:
+  - PROJECT_NAME: Serratus
+    PROJECT_DESCRIPTION: An open science project to uncover the planetary virome, freely and openly
+    GITHUB_REPO_NAME: issues-serratus
+    GITHUB_README: https://github.com/team19hackathon2021/serratus-api/
+    SOLR_APP_NAME: serratus-api
+    STATIC_PATHS:
+      - path: /usr/local/src/serratus-api/src/main/java/io/serratus/api
+        patterns: ['package-info\.java$']
+        base_path: /usr/local/src/serratus-api
+        java_path: /usr/local/src/serratus-api/src/main/java/io/serratus/api/enus/staticclasses
+        java_package: io.serratus.api.enus.staticclasses
+      - path: /usr/local/src/serratus-api
+        patterns: ['pom\.xml$']
+        base_path: /usr/local/src/serratus-api
+        java_path: /usr/local/src/serratus-api/src/main/java/io/serratus/api/enus/staticclasses
+        java_package: io.serratus.api.enus.staticclasses
+      - path: /usr/local/src/serratus-api
+        patterns: ['install_project_ansible_playbook\.yml$']
+        base_path: /usr/local/src/serratus-api
+        java_path: /usr/local/src/serratus-api/src/main/java/io/serratus/api/enus/ansible
+        java_package: io.serratus.api.enus.ansible
+      - path: /usr/local/src/serratus-api-static
+        patterns: ['.*\.hbs$']
+        base_path: /usr/local/src/serratus-api-static
+        java_path: /usr/local/src/serratus-api/src/main/java/io/serratus/api/enus/docroot
+        java_package: io.serratus.api.enus.docroot
+      - path: /usr/local/src/serratus-api-static
+        patterns: ['.*\.js$']
+        base_path: /usr/local/src/serratus-api-static
+        java_path: /usr/local/src/serratus-api/src/main/java/io/serratus/api/enus/docroot
+        java_package: io.serratus.api.enus.docroot
+    ANSIBLE_COLUMNS:
+      - COLUMN_NAME: Develop SequenceRun API
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop BioSample API
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop Taxonomy API
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop SiteUser API
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop Base Classes
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Quarkus app development
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop Web Backend
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate Project Deployment
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop UI
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop SequenceRun UI
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop BioSample UI
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop Taxonomy UI
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop SiteUser UI
+        ANSIBLE_ISSUES: []
+  - PROJECT_NAME: ChRIS
+    PROJECT_DESCRIPTION: ChRIS is a pervasively open source platform that utilizes cloud technologies to democratize medical analytics application development. It enables healthcare organizations to keep owning their data while benefiting from public cloud processing capabilities. ChRIS is developed as part of a collaborative effort between Boston Children’s Hospital, Red Hat, Boston University, and the Mass Open Cloud (MOC). ChRIS allows researchers the ability to simply deploy their applications in a cloud infrastructure with access to more data, more compute, and more collaboration to drive medical innovation. ChRIS uses leading open source technologies to standardize cloud-based healthcare application development, taking care of the infrastructure so medical researchers can focus on their data.
+    GITHUB_REPO_NAME: issues-chris
+    GITHUB_README: https://github.com/team19hackathon2021/ChRIS_ultron_backEnd/tree/master/ansible
+    SOLR_APP_NAME: ChRIS_ultron_backEnd
+    STATIC_PATHS:
+      - path: /usr/local/src/ChRIS_ultron_backEnd/ansible
+        patterns: ['^.*\.yml$']
+        base_path: /usr/local/src/ChRIS_ultron_backEnd
+        java_path: /usr/local/src/ChRIS_ultron_backEnd/src/main/java/org/chrisproject/api/enus/ansible
+        java_package: org.chrisproject.api.enus.ansible
+      - path: /usr/local/src/ChRIS_ultron_backEnd/ansible
+        patterns: ['^.*\.service$']
+        base_path: /usr/local/src/ChRIS_ultron_backEnd
+        java_path: /usr/local/src/ChRIS_ultron_backEnd/src/main/java/org/chrisproject/api/enus/ansible
+        java_package: org.chrisproject.api.enus.ansible
+    ANSIBLE_COLUMNS:
+      - COLUMN_NAME: Automate ChRIS install
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate pman
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate pfcon
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate dev database
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate dev
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate queue
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate scheduler
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate store
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate swift
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate ui
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate worker periodic
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate worker
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Automate plugins
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Python development
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: pman_app_logging
+            ISSUE_MISSION: improve pman application logging
+            ISSUE_TITLE: Improve pman application logging
+            ISSUE_DESCRIPTION: The pman application doesn't log any errors or info statements. We want to enable logging to better see what's going on under the hood of pman. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the pman repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/pman
+              git clone git@github.com:team19hackathon2021/pman.git /usr/local/src/pman
+              ```
+              
+              ## Edit the file: /usr/local/src/pman/pman/app.py
+              
+              ## Import the os package to get environment variables. 
+              
+              ```python
+              import os
+              ```
+              
+              ## Add better logging for gunicorn. 
+              
+              ```python
+                  # logging
+                  gunicorn_error_logger = logging.getLogger('gunicorn.error')
+                  app.logger.handlers.extend(gunicorn_error_logger.handlers)
+                  app.logger.setLevel(logging.DEBUG)
+              ```
+          - ISSUE_LABEL: pman_config_vars
+            ISSUE_MISSION: enable podman configuration variables in the pman application
+            ISSUE_TITLE: Enable podman configuration variables in the pman application
+            ISSUE_DESCRIPTION: The pman application can run docker containers, but we want to configure pman to use podman containers for compatibility with Red Hat operating systems. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the pman repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/pman
+              git clone git@github.com:team19hackathon2021/pman.git /usr/local/src/pman
+              ```
+              
+              ## Edit the file: /usr/local/src/pman/pman/config.py
+              
+              ## Import the os package to get environment variables. 
+              
+              ```python
+              import os
+              ```
+              
+              ## Update the self.CONTAINER_ENV variable to load it's default value from an environment variable. 
+              
+              ```python
+                      self.CONTAINER_ENV = env('CONTAINER_ENV', os.getenv('CONTAINER_ENV', 'swarm'))
+              ```
+              
+              ## If the container environment is podman, set the docker environment variables. 
+              
+              ```python
+                      if self.CONTAINER_ENV == 'podman':
+                          docker_host = env('DOCKER_HOST', '')
+                          if docker_host:
+                              self.DOCKER_HOST = docker_host
+                          docker_tls_verify = env.int('DOCKER_TLS_VERIFY', None)
+                          if docker_tls_verify is not None:
+                              self.DOCKER_TLS_VERIFY = docker_tls_verify
+                          docker_cert_path = env('DOCKER_CERT_PATH', '')
+                          if docker_cert_path:
+                              self.DOCKER_CERT_PATH = docker_cert_path
+              ```
+          - ISSUE_LABEL: pman_podman_manager
+            ISSUE_MISSION: add a podman manager class for managing podman containers
+            ISSUE_TITLE: Add a podman manager class for managing podman containers
+            ISSUE_DESCRIPTION: The pman application can run docker containers, but we want to configure pman to use podman containers for compatibility with Red Hat operating systems. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the pman repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/pman
+              git clone git@github.com:team19hackathon2021/pman.git /usr/local/src/pman
+              ```
+              
+              ## Edit the file: /usr/local/src/pman/pman/podmanmgr.py
+              
+              ## Import the dependencies
+              
+              ```python
+              """
+              Podman cluster manager module that provides functionality to schedule
+              jobs (short-lived services) as well as manage their state in the cluster.
+              """
+              
+              import os
+              import logging
+              import podman
+              from podman.domain.images import Image
+              from .abstractmgr import AbstractManager, ManagerException
+              
+              
+              ```
+              
+              ## Create the PodmanManager class that extends AbstractManager
+              
+              ```python
+              class PodmanManager(AbstractManager):
+              
+              ```
+              
+              ## Create the PodmanManager constructor
+              
+              ```python
+                  def __init__(self, config_dict=None):
+                      super().__init__(config_dict)
+              
+                      self.podman_client = podman.PodmanClient(base_url='tcp://%s:%s' % (os.getenv('PODMAN_IP_ADDRESS'), os.getenv('PODMAN_TCP_PORT')))
+              
+              ```
+              
+              ## Create a method to schedule a job
+              
+              ```python
+                  def schedule_job(self, image, command, name, resources_dict, mountdir=None):
+                      """
+                      Schedule a new job and return the job (podman service) object.
+                      """
+                      restart_policy = {'Name': 'no', 'MaximumRetryCount':0}
+                      mounts = []
+                      if mountdir is not None:
+                          mounts.append({'source': mountdir, 'destination': '/share', 'type': 'bind', 'options': ['rw']})
+                      try:
+                          logging.info(' create container image="%s", command="%s", name="%s", mounts=%s, restart_policy=%s' % (image, command, name, mounts, restart_policy))
+                          job = self.podman_client.containers.create(image, command.split(' '), name=name, mounts=mounts, restart_policy=restart_policy, tty=True)
+                      except Exception as e:
+                              status_code = 503 if e.response.status_code == 500 else e.response.status_code
+                              raise ManagerException(str(e), status_code=status_code)
+                      return job
+              
+              ```
+              
+              ## Create a method to get a job
+              
+              ```python
+                  def get_job(self, name):
+                      """
+                      Get a previously scheduled job object.
+                      """
+                      try:
+                          job = self.podman_client.containers.get(name)
+                      except Exception as e:
+                          raise ManagerException(str(e), status_code=400)
+                      return job
+              
+              ```
+              
+              ## Create a method to get job logs
+              
+              ```python
+                  def get_job_logs(self, job):
+                      """
+                      Get the logs from a previously scheduled job object.
+                      """
+                      return ''.join([l.decode() for l in job.logs(stdout=True, stderr=True)])
+              
+              ```
+              
+              ## Create a method to get job info
+              
+              ```python
+                  def get_job_info(self, job):
+                      """
+                      Get the job's info for a previously scheduled job object.
+                      """
+                      info = super().get_job_info(job)
+                      info['status'] = 'notstarted'
+                      info['message'] = 'task not available yet'
+              
+                      task = self.get_job_task(job)
+                      if task:
+                          status = 'undefined'
+                          state = task['State']['Status']
+                          if state in ('new', 'pending', 'assigned', 'accepted', 'preparing',
+                                       'starting', 'configured'):
+                              status = 'notstarted'
+                          elif state == 'running':
+                              status = 'started'
+                          elif state == 'failed':
+                              status = 'finishedWithError'
+                          elif state == 'complete':
+                              status = 'finishedSuccessfully'
+                          logging.info('pman status: %s' % state)
+              
+                          info['name'] = job.name
+                          info['image'] = task['Config']['Image']
+                          info['cmd'] = ' '.join(task['Config']['Cmd'])
+                          info['timestamp'] = task['Created']
+                          info['message'] = task['State']['Error']
+                          info['status'] = status
+                      return info
+              
+              ```
+              
+              ## Create a method to remove a job
+              
+              ```python
+                  def remove_job(self, job):
+                      """
+                      Remove a previously scheduled job.
+                      """
+                      job.remove()
+              
+              ```
+              
+              ## Create a method to get a job task
+              
+              ```python
+                  def get_job_task(self, job):
+                      """
+                      Get the job's task for a previously scheduled job object.
+                      """
+                      return job.inspect()
+              ```
+          - ISSUE_LABEL: pman_update_resources
+            ISSUE_MISSION: add the new podman manager to the pman resources
+            ISSUE_TITLE: Add the new podman manager to the pman resources
+            ISSUE_DESCRIPTION: The pman application can run docker containers, but we want to configure pman to use podman containers for compatibility with Red Hat operating systems. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the pman repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/pman
+              git clone git@github.com:team19hackathon2021/pman.git /usr/local/src/pman
+              ```
+              
+              ## Edit the file: /usr/local/src/pman/pman/resources.py
+              
+              ## Import the PodmanManager class
+              
+              ```python
+              from .podmanmgr import PodmanManager
+              ```
+              
+              ## If the container environment is podman, then set the compute manager to the PodmanManager. 
+              
+              ```python
+                  elif container_env == 'podman':
+                      compute_mgr = PodmanManager(app.config)
+              ``` 
+          - ISSUE_LABEL: pman_requirements
+            ISSUE_MISSION: add podman package to the pman list of Python required dependencies
+            ISSUE_TITLE: Add podman package to the pman list of Python required dependencies
+            ISSUE_DESCRIPTION: The pman application can run docker containers, but we want to configure pman to use podman containers for compatibility with Red Hat operating systems. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the pman repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/pman
+              git clone git@github.com:team19hackathon2021/pman.git /usr/local/src/pman
+              ```
+              
+              ## Edit the file: /usr/local/src/pman/requirements/base.txt
+              
+              ## Add the following python requirement
+              
+              ```python
+              podman==3.2.1
+              ```
+          - ISSUE_LABEL: chris_backend_local_config
+            ISSUE_MISSION: allow populating certain ChRIS environment variables
+            ISSUE_TITLE: Allow populating certain ChRIS environment variables
+            ISSUE_DESCRIPTION: The chris_backend code contains some hard coded hostnames and ports that need to be customized to work with podman. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the ChRIS_ultron_backEnd repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/ChRIS_ultron_backEnd
+              git clone git@github.com:team19hackathon2021/ChRIS_ultron_backEnd.git /usr/local/src/ChRIS_ultron_backEnd
+              ```
+
+              ## Edit the file: /usr/local/src/ChRIS_ultron_backEnd/chris_backend/config/settings/local.py
+              
+              ## Populate the SWIFT_AUTH_URL hostname with environment variables
+              
+              ```python
+              SWIFT_AUTH_URL = 'http://%s:8080/auth/v1.0' % os.getenv('SWIFT_HOSTNAME', 'swift_service')
+              ```
+              
+              ## Populate the CHRIS_STORE_URL hostname with environment variables
+              
+              ```python
+              CHRIS_STORE_URL = 'http://%s:8010/api/v1/' % os.getenv('STORE_HOSTNAME', 'chris-store.local')
+              ```
+              
+              ## Populate the database hostname with environment variables
+              
+              ```python
+              DATABASES['default']['HOST'] = os.getenv('DEV_DB_HOSTNAME', 'chris_dev_db')
+              ```
+              
+              ## Populate the COMPUTE_RESOURCE_URL hostname with environment variables
+              
+              ```python
+              COMPUTE_RESOURCE_URL = 'http://%s:30005/api/v1/' % os.getenv('PFCON_HOSTNAME', 'pfcon.remote')
+              ```
+              
+              ## Populate the CELERY_BROKER_URL hostname with environment variables
+              
+              ```python
+              CELERY_BROKER_URL = 'amqp://%s:5672' % os.getenv('QUEUE_HOSTNAME', 'queue')
+              ```
+          - ISSUE_LABEL: chris_backend_migratedb
+            ISSUE_MISSION: load the database host from an environment variable when migrating the database
+            ISSUE_TITLE: Load the database host from an environment variable when migrating the database
+            ISSUE_DESCRIPTION: The chris_backend code uses some hard coded hostnames that can be improved. 
+            ISSUE_SKILLS: Python
+            ISSUE_LABELS:
+              - Python
+            ISSUE_BODY: |
+              
+              ### Create a directory for the ChRIS_ultron_backEnd repository and clone it
+              
+              ```bash
+              install -d -o $USER /usr/local/src/ChRIS_ultron_backEnd
+              git clone git@github.com:team19hackathon2021/ChRIS_ultron_backEnd.git /usr/local/src/ChRIS_ultron_backEnd
+              ```
+              
+              ## Edit the file: /usr/local/src/ChRIS_ultron_backEnd/chris_backend/migratedb.py
+              
+              ## Import the os package to get environment variables. 
+              
+              ```python
+              import os
+              ```
+              
+              ## Load the database hostname from an environment variable. 
+              
+              ```python
+              host = os.getenv('DEV_DB_HOSTNAME')
+              if not host:
+                  host = args.host if args.host else 'localhost'
+              ```
+      - COLUMN_NAME: Apps to containerize and deploy
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: containerize_datalad
+            ISSUE_TITLE: Containerize DataLad 
+            ISSUE_BODY: "https://www.datalad.org/ (To enable importing DataLad repos into ChRIS feeds)"
+          - ISSUE_LABEL: containerize_ipfs
+            ISSUE_TITLE: Containerize IPFS
+            ISSUE_BODY: "https://ipfs.io/"
+          - ISSUE_LABEL: containerize_gimic
+            ISSUE_TITLE: Containerize and deploy G’IMIC
+            ISSUE_BODY: "(https://gmic.eu/)"
+          - ISSUE_LABEL: containerize_deoldify
+            ISSUE_TITLE: Containerize and deploy DeOldify
+            ISSUE_BODY: "(https://deoldify.ai/) (python based)"
+          - ISSUE_LABEL: containerize_ocr_tool
+            ISSUE_TITLE: Containerize and deploy some kind of OCR tool
+            ISSUE_BODY: "maybe a deep learning model based OCR?"
+          - ISSUE_LABEL: containerize_graphicsmagick
+            ISSUE_TITLE: Containerize and deploy GraphicsMagick
+            ISSUE_BODY: ""
+          - ISSUE_LABEL: containerize_ffmpeg
+            ISSUE_TITLE: Containerize and deploy Ffmpeg
+            ISSUE_BODY: ""
+          - ISSUE_LABEL: containerize_opencv
+            ISSUE_TITLE: Containerize and deploy Opencv
+            ISSUE_BODY: ""
+          - ISSUE_LABEL: containerize_gstreamer
+            ISSUE_TITLE: Containerize and deploy Gstreamer
+            ISSUE_BODY: ""
+          - ISSUE_LABEL: containerize_scikit_image
+            ISSUE_TITLE: Containerize and deploy Scikit-image
+            ISSUE_BODY: "(python based)"
+          - ISSUE_LABEL: containerize_libav
+            ISSUE_TITLE: Containerize and deploy Libav
+            ISSUE_BODY: "https://libav.org/"
+          - ISSUE_LABEL: containerize_pyscenedetect
+            ISSUE_TITLE: Containerize and deploy PySceneDetect
+            ISSUE_BODY: "https://pyscenedetect.readthedocs.io/en/latest/  (python based)"
+          - ISSUE_LABEL: containerize_statsmodels
+            ISSUE_TITLE: Containerize and deploy Stats models
+            ISSUE_BODY: "https://www.statsmodels.org (python based)"
+          - ISSUE_LABEL: containerize_matplotlib
+            ISSUE_TITLE: Containerize and deploy Matplotlib
+            ISSUE_BODY: "https://matplotlib.org/ (python)"
+          - ISSUE_LABEL: containerize_gnuplot
+            ISSUE_TITLE: Containerize and deploy Gnuplot
+            ISSUE_BODY: "http://www.gnuplot.info/ (python)"
+          - ISSUE_LABEL: containerize_mediapipe
+            ISSUE_TITLE: Containerize and deploy Mediapipe
+            ISSUE_BODY: "https://google.github.io/mediapipe/"
+          - ISSUE_LABEL: containerize_optipng
+            ISSUE_TITLE: Containerize and deploy Optipng
+            ISSUE_BODY: "http://optipng.sourceforge.net/"
+          - ISSUE_LABEL: containerize_pngquant
+            ISSUE_TITLE: Containerize and deploy Pngquant
+            ISSUE_BODY: "https://pngquant.org/"
+          - ISSUE_LABEL: containerize_jpegoptim
+            ISSUE_TITLE: Containerize and deploy Jpegoptim
+            ISSUE_BODY: "https://github.com/tjko/jpegoptim"
+          - ISSUE_LABEL: containerize_timestampmaker
+            ISSUE_TITLE: Containerize and deploy Timestampmaker
+            ISSUE_BODY: "https://github.com/tonytonyjan/timestamp_maker"
+          - ISSUE_LABEL: containerize_imageio
+            ISSUE_TITLE: Containerize and deploy Imageio / pygifsicle
+            ISSUE_BODY: "https://medium.com/swlh/python-animated-images-6a85b9b68f86"
+  - PROJECT_NAME: Curriki
+    PROJECT_DESCRIPTION: One of the project’s major goals is to establish https://cc.curriki.org as the global authoring and distribution hub and library for openly licensed, next generation, open educational resources (OER+) under the least restrictive Creative Commons license, CC-BY.
+    GITHUB_REPO_NAME: issues-curriki
+    SOLR_APP_NAME: ActiveLearningStudio-API
+    GITHUB_README: https://github.com/team19hackathon2021/ActiveLearningStudio-API
+    ANSIBLE_COLUMNS:
+      - COLUMN_NAME: Basic Structure for the Java Service Project
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: java_project_with_dependencies
+            ISSUE_TITLE: Java Project with Dependencies 
+            ISSUE_BODY: Provide a project structure with correct Red Hat repos on which the services can be built. This story aims to demonstrate how a Quarkus based api would look like. The project will refer to Red Hat BOM and provide the best praactices for the base project. This project will form the basis of Curriki MSA
+          - ISSUE_LABEL: java_project_with_jpa_and_pgsql_example
+            ISSUE_TITLE: Java Project with JPA and PGSql connection example
+            ISSUE_BODY: Build a simple hello world type Quarkus applicationa and show how Panache/JPA can be used in Quarkus. Complete with full unit test cases done via H2 in memeoyr database and diferent querying capabilities. Optionally show case how the latest reactive driver helps write more scaleable code.
+          - ISSUE_LABEL: monitoring_capabilities
+            ISSUE_TITLE: Add monitoring capabilites for a prometheus/grafana based monitoring
+            ISSUE_BODY: Build a simple hello world Quarkus application with a focus of exposing the monitoring via prometheus and grafana. Use the right dependencies and optionally showcasing the custo metrics. Manually Deploy the app and build a basic Grafana dash board on OCP
+
+      - COLUMN_NAME: Run an deploy Java based services on OCP
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: containerising_java_with_base_image
+            ISSUE_TITLE: Best practices for containerising Java with a base image
+            ISSUE_BODY: Build a base image using Red Hat UBI and Open JDK 11 (17?). Secondly, Build a minimal image to run Quarkus binary application. The aim is to showcase the use of UBI images and thing to consider while building the images wrt security, upgrade path and trusted software chain. Automate the base image build via Git and Tekton pipeline to publish to OCP.
+          - ISSUE_LABEL: java_ocp_deployment_setup
+            ISSUE_TITLE: Java OCP Deployment(Config) setup
+            ISSUE_BODY: Build a reusable Helm chart to deploy a quarkus java application on OCP. The chart will talk about Deployment, Service, Config and related K8S objects. The deployment will also cover how to configure  Memory settings, liveness and readiness probes, and cpu/mem requests for a given application.
+          - ISSUE_LABEL: tekton_pipeline_to_deploy_java_service
+            ISSUE_TITLE: Build a running Tekton pipeline to deploy a java service
+            ISSUE_BODY: Build a reusable Tekton pipline that can be used to Build, Unit Test and package application using helm charts and tekton.  The pipeline will also show how the applications can be deployed across multiple enviornments. 
+          - ISSUE_LABEL: blue_green_deployment_openshift_tekton
+            ISSUE_TITLE: Showcase blue green deployment via OpenShift and Tekton
+            ISSUE_BODY: N/A - this is not in scope at this point 
+      - COLUMN_NAME: MSA Architecture and Design
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: event_storming_ddd
+            ISSUE_TITLE: Event Storming and DDD 
+            ISSUE_BODY:  Educate the team on how to run domain driven design practices to build an MSA architecture. Use one of the Currikis use case as example and build a set of MSA using DDD and Bounded Context.
+          - ISSUE_LABEL: setup_sso_msa_auth
+            ISSUE_TITLE: Setup SSO on OCP for MSA authentication
+            ISSUE_BODY: With MSA being at the core of Curriki, it is important that a solid SSO solution is in place to cater the needs to authentication and authorsation requirements. In this story, an SSO will be deployed on OCP and a dummy Quarkus microservice will be secured via OIDC.
+          - ISSUE_LABEL: postgres_operator_openshift
+            ISSUE_TITLE: Run a postgresl operator on Openshift
+            ISSUE_BODY: N/A -  this is not in scope at this point 
+      - COLUMN_NAME: OpenAPI 
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: define_api_contract
+            ISSUE_TITLE: Define a contract first design principle and show OpenAPI based spec
+            ISSUE_BODY: The team will showcase how the contract first design principle works. The team will share the API design best practices and use them to define a contract for one the Curriikis Service. this API wil be OpanAPI v3 compatible. The team will also showcase how to use the contract to generate Java based stubs.
+          - ISSUE_LABEL: generate_mocks_stubs_openapi_mikrocks_maven
+            ISSUE_TITLE: Generate Mocks and stubs using the OpenApi Spec using Mikrocks and maven plugins
+            ISSUE_BODY: The team will use a predefined OpenAPI Spec and deploy it on OCP using MicRocks. The aim is to show how OCP and MicRocks can be used to host APIs and create mocks for different situations. The team will build a success and a failure scenario and run it via curl or POstman. 
+      - COLUMN_NAME: Develop Base Classes
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Quarkus app development
+        ANSIBLE_ISSUES: []
+      - COLUMN_NAME: Develop SiteUser API
+        ANSIBLE_ISSUES: []
+

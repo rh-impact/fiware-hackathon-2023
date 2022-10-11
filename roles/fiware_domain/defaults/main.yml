@@ -1,0 +1,1995 @@
+---
+
+- DOMAIN_NAME: Smart Cities
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartCities
+  REPO_URL: https://github.com/smart-data-models/SmartCities.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Building
+      SUBMODULE_NAME: dataModel.Building
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building
+      MODELS:
+        - MODEL_NAME: Building
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/Building
+        - MODEL_NAME: BuildingOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/BuildingOperation
+        - MODEL_NAME: BuildingType
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/BuildingType
+        - MODEL_NAME: Enclosure_incubated
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/Enclosure_incubated
+        - MODEL_NAME: Floor_incubated
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/Floor_incubated
+        - MODEL_NAME: VibrationsObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Building/VibrationsObserved
+    - SUBMODULE_SHORT_NAME: OSLO
+      SUBMODULE_NAME: dataModel.OSLO
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.OSLO
+      MODELS:
+        - MODEL_NAME: BicycleParkingStation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.OSLO/BicycleParkingStation
+        - MODEL_NAME: BicycleParkingStationForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.OSLO/BicycleParkingStationForecast
+        - MODEL_NAME: ResourceReport
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.OSLO/ResourceReport
+        - MODEL_NAME: ResourceReportForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.OSLO/ResourceReportForecast
+    - SUBMODULE_SHORT_NAME: Parking
+      SUBMODULE_NAME: dataModel.Parking
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking
+      MODELS:
+        - MODEL_NAME: OffStreetParking
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking/OffStreetParking
+        - MODEL_NAME: OnStreetParking
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking/OnStreetParking
+        - MODEL_NAME: ParkingAccess
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking/ParkingAccess
+        - MODEL_NAME: ParkingGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking/ParkingGroup
+        - MODEL_NAME: ParkingSpot
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Parking/ParkingSpot
+    - SUBMODULE_SHORT_NAME: ParksAndGardens
+      SUBMODULE_NAME: dataModel.ParksAndGardens
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.ParksAndGardens
+      MODELS:
+        - MODEL_NAME: FlowerBed
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.ParksAndGardens/FlowerBed
+        - MODEL_NAME: Garden
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.ParksAndGardens/Garden
+        - MODEL_NAME: GreenspaceRecord
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.ParksAndGardens/GreenspaceRecord
+    - SUBMODULE_SHORT_NAME: PointOfInterest
+      SUBMODULE_NAME: dataModel.PointOfInterest
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.PointOfInterest
+      MODELS:
+        - MODEL_NAME: Beach
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.PointOfInterest/Beach
+        - MODEL_NAME: Museum
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.PointOfInterest/Museum
+        - MODEL_NAME: PointOfInterest
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.PointOfInterest/PointOfInterest
+        - MODEL_NAME: Store
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.PointOfInterest/Store
+    - SUBMODULE_SHORT_NAME: Ports
+      SUBMODULE_NAME: dataModel.Ports
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Ports
+      MODELS:
+        - MODEL_NAME: BoatAuthorized
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Ports/BoatAuthorized
+        - MODEL_NAME: BoatPlacesAvailable
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Ports/BoatPlacesAvailable
+        - MODEL_NAME: BoatPlacesPricing
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Ports/BoatPlacesPricing
+        - MODEL_NAME: SeaportFacilities
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Ports/SeaportFacilities
+    - SUBMODULE_SHORT_NAME: Streetlighting
+      SUBMODULE_NAME: dataModel.Streetlighting
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting
+      MODELS:
+        - MODEL_NAME: Streetlight
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting/Streetlight
+        - MODEL_NAME: StreetlightControlCabinet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting/StreetlightControlCabinet
+        - MODEL_NAME: StreetlightFeeder
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting/StreetlightFeeder
+        - MODEL_NAME: StreetlightGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting/StreetlightGroup
+        - MODEL_NAME: StreetlightModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Streetlighting/StreetlightModel
+    - SUBMODULE_SHORT_NAME: Transportation
+      SUBMODULE_NAME: dataModel.Transportation
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation
+      MODELS:
+        - MODEL_NAME: BikeHireDockingStation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/BikeHireDockingStation
+        - MODEL_NAME: BikeLane
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/BikeLane
+        - MODEL_NAME: CityWork
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/CityWork
+        - MODEL_NAME: CrowdFlowObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/CrowdFlowObserved
+        - MODEL_NAME: EVChargingStation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/EVChargingStation
+        - MODEL_NAME: FareCollectionSystem
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/FareCollectionSystem
+        - MODEL_NAME: FleetVehicle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/FleetVehicle
+        - MODEL_NAME: FleetVehicleOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/FleetVehicleOperation
+        - MODEL_NAME: FleetVehicleStatus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/FleetVehicleStatus
+        - MODEL_NAME: ItemFlowObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/ItemFlowObserved
+        - MODEL_NAME: RestrictedTrafficArea
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/RestrictedTrafficArea
+        - MODEL_NAME: RestrictionException
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/RestrictionException
+        - MODEL_NAME: Road
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/Road
+        - MODEL_NAME: RoadAccident
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/RoadAccident
+        - MODEL_NAME: RoadSegment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/RoadSegment
+        - MODEL_NAME: SpecialRestriction
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/SpecialRestriction
+        - MODEL_NAME: TrafficFlowObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/TrafficFlowObserved
+        - MODEL_NAME: TrafficViolation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/TrafficViolation
+        - MODEL_NAME: TransportStation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/TransportStation
+        - MODEL_NAME: Vehicle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/Vehicle
+        - MODEL_NAME: VehicleFault
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/VehicleFault
+        - MODEL_NAME: VehicleModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Transportation/VehicleModel
+    - SUBMODULE_SHORT_NAME: UrbanMobility
+      SUBMODULE_NAME: dataModel.UrbanMobility
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility
+      MODELS:
+        - MODEL_NAME: ArrivalEstimation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/ArrivalEstimation
+        - MODEL_NAME: GtfsAccessPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsAccessPoint
+        - MODEL_NAME: GtfsAgency
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsAgency
+        - MODEL_NAME: GtfsCalendarDateRule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsCalendarDateRule
+        - MODEL_NAME: GtfsCalendarRule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsCalendarRule
+        - MODEL_NAME: GtfsFrequency
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsFrequency
+        - MODEL_NAME: GtfsRoute
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsRoute
+        - MODEL_NAME: GtfsService
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsService
+        - MODEL_NAME: GtfsShape
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsShape
+        - MODEL_NAME: GtfsStation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsStation
+        - MODEL_NAME: GtfsStop
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsStop
+        - MODEL_NAME: GtfsStopTime
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsStopTime
+        - MODEL_NAME: GtfsTransferRule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsTransferRule
+        - MODEL_NAME: GtfsTrip
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/GtfsTrip
+        - MODEL_NAME: PublicTransportRoute
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/PublicTransportRoute
+        - MODEL_NAME: PublicTransportStop
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/PublicTransportStop
+        - MODEL_NAME: TransitManagement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.UrbanMobility/TransitManagement
+    - SUBMODULE_SHORT_NAME: WasteManagement
+      SUBMODULE_NAME: dataModel.WasteManagement
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.WasteManagement
+      MODELS:
+        - MODEL_NAME: WasteContainer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.WasteManagement/WasteContainer
+        - MODEL_NAME: WasteContainerIsle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.WasteManagement/WasteContainerIsle
+        - MODEL_NAME: WasteContainerModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.WasteManagement/WasteContainerModel
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartCities/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Smart Agrifood
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood
+  REPO_URL: https://github.com/smart-data-models/SmartAgrifood.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Agrifood
+      SUBMODULE_NAME: dataModel.Agrifood
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood
+      MODELS:
+        - MODEL_NAME: AgrFarm
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgrFarm
+        - MODEL_NAME: AgriApp
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriApp
+        - MODEL_NAME: AgriCrop
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriCrop
+        - MODEL_NAME: AgriFarm
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriFarm
+        - MODEL_NAME: AgriGreenhouse
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriGreenhouse
+        - MODEL_NAME: AgriParcel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriParcel
+        - MODEL_NAME: AgriParcelOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriParcelOperation
+        - MODEL_NAME: AgriParcelRecord
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriParcelRecord
+        - MODEL_NAME: AgriPest
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriPest
+        - MODEL_NAME: AgriProductType
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriProductType
+        - MODEL_NAME: AgriSoil
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AgriSoil
+        - MODEL_NAME: Animal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/Animal
+        - MODEL_NAME: AnimalDisease
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AnimalDisease
+        - MODEL_NAME: AnimalMovement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/AnimalMovement
+        - MODEL_NAME: Carcass
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/Carcass
+        - MODEL_NAME: Compartment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/Compartment
+        - MODEL_NAME: FeedRegistry
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/FeedRegistry
+        - MODEL_NAME: MeatProduct
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/MeatProduct
+        - MODEL_NAME: Pen
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/Pen
+        - MODEL_NAME: VeterinarianTreatment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Agrifood/VeterinarianTreatment
+    - SUBMODULE_SHORT_NAME: Aquaculture
+      SUBMODULE_NAME: dataModel.Aquaculture
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Aquaculture
+      MODELS:
+        - MODEL_NAME: Feed
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Aquaculture/Feed
+        - MODEL_NAME: Feeder
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Aquaculture/Feeder
+        - MODEL_NAME: FeedingOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Aquaculture/FeedingOperation
+        - MODEL_NAME: FishPopulation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Aquaculture/FishPopulation
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAgrifood/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Smart Water
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartWater
+  REPO_URL: https://github.com/smart-data-models/SmartWater.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: OpenChannelManagement
+      SUBMODULE_NAME: dataModel.OpenChannelManagement
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement
+      MODELS:
+        - MODEL_NAME: CrossSection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/CrossSection
+        - MODEL_NAME: OpenChannel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/OpenChannel
+        - MODEL_NAME: OpenChannelCurve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/OpenChannelCurve
+        - MODEL_NAME: OpenChannelFlowRegulation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/OpenChannelFlowRegulation
+        - MODEL_NAME: OpenChannelJunction
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/OpenChannelJunction
+        - MODEL_NAME: OpenChannelSystem
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/OpenChannelSystem
+        - MODEL_NAME: RegulationStructure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/RegulationStructure
+        - MODEL_NAME: RegulationStructureSimulation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/RegulationStructureSimulation
+        - MODEL_NAME: SluiceGate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/SluiceGate
+        - MODEL_NAME: Spillway
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.OpenChannelManagement/Spillway
+    - SUBMODULE_SHORT_NAME: WasteWater
+      SUBMODULE_NAME: dataModel.WasteWater
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater
+      MODELS:
+        - MODEL_NAME: Blower
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/Blower
+        - MODEL_NAME: OffGasStack
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/OffGasStack
+        - MODEL_NAME: WasteWaterJunction
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/WasteWaterJunction
+        - MODEL_NAME: WasteWaterPlant
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/WasteWaterPlant
+        - MODEL_NAME: WasteWaterSimulationResult
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/WasteWaterSimulationResult
+        - MODEL_NAME: WasteWaterTank
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WasteWater/WasteWaterTank
+    - SUBMODULE_SHORT_NAME: WaterConsumption
+      SUBMODULE_NAME: dataModel.WaterConsumption
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterConsumption
+      MODELS:
+        - MODEL_NAME: WaterConsumptionObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterConsumption/WaterConsumptionObserved
+    - SUBMODULE_SHORT_NAME: WaterDistribution
+      SUBMODULE_NAME: dataModel.WaterDistribution
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistribution
+      MODELS:
+        - MODEL_NAME: WaterDistributionNetwork_incubated
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistribution/WaterDistributionNetwork_incubated
+    - SUBMODULE_SHORT_NAME: WaterDistributionManagementEPANET
+      SUBMODULE_NAME: dataModel.WaterDistributionManagementEPANET
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET
+      MODELS:
+        - MODEL_NAME: Curve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Curve
+        - MODEL_NAME: Junction
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Junction
+        - MODEL_NAME: Pattern
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Pattern
+        - MODEL_NAME: Pipe
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Pipe
+        - MODEL_NAME: Pump
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Pump
+        - MODEL_NAME: Reservoir
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Reservoir
+        - MODEL_NAME: SimulationResult
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/SimulationResult
+        - MODEL_NAME: SimulationScenario
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/SimulationScenario
+        - MODEL_NAME: Tank
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Tank
+        - MODEL_NAME: Valve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/Valve
+        - MODEL_NAME: WaterNetwork
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterDistributionManagementEPANET/WaterNetwork
+    - SUBMODULE_SHORT_NAME: WaterQuality
+      SUBMODULE_NAME: dataModel.WaterQuality
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterQuality
+      MODELS:
+        - MODEL_NAME: WaterQualityObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartWater/dataModel.WaterQuality/WaterQualityObserved
+
+- DOMAIN_NAME: Smart Energy
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy
+  REPO_URL: https://github.com/smart-data-models/SmartEnergy.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Battery
+      SUBMODULE_NAME: dataModel.Battery
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Battery
+      MODELS:
+        - MODEL_NAME: Battery
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Battery/Battery
+        - MODEL_NAME: BatteryStatus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Battery/BatteryStatus
+        - MODEL_NAME: StorageBatteryDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Battery/StorageBatteryDevice
+        - MODEL_NAME: StorageBatteryMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Battery/StorageBatteryMeasurement
+    - SUBMODULE_SHORT_NAME: Consumption
+      SUBMODULE_NAME: dataModel.Consumption
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Consumption
+      MODELS:
+        - MODEL_NAME: ConsumptionCost
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Consumption/ConsumptionCost
+        - MODEL_NAME: ConsumptionPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Consumption/ConsumptionPoint
+    - SUBMODULE_SHORT_NAME: Energy
+      SUBMODULE_NAME: dataModel.Energy
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy
+      MODELS:
+        - MODEL_NAME: ACMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy/ACMeasurement
+        - MODEL_NAME: InverterDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy/InverterDevice
+        - MODEL_NAME: SolarEnergy
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy/SolarEnergy
+        - MODEL_NAME: TechnicalCabinetDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy/TechnicalCabinetDevice
+        - MODEL_NAME: ThreePhaseAcMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Energy/ThreePhaseAcMeasurement
+    - SUBMODULE_SHORT_NAME: EnergyCIM
+      SUBMODULE_NAME: dataModel.EnergyCIM
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM
+      MODELS:
+        - MODEL_NAME: ACDCConverter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ACDCConverter
+        - MODEL_NAME: ACDCConverterDCTerminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ACDCConverterDCTerminal
+        - MODEL_NAME: ACDCTerminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ACDCTerminal
+        - MODEL_NAME: ACLineSegment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ACLineSegment
+        - MODEL_NAME: Accumulator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Accumulator
+        - MODEL_NAME: AccumulatorLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AccumulatorLimit
+        - MODEL_NAME: AccumulatorLimitSet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AccumulatorLimitSet
+        - MODEL_NAME: AccumulatorReset
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AccumulatorReset
+        - MODEL_NAME: ActivePower
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ActivePower
+        - MODEL_NAME: ActivePowerLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ActivePowerLimit
+        - MODEL_NAME: ActivePowerPerCurrentFlow
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ActivePowerPerCurrentFlow
+        - MODEL_NAME: ActivePowerPerFrequency
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ActivePowerPerFrequency
+        - MODEL_NAME: Analog
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Analog
+        - MODEL_NAME: AnalogControl
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AnalogControl
+        - MODEL_NAME: AnalogLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AnalogLimit
+        - MODEL_NAME: AnalogLimitSet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AnalogLimitSet
+        - MODEL_NAME: AnalogValue
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AnalogValue
+        - MODEL_NAME: AngleDegrees
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AngleDegrees
+        - MODEL_NAME: AngleRadians
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AngleRadians
+        - MODEL_NAME: ApparentPower
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ApparentPower
+        - MODEL_NAME: ApparentPowerLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ApparentPowerLimit
+        - MODEL_NAME: Area
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Area
+        - MODEL_NAME: AsynchronousMachine
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AsynchronousMachine
+        - MODEL_NAME: AsynchronousMachineDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AsynchronousMachineDynamics
+        - MODEL_NAME: AsynchronousMachineEquivalentCircuit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AsynchronousMachineEquivalentCircuit
+        - MODEL_NAME: AsynchronousMachineTimeConstantReactance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AsynchronousMachineTimeConstantReactance
+        - MODEL_NAME: AsynchronousMachineUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/AsynchronousMachineUserDefined
+        - MODEL_NAME: BaseVoltage
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/BaseVoltage
+        - MODEL_NAME: BasicIntervalSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/BasicIntervalSchedule
+        - MODEL_NAME: Bay
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Bay
+        - MODEL_NAME: BusNameMarker
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/BusNameMarker
+        - MODEL_NAME: BusbarSection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/BusbarSection
+        - MODEL_NAME: Capacitance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Capacitance
+        - MODEL_NAME: CapacitancePerLength
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CapacitancePerLength
+        - MODEL_NAME: Command
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Command
+        - MODEL_NAME: Conductance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Conductance
+        - MODEL_NAME: ConductingEquipment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConductingEquipment
+        - MODEL_NAME: Conductor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Conductor
+        - MODEL_NAME: ConformLoad
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConformLoad
+        - MODEL_NAME: ConformLoadGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConformLoadGroup
+        - MODEL_NAME: ConformLoadSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConformLoadSchedule
+        - MODEL_NAME: ConnectivityNode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConnectivityNode
+        - MODEL_NAME: ConnectivityNodeContainer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ConnectivityNodeContainer
+        - MODEL_NAME: ControlArea
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ControlArea
+        - MODEL_NAME: ControlAreaGeneratingUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ControlAreaGeneratingUnit
+        - MODEL_NAME: CoordinateSystem
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CoordinateSystem
+        - MODEL_NAME: CsConverter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CsConverter
+        - MODEL_NAME: CurrentFlow
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CurrentFlow
+        - MODEL_NAME: CurrentLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CurrentLimit
+        - MODEL_NAME: Curve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Curve
+        - MODEL_NAME: CurveData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/CurveData
+        - MODEL_NAME: DCBaseTerminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCBaseTerminal
+        - MODEL_NAME: DCConductingEquipment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCConductingEquipment
+        - MODEL_NAME: DCConverterUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCConverterUnit
+        - MODEL_NAME: DCEquipmentContainer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCEquipmentContainer
+        - MODEL_NAME: DCGround
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCGround
+        - MODEL_NAME: DCLine
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCLine
+        - MODEL_NAME: DCLineSegment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCLineSegment
+        - MODEL_NAME: DCNode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCNode
+        - MODEL_NAME: DCSeriesDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCSeriesDevice
+        - MODEL_NAME: DCShunt
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCShunt
+        - MODEL_NAME: DCTerminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCTerminal
+        - MODEL_NAME: DCTopologicalIsland
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCTopologicalIsland
+        - MODEL_NAME: DCTopologicalNode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DCTopologicalNode
+        - MODEL_NAME: DayType
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DayType
+        - MODEL_NAME: Diagram
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Diagram
+        - MODEL_NAME: DiagramLayoutVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramLayoutVersion
+        - MODEL_NAME: DiagramObject
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramObject
+        - MODEL_NAME: DiagramObjectGluePoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramObjectGluePoint
+        - MODEL_NAME: DiagramObjectPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramObjectPoint
+        - MODEL_NAME: DiagramObjectStyle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramObjectStyle
+        - MODEL_NAME: DiagramStyle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiagramStyle
+        - MODEL_NAME: DiscExcContIEEEDEC1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscExcContIEEEDEC1A
+        - MODEL_NAME: DiscExcContIEEEDEC2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscExcContIEEEDEC2A
+        - MODEL_NAME: DiscExcContIEEEDEC3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscExcContIEEEDEC3A
+        - MODEL_NAME: DiscontinuousExcitationControlDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscontinuousExcitationControlDynamics
+        - MODEL_NAME: DiscontinuousExcitationControlUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscontinuousExcitationControlUserDefined
+        - MODEL_NAME: Discrete
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Discrete
+        - MODEL_NAME: DiscreteValue
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DiscreteValue
+        - MODEL_NAME: DynamicsFunctionBlock
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DynamicsFunctionBlock
+        - MODEL_NAME: DynamicsVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/DynamicsVersion
+        - MODEL_NAME: EarthFaultCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EarthFaultCompensator
+        - MODEL_NAME: EnergyArea
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EnergyArea
+        - MODEL_NAME: EnergyConsumer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EnergyConsumer
+        - MODEL_NAME: EnergySchedulingType
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EnergySchedulingType
+        - MODEL_NAME: EnergySource
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EnergySource
+        - MODEL_NAME: Equipment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Equipment
+        - MODEL_NAME: EquipmentBoundaryVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquipmentBoundaryVersion
+        - MODEL_NAME: EquipmentContainer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquipmentContainer
+        - MODEL_NAME: EquipmentVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquipmentVersion
+        - MODEL_NAME: EquivalentBranch
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquivalentBranch
+        - MODEL_NAME: EquivalentEquipment
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquivalentEquipment
+        - MODEL_NAME: EquivalentInjection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquivalentInjection
+        - MODEL_NAME: EquivalentNetwork
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquivalentNetwork
+        - MODEL_NAME: EquivalentShunt
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/EquivalentShunt
+        - MODEL_NAME: ExcAC1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC1A
+        - MODEL_NAME: ExcAC2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC2A
+        - MODEL_NAME: ExcAC3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC3A
+        - MODEL_NAME: ExcAC4A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC4A
+        - MODEL_NAME: ExcAC5A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC5A
+        - MODEL_NAME: ExcAC6A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC6A
+        - MODEL_NAME: ExcAC8B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAC8B
+        - MODEL_NAME: ExcANS
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcANS
+        - MODEL_NAME: ExcAVR1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR1
+        - MODEL_NAME: ExcAVR2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR2
+        - MODEL_NAME: ExcAVR3
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR3
+        - MODEL_NAME: ExcAVR4
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR4
+        - MODEL_NAME: ExcAVR5
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR5
+        - MODEL_NAME: ExcAVR7
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcAVR7
+        - MODEL_NAME: ExcBBC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcBBC
+        - MODEL_NAME: ExcCZ
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcCZ
+        - MODEL_NAME: ExcDC1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcDC1A
+        - MODEL_NAME: ExcDC2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcDC2A
+        - MODEL_NAME: ExcDC3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcDC3A
+        - MODEL_NAME: ExcDC3A1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcDC3A1
+        - MODEL_NAME: ExcELIN1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcELIN1
+        - MODEL_NAME: ExcELIN2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcELIN2
+        - MODEL_NAME: ExcHU
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcHU
+        - MODEL_NAME: ExcIEEEAC1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC1A
+        - MODEL_NAME: ExcIEEEAC2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC2A
+        - MODEL_NAME: ExcIEEEAC3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC3A
+        - MODEL_NAME: ExcIEEEAC4A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC4A
+        - MODEL_NAME: ExcIEEEAC5A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC5A
+        - MODEL_NAME: ExcIEEEAC6A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC6A
+        - MODEL_NAME: ExcIEEEAC7B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC7B
+        - MODEL_NAME: ExcIEEEAC8B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEAC8B
+        - MODEL_NAME: ExcIEEEDC1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEDC1A
+        - MODEL_NAME: ExcIEEEDC2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEDC2A
+        - MODEL_NAME: ExcIEEEDC3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEDC3A
+        - MODEL_NAME: ExcIEEEDC4B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEDC4B
+        - MODEL_NAME: ExcIEEEST1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST1A
+        - MODEL_NAME: ExcIEEEST2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST2A
+        - MODEL_NAME: ExcIEEEST3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST3A
+        - MODEL_NAME: ExcIEEEST4B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST4B
+        - MODEL_NAME: ExcIEEEST5B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST5B
+        - MODEL_NAME: Line
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Line
+        - MODEL_NAME: ExcIEEEST6B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST6B
+        - MODEL_NAME: ExcIEEEST7B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcIEEEST7B
+        - MODEL_NAME: ExcOEX3T
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcOEX3T
+        - MODEL_NAME: ExcPIC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcPIC
+        - MODEL_NAME: ExcREXS
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcREXS
+        - MODEL_NAME: ExcSCRX
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcSCRX
+        - MODEL_NAME: ExcSEXS
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcSEXS
+        - MODEL_NAME: ExcSK
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcSK
+        - MODEL_NAME: ExcST1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST1A
+        - MODEL_NAME: ExcST2A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST2A
+        - MODEL_NAME: ExcST3A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST3A
+        - MODEL_NAME: ExcST4B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST4B
+        - MODEL_NAME: ExcST6B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST6B
+        - MODEL_NAME: ExcST7B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcST7B
+        - MODEL_NAME: ExcitationSystemDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcitationSystemDynamics
+        - MODEL_NAME: ExcitationSystemUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExcitationSystemUserDefined
+        - MODEL_NAME: ExternalNetworkInjection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ExternalNetworkInjection
+        - MODEL_NAME: FossilFuel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/FossilFuel
+        - MODEL_NAME: Frequency
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Frequency
+        - MODEL_NAME: GenICompensationForGenJ
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GenICompensationForGenJ
+        - MODEL_NAME: GeneratingUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GeneratingUnit
+        - MODEL_NAME: GeographicalLocationVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GeographicalLocationVersion
+        - MODEL_NAME: GeographicalRegion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GeographicalRegion
+        - MODEL_NAME: GovCT1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovCT1
+        - MODEL_NAME: GovCT2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovCT2
+        - MODEL_NAME: GovGAST
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGAST
+        - MODEL_NAME: GovGAST1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGAST1
+        - MODEL_NAME: GovGAST2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGAST2
+        - MODEL_NAME: GovGAST3
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGAST3
+        - MODEL_NAME: GovGAST4
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGAST4
+        - MODEL_NAME: GovGASTWD
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovGASTWD
+        - MODEL_NAME: GovHydro1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydro1
+        - MODEL_NAME: GovHydro2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydro2
+        - MODEL_NAME: GovHydro3
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydro3
+        - MODEL_NAME: GovHydro4
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydro4
+        - MODEL_NAME: GovHydroDD
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroDD
+        - MODEL_NAME: GovHydroFrancis
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroFrancis
+        - MODEL_NAME: GovHydroIEEE0
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroIEEE0
+        - MODEL_NAME: GovHydroIEEE2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroIEEE2
+        - MODEL_NAME: GovHydroPID
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroPID
+        - MODEL_NAME: GovHydroPID2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroPID2
+        - MODEL_NAME: GovHydroPelton
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroPelton
+        - MODEL_NAME: GovHydroR
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroR
+        - MODEL_NAME: GovHydroWEH
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroWEH
+        - MODEL_NAME: GovHydroWPID
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovHydroWPID
+        - MODEL_NAME: GovSteam0
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteam0
+        - MODEL_NAME: GovSteam1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteam1
+        - MODEL_NAME: GovSteam2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteam2
+        - MODEL_NAME: GovSteamCC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamCC
+        - MODEL_NAME: GovSteamEU
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamEU
+        - MODEL_NAME: GovSteamFV2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamFV2
+        - MODEL_NAME: GovSteamFV3
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamFV3
+        - MODEL_NAME: GovSteamFV4
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamFV4
+        - MODEL_NAME: GovSteamIEEE1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamIEEE1
+        - MODEL_NAME: GovSteamSGO
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GovSteamSGO
+        - MODEL_NAME: GrossToNetActivePowerCurve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GrossToNetActivePowerCurve
+        - MODEL_NAME: GroundingImpedance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/GroundingImpedance
+        - MODEL_NAME: HydroGeneratingUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/HydroGeneratingUnit
+        - MODEL_NAME: HydroPowerPlant
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/HydroPowerPlant
+        - MODEL_NAME: HydroPump
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/HydroPump
+        - MODEL_NAME: IdentifiedObject
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/IdentifiedObject
+        - MODEL_NAME: Inductance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Inductance
+        - MODEL_NAME: InductancePerLength
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/InductancePerLength
+        - MODEL_NAME: Length
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Length
+        - MODEL_NAME: LimitSet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LimitSet
+        - MODEL_NAME: LinearShuntCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LinearShuntCompensator
+        - MODEL_NAME: LoadAggregate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadAggregate
+        - MODEL_NAME: LoadArea
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadArea
+        - MODEL_NAME: LoadComposite
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadComposite
+        - MODEL_NAME: LoadDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadDynamics
+        - MODEL_NAME: LoadGenericNonLinear
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadGenericNonLinear
+        - MODEL_NAME: LoadGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadGroup
+        - MODEL_NAME: LoadMotor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadMotor
+        - MODEL_NAME: LoadResponseCharacteristic
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadResponseCharacteristic
+        - MODEL_NAME: LoadStatic
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadStatic
+        - MODEL_NAME: LoadUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/LoadUserDefined
+        - MODEL_NAME: Location
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Location
+        - MODEL_NAME: Measurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Measurement
+        - MODEL_NAME: MeasurementValue
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MeasurementValue
+        - MODEL_NAME: MeasurementValueQuality
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MeasurementValueQuality
+        - MODEL_NAME: MeasurementValueSource
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MeasurementValueSource
+        - MODEL_NAME: MechLoad1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MechLoad1
+        - MODEL_NAME: MechanicalLoadDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MechanicalLoadDynamics
+        - MODEL_NAME: MechanicalLoadUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MechanicalLoadUserDefined
+        - MODEL_NAME: Money
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Money
+        - MODEL_NAME: MutualCoupling
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/MutualCoupling
+        - MODEL_NAME: NonConformLoad
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/NonConformLoad
+        - MODEL_NAME: NonConformLoadGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/NonConformLoadGroup
+        - MODEL_NAME: NonConformLoadSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/NonConformLoadSchedule
+        - MODEL_NAME: NonlinearShuntCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/NonlinearShuntCompensator
+        - MODEL_NAME: NonlinearShuntCompensatorPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/NonlinearShuntCompensatorPoint
+        - MODEL_NAME: OperationalLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OperationalLimit
+        - MODEL_NAME: OperationalLimitSet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OperationalLimitSet
+        - MODEL_NAME: OperationalLimitType
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OperationalLimitType
+        - MODEL_NAME: OverexcLim2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcLim2
+        - MODEL_NAME: OverexcLimIEEE
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcLimIEEE
+        - MODEL_NAME: OverexcLimX1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcLimX1
+        - MODEL_NAME: OverexcLimX2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcLimX2
+        - MODEL_NAME: OverexcitationLimiterDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcitationLimiterDynamics
+        - MODEL_NAME: OverexcitationLimiterUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/OverexcitationLimiterUserDefined
+        - MODEL_NAME: PFVArControllerType1Dynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArControllerType1Dynamics
+        - MODEL_NAME: PFVArControllerType1UserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArControllerType1UserDefined
+        - MODEL_NAME: PFVArControllerType2Dynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArControllerType2Dynamics
+        - MODEL_NAME: PFVArControllerType2UserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArControllerType2UserDefined
+        - MODEL_NAME: PFVArType1IEEEPFController
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArType1IEEEPFController
+        - MODEL_NAME: PFVArType1IEEEVArController
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArType1IEEEVArController
+        - MODEL_NAME: PFVArType2Common1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArType2Common1
+        - MODEL_NAME: PFVArType2IEEEPFController
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArType2IEEEPFController
+        - MODEL_NAME: PFVArType2IEEEVArController
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PFVArType2IEEEVArController
+        - MODEL_NAME: PU
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PU
+        - MODEL_NAME: PerCent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PerCent
+        - MODEL_NAME: PerLengthDCLineParameter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PerLengthDCLineParameter
+        - MODEL_NAME: PetersenCoil
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PetersenCoil
+        - MODEL_NAME: PhaseTapChanger
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChanger
+        - MODEL_NAME: PhaseTapChangerAsymmetrical
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerAsymmetrical
+        - MODEL_NAME: PhaseTapChangerLinear
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerLinear
+        - MODEL_NAME: PhaseTapChangerNonLinear
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerNonLinear
+        - MODEL_NAME: PhaseTapChangerTable
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerTable
+        - MODEL_NAME: PhaseTapChangerTablePoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerTablePoint
+        - MODEL_NAME: PhaseTapChangerTabular
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PhaseTapChangerTabular
+        - MODEL_NAME: PositionPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PositionPoint
+        - MODEL_NAME: PowerSystemResource
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PowerSystemResource
+        - MODEL_NAME: PowerSystemStabilizerDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PowerSystemStabilizerDynamics
+        - MODEL_NAME: PowerSystemStabilizerUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PowerSystemStabilizerUserDefined
+        - MODEL_NAME: PowerTransformer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PowerTransformer
+        - MODEL_NAME: PowerTransformerEnd
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PowerTransformerEnd
+        - MODEL_NAME: ProprietaryParameterDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ProprietaryParameterDynamics
+        - MODEL_NAME: Pss1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Pss1
+        - MODEL_NAME: Pss1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Pss1A
+        - MODEL_NAME: Pss2B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Pss2B
+        - MODEL_NAME: Pss2ST
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Pss2ST
+        - MODEL_NAME: Pss5
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Pss5
+        - MODEL_NAME: PssELIN2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssELIN2
+        - MODEL_NAME: PssIEEE1A
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssIEEE1A
+        - MODEL_NAME: PssIEEE2B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssIEEE2B
+        - MODEL_NAME: PssIEEE3B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssIEEE3B
+        - MODEL_NAME: PssIEEE4B
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssIEEE4B
+        - MODEL_NAME: PssPTIST1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssPTIST1
+        - MODEL_NAME: PssPTIST3
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssPTIST3
+        - MODEL_NAME: PssSB4
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssSB4
+        - MODEL_NAME: PssSH
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssSH
+        - MODEL_NAME: PssSK
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssSK
+        - MODEL_NAME: PssWECC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/PssWECC
+        - MODEL_NAME: Quality61850
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Quality61850
+        - MODEL_NAME: RaiseLowerCommand
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RaiseLowerCommand
+        - MODEL_NAME: RatioTapChanger
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RatioTapChanger
+        - MODEL_NAME: RatioTapChangerTable
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RatioTapChangerTable
+        - MODEL_NAME: RatioTapChangerTablePoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RatioTapChangerTablePoint
+        - MODEL_NAME: Reactance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Reactance
+        - MODEL_NAME: ReactiveCapabilityCurve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ReactiveCapabilityCurve
+        - MODEL_NAME: ReactivePower
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ReactivePower
+        - MODEL_NAME: RegularIntervalSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RegularIntervalSchedule
+        - MODEL_NAME: RegularTimePoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RegularTimePoint
+        - MODEL_NAME: RegulatingCondEq
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RegulatingCondEq
+        - MODEL_NAME: RegulatingControl
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RegulatingControl
+        - MODEL_NAME: RegulationSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RegulationSchedule
+        - MODEL_NAME: RemoteInputSignal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RemoteInputSignal
+        - MODEL_NAME: ReportingGroup
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ReportingGroup
+        - MODEL_NAME: Resistance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Resistance
+        - MODEL_NAME: ResistancePerLength
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ResistancePerLength
+        - MODEL_NAME: RotatingMachine
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RotatingMachine
+        - MODEL_NAME: RotatingMachineDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RotatingMachineDynamics
+        - MODEL_NAME: RotationSpeed
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/RotationSpeed
+        - MODEL_NAME: Season
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Season
+        - MODEL_NAME: SeasonDayTypeSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SeasonDayTypeSchedule
+        - MODEL_NAME: Seconds
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Seconds
+        - MODEL_NAME: SeriesCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SeriesCompensator
+        - MODEL_NAME: SetPoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SetPoint
+        - MODEL_NAME: ShuntCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ShuntCompensator
+        - MODEL_NAME: Simple_Float
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Simple_Float
+        - MODEL_NAME: StateVariablesVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/StateVariablesVersion
+        - MODEL_NAME: StaticVarCompensator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/StaticVarCompensator
+        - MODEL_NAME: SteadyStateHypothesisVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SteadyStateHypothesisVersion
+        - MODEL_NAME: StringMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/StringMeasurement
+        - MODEL_NAME: StringMeasurementValue
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/StringMeasurementValue
+        - MODEL_NAME: SubGeographicalRegion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SubGeographicalRegion
+        - MODEL_NAME: SubLoadArea
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SubLoadArea
+        - MODEL_NAME: Substation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Substation
+        - MODEL_NAME: Susceptance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Susceptance
+        - MODEL_NAME: SvInjection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvInjection
+        - MODEL_NAME: SvPowerFlow
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvPowerFlow
+        - MODEL_NAME: SvShuntCompensatorSections
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvShuntCompensatorSections
+        - MODEL_NAME: SvStatus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvStatus
+        - MODEL_NAME: SvTapStep
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvTapStep
+        - MODEL_NAME: SvVoltage
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SvVoltage
+        - MODEL_NAME: Switch
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Switch
+        - MODEL_NAME: SwitchSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SwitchSchedule
+        - MODEL_NAME: SynchronousMachine
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachine
+        - MODEL_NAME: SynchronousMachineDetailed
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachineDetailed
+        - MODEL_NAME: SynchronousMachineDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachineDynamics
+        - MODEL_NAME: SynchronousMachineEquivalentCircuit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachineEquivalentCircuit
+        - MODEL_NAME: SynchronousMachineTimeConstantReactance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachineTimeConstantReactance
+        - MODEL_NAME: SynchronousMachineUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/SynchronousMachineUserDefined
+        - MODEL_NAME: TapChanger
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TapChanger
+        - MODEL_NAME: TapChangerControl
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TapChangerControl
+        - MODEL_NAME: TapChangerTablePoint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TapChangerTablePoint
+        - MODEL_NAME: TapSchedule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TapSchedule
+        - MODEL_NAME: Temperature
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Temperature
+        - MODEL_NAME: Terminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Terminal
+        - MODEL_NAME: TextDiagramObject
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TextDiagramObject
+        - MODEL_NAME: ThermalGeneratingUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ThermalGeneratingUnit
+        - MODEL_NAME: TieFlow
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TieFlow
+        - MODEL_NAME: TopologicalIsland
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TopologicalIsland
+        - MODEL_NAME: TopologicalNode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TopologicalNode
+        - MODEL_NAME: TopologyBoundaryVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TopologyBoundaryVersion
+        - MODEL_NAME: TopologyVersion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TopologyVersion
+        - MODEL_NAME: TransformerEnd
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TransformerEnd
+        - MODEL_NAME: TurbLCFB1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TurbLCFB1
+        - MODEL_NAME: TurbineGovernorDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TurbineGovernorDynamics
+        - MODEL_NAME: TurbineGovernorUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TurbineGovernorUserDefined
+        - MODEL_NAME: TurbineLoadControllerDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TurbineLoadControllerDynamics
+        - MODEL_NAME: TurbineLoadControllerUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/TurbineLoadControllerUserDefined
+        - MODEL_NAME: UnderexcLim2Simplified
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcLim2Simplified
+        - MODEL_NAME: UnderexcLimIEEE1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcLimIEEE1
+        - MODEL_NAME: UnderexcLimIEEE2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcLimIEEE2
+        - MODEL_NAME: UnderexcLimX1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcLimX1
+        - MODEL_NAME: UnderexcLimX2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcLimX2
+        - MODEL_NAME: UnderexcitationLimiterDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcitationLimiterDynamics
+        - MODEL_NAME: UnderexcitationLimiterUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/UnderexcitationLimiterUserDefined
+        - MODEL_NAME: VAdjIEEE
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VAdjIEEE
+        - MODEL_NAME: VCompIEEEType1
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VCompIEEEType1
+        - MODEL_NAME: VCompIEEEType2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VCompIEEEType2
+        - MODEL_NAME: ValueAliasSet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ValueAliasSet
+        - MODEL_NAME: ValueToAlias
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/ValueToAlias
+        - MODEL_NAME: VisibilityLayer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VisibilityLayer
+        - MODEL_NAME: Voltage
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/Voltage
+        - MODEL_NAME: VoltageAdjusterDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageAdjusterDynamics
+        - MODEL_NAME: VoltageAdjusterUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageAdjusterUserDefined
+        - MODEL_NAME: VoltageCompensatorDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageCompensatorDynamics
+        - MODEL_NAME: VoltageCompensatorUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageCompensatorUserDefined
+        - MODEL_NAME: VoltageLevel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageLevel
+        - MODEL_NAME: VoltageLimit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltageLimit
+        - MODEL_NAME: VoltagePerReactivePower
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VoltagePerReactivePower
+        - MODEL_NAME: VolumeFlowRate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VolumeFlowRate
+        - MODEL_NAME: VsCapabilityCurve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VsCapabilityCurve
+        - MODEL_NAME: VsConverter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/VsConverter
+        - MODEL_NAME: WindAeroConstIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindAeroConstIEC
+        - MODEL_NAME: WindAeroLinearIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindAeroLinearIEC
+        - MODEL_NAME: WindContCurrLimIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContCurrLimIEC
+        - MODEL_NAME: WindContPType3IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContPType3IEC
+        - MODEL_NAME: WindContPType4aIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContPType4aIEC
+        - MODEL_NAME: WindContPType4bIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContPType4bIEC
+        - MODEL_NAME: WindContPitchAngleIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContPitchAngleIEC
+        - MODEL_NAME: WindContQIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContQIEC
+        - MODEL_NAME: WindContRotorRIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindContRotorRIEC
+        - MODEL_NAME: WindDynamicsLookupTable
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindDynamicsLookupTable
+        - MODEL_NAME: WindGenTurbineType1IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenTurbineType1IEC
+        - MODEL_NAME: WindGenTurbineType2IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenTurbineType2IEC
+        - MODEL_NAME: WindGenTurbineType3IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenTurbineType3IEC
+        - MODEL_NAME: WindGenTurbineType3aIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenTurbineType3aIEC
+        - MODEL_NAME: WindGenTurbineType3bIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenTurbineType3bIEC
+        - MODEL_NAME: WindGenType4IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGenType4IEC
+        - MODEL_NAME: WindGeneratingUnit
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindGeneratingUnit
+        - MODEL_NAME: WindMechIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindMechIEC
+        - MODEL_NAME: WindPitchContEmulIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPitchContEmulIEC
+        - MODEL_NAME: WindPlantDynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPlantDynamics
+        - MODEL_NAME: WindPlantIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPlantIEC
+        - MODEL_NAME: WindPlantFreqPcontrolIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPlantFreqPcontrolIEC
+        - MODEL_NAME: WindPlantReactiveControlIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPlantReactiveControlIEC
+        - MODEL_NAME: WindPlantUserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindPlantUserDefined
+        - MODEL_NAME: WindProtectionIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindProtectionIEC
+        - MODEL_NAME: WindTurbineType1or2Dynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType1or2Dynamics
+        - MODEL_NAME: WindTurbineType1or2IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType1or2IEC
+        - MODEL_NAME: WindTurbineType3or4Dynamics
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType3or4Dynamics
+        - MODEL_NAME: WindTurbineType3or4IEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType3or4IEC
+        - MODEL_NAME: WindTurbineType4aIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType4aIEC
+        - MODEL_NAME: WindTurbineType4bIEC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindTurbineType4bIEC
+        - MODEL_NAME: WindType1or2UserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindType1or2UserDefined
+        - MODEL_NAME: WindType3or4UserDefined
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.EnergyCIM/WindType3or4UserDefined
+    - SUBMODULE_SHORT_NAME: GreenEnergy
+      SUBMODULE_NAME: dataModel.GreenEnergy
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.GreenEnergy
+      MODELS:
+        - MODEL_NAME: GreenEnergyGenerator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.GreenEnergy/GreenEnergyGenerator
+        - MODEL_NAME: GreenEnergyMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.GreenEnergy/GreenEnergyMeasurement
+        - MODEL_NAME: PhotovoltaicDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.GreenEnergy/PhotovoltaicDevice
+        - MODEL_NAME: PhotovoltaicMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.GreenEnergy/PhotovoltaicMeasurement
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnergy/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Smart Environment
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment
+  REPO_URL: https://github.com/smart-data-models/SmartEnvironment.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Environment
+      SUBMODULE_NAME: dataModel.Environment
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment
+      MODELS:
+        - MODEL_NAME: AeroAllergenObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/AeroAllergenObserved
+        - MODEL_NAME: AirQualityForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/AirQualityForecast
+        - MODEL_NAME: AirQualityMonitoring
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/AirQualityMonitoring
+        - MODEL_NAME: AirQualityObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/AirQualityObserved
+        - MODEL_NAME: ElectroMagneticObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/ElectroMagneticObserved
+        - MODEL_NAME: EnvironmentObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/EnvironmentObserved
+        - MODEL_NAME: FloodMonitoring
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/FloodMonitoring
+        - MODEL_NAME: IndoorEnvironmentObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/IndoorEnvironmentObserved
+        - MODEL_NAME: NoiseLevelObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/NoiseLevelObserved
+        - MODEL_NAME: NoisePollution
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/NoisePollution
+        - MODEL_NAME: NoisePollutionForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/NoisePollutionForecast
+        - MODEL_NAME: PhreaticObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/PhreaticObserved
+        - MODEL_NAME: RainFallRadarObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/RainFallRadarObserved
+        - MODEL_NAME: TrafficEnvironmentImpact
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/TrafficEnvironmentImpact
+        - MODEL_NAME: TrafficEnvironmentImpactForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/TrafficEnvironmentImpactForecast
+        - MODEL_NAME: WaterObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Environment/WaterObserved
+    - SUBMODULE_SHORT_NAME: FrictionlessData
+      SUBMODULE_NAME: dataModel.FrictionlessData
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.FrictionlessData
+      MODELS:
+        - MODEL_NAME: CSVDialectFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.FrictionlessData/CSVDialectFrictionlessData
+        - MODEL_NAME: DataPackageFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.FrictionlessData/DataPackageFrictionlessData
+        - MODEL_NAME: DataResourceFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.FrictionlessData/DataResourceFrictionlessData
+        - MODEL_NAME: TableSchemaFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.FrictionlessData/TableSchemaFrictionlessData
+    - SUBMODULE_SHORT_NAME: WasteManagement
+      SUBMODULE_NAME: dataModel.WasteManagement
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WasteManagement
+      MODELS:
+        - MODEL_NAME: WasteContainer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WasteManagement/WasteContainer
+        - MODEL_NAME: WasteContainerIsle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WasteManagement/WasteContainerIsle
+        - MODEL_NAME: WasteContainerModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WasteManagement/WasteContainerModel
+    - SUBMODULE_SHORT_NAME: WaterQuality
+      SUBMODULE_NAME: dataModel.WaterQuality
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WaterQuality
+      MODELS:
+        - MODEL_NAME: WaterQualityObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.WaterQuality/WaterQualityObserved
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartEnvironment/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Smart Sensoring
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring
+  REPO_URL: https://github.com/smart-data-models/Smart-Sensoring.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Device
+      SUBMODULE_NAME: dataModel.Device
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device
+      MODELS:
+        - MODEL_NAME: Camera
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/Camera
+        - MODEL_NAME: Device
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/Device
+        - MODEL_NAME: DeviceMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/DeviceMeasurement
+        - MODEL_NAME: DeviceModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/DeviceModel
+        - MODEL_NAME: DeviceOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/DeviceOperation
+        - MODEL_NAME: PrivacyObject
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/PrivacyObject
+        - MODEL_NAME: SmartMeteringObservation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.Device/SmartMeteringObservation
+    - SUBMODULE_SHORT_NAME: OCF
+      SUBMODULE_NAME: dataModel.OCF
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF
+      MODELS:
+        - MODEL_NAME: 3DPrinter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/3DPrinter
+        - MODEL_NAME: Activity
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Activity
+        - MODEL_NAME: AirFlow
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/AirFlow
+        - MODEL_NAME: AirQuality
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/AirQuality
+        - MODEL_NAME: Alarm
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Alarm
+        - MODEL_NAME: Altimeter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Altimeter
+        - MODEL_NAME: AutoFocus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/AutoFocus
+        - MODEL_NAME: AutoWhiteBalance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/AutoWhiteBalance
+        - MODEL_NAME: AutomaticDocumentFeeder
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/AutomaticDocumentFeeder
+        - MODEL_NAME: BMI
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BMI
+        - MODEL_NAME: BatteryMaterial
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BatteryMaterial
+        - MODEL_NAME: BinarySwitch
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BinarySwitch
+        - MODEL_NAME: BloodPressure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BloodPressure
+        - MODEL_NAME: BodyFat
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BodyFat
+        - MODEL_NAME: BodyFatFreeMass
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BodyFatFreeMass
+        - MODEL_NAME: BodyLocationTemperature
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BodyLocationTemperature
+        - MODEL_NAME: BodySoftLeanMass
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BodySoftLeanMass
+        - MODEL_NAME: BodyWater
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/BodyWater
+        - MODEL_NAME: Brewing
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Brewing
+        - MODEL_NAME: Brightness
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Brightness
+        - MODEL_NAME: Button
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Button
+        - MODEL_NAME: CO
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/CO
+        - MODEL_NAME: CO2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/CO2
+        - MODEL_NAME: Cadence
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Cadence
+        - MODEL_NAME: Calorific
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Calorific
+        - MODEL_NAME: CircuitBreaker
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/CircuitBreaker
+        - MODEL_NAME: Clock
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Clock
+        - MODEL_NAME: ColourCSC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ColourCSC
+        - MODEL_NAME: ColourChroma
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ColourChroma
+        - MODEL_NAME: ColourHS
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ColourHS
+        - MODEL_NAME: ColourRGB
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ColourRGB
+        - MODEL_NAME: ColourTemp
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ColourTemp
+        - MODEL_NAME: Consumption
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Consumption
+        - MODEL_NAME: Contact
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Contact
+        - MODEL_NAME: ContinuousGlucoseMeterCalibrate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ContinuousGlucoseMeterCalibrate
+        - MODEL_NAME: ContinuousGlucoseMeterSamplingInterval
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ContinuousGlucoseMeterSamplingInterval
+        - MODEL_NAME: ContinuousGlucoseMeterSensor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ContinuousGlucoseMeterSensor
+        - MODEL_NAME: ContinuousGlucoseMeterStatus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ContinuousGlucoseMeterStatus
+        - MODEL_NAME: ContinuousGlucoseMeterThreshold
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ContinuousGlucoseMeterThreshold
+        - MODEL_NAME: Conversion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Conversion
+        - MODEL_NAME: Count
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Count
+        - MODEL_NAME: DRLC
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/DRLC
+        - MODEL_NAME: Dali
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Dali
+        - MODEL_NAME: Deodorization
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Deodorization
+        - MODEL_NAME: Dimming
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Dimming
+        - MODEL_NAME: Door
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Door
+        - MODEL_NAME: EnergyGeneration
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/EnergyGeneration
+        - MODEL_NAME: EnergyOverload
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/EnergyOverload
+        - MODEL_NAME: Exercise
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Exercise
+        - MODEL_NAME: Foaming
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Foaming
+        - MODEL_NAME: Geolocation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Geolocation
+        - MODEL_NAME: GlassBreak
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlassBreak
+        - MODEL_NAME: Glucose
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Glucose
+        - MODEL_NAME: GlucoseCarb
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseCarb
+        - MODEL_NAME: GlucoseHealth
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseHealth
+        - MODEL_NAME: GlucoseMeal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseMeal
+        - MODEL_NAME: GlucoseMedication
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseMedication
+        - MODEL_NAME: GlucoseSampleLocation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseSampleLocation
+        - MODEL_NAME: GlucoseTester
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/GlucoseTester
+        - MODEL_NAME: HbA1c
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/HbA1c
+        - MODEL_NAME: HeartRate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/HeartRate
+        - MODEL_NAME: HeatingZone
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/HeatingZone
+        - MODEL_NAME: Height
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Height
+        - MODEL_NAME: Illuminance
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Illuminance
+        - MODEL_NAME: ImpactSensor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ImpactSensor
+        - MODEL_NAME: Inverter
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Inverter
+        - MODEL_NAME: KeyCardSwitch
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/KeyCardSwitch
+        - MODEL_NAME: KeyPadChar
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/KeyPadChar
+        - MODEL_NAME: Lock
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Lock
+        - MODEL_NAME: LockCode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/LockCode
+        - MODEL_NAME: Measurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Measurement
+        - MODEL_NAME: Media
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Media
+        - MODEL_NAME: Mode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Mode
+        - MODEL_NAME: Motion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Motion
+        - MODEL_NAME: MuscleOxygenSaturation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/MuscleOxygenSaturation
+        - MODEL_NAME: NightMode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/NightMode
+        - MODEL_NAME: OpaqueData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/OpaqueData
+        - MODEL_NAME: OpenLevel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/OpenLevel
+        - MODEL_NAME: PVArrayConnectionTerminal
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/PVArrayConnectionTerminal
+        - MODEL_NAME: PanTiltZoom
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/PanTiltZoom
+        - MODEL_NAME: Presence
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Presence
+        - MODEL_NAME: PrintQueue
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/PrintQueue
+        - MODEL_NAME: PulseRate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/PulseRate
+        - MODEL_NAME: RampTime
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/RampTime
+        - MODEL_NAME: RemoteControl
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/RemoteControl
+        - MODEL_NAME: RenderingIndex
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/RenderingIndex
+        - MODEL_NAME: Request
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Request
+        - MODEL_NAME: Saturation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Saturation
+        - MODEL_NAME: SelectableLevels
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SelectableLevels
+        - MODEL_NAME: Sensor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Sensor
+        - MODEL_NAME: SensorProps
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SensorProps
+        - MODEL_NAME: SignalStrength
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SignalStrength
+        - MODEL_NAME: Sleep
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Sleep
+        - MODEL_NAME: SoundPressure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SoundPressure
+        - MODEL_NAME: SoundPressureLevel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SoundPressureLevel
+        - MODEL_NAME: SpO2
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/SpO2
+        - MODEL_NAME: Speech
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Speech
+        - MODEL_NAME: Speed
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Speed
+        - MODEL_NAME: Temperature
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Temperature
+        - MODEL_NAME: TimePeriod
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/TimePeriod
+        - MODEL_NAME: TimeStamp
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/TimeStamp
+        - MODEL_NAME: Torque
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Torque
+        - MODEL_NAME: Touch
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Touch
+        - MODEL_NAME: UVARadiation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/UVARadiation
+        - MODEL_NAME: UVBRadiation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/UVBRadiation
+        - MODEL_NAME: UVRadiation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/UVRadiation
+        - MODEL_NAME: UserID
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/UserID
+        - MODEL_NAME: UserInfo-retrieve
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/UserInfo-retrieve
+        - MODEL_NAME: VehicleConnector
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/VehicleConnector
+        - MODEL_NAME: Water
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Water
+        - MODEL_NAME: WaterInfo
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/WaterInfo
+        - MODEL_NAME: Weight
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/Weight
+        - MODEL_NAME: acceleration
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/acceleration
+        - MODEL_NAME: atmosphericPressure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/atmosphericPressure
+        - MODEL_NAME: capacity
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/capacity
+        - MODEL_NAME: consumable
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/consumable
+        - MODEL_NAME: ecomode
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/ecomode
+        - MODEL_NAME: heartRateZone
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/heartRateZone
+        - MODEL_NAME: magneticFieldDirection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/magneticFieldDirection
+        - MODEL_NAME: mediaSource
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/mediaSource
+        - MODEL_NAME: mediaSourceList
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/mediaSourceList
+        - MODEL_NAME: movement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/movement
+        - MODEL_NAME: pulsatilecharacteristic
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/pulsatilecharacteristic
+        - MODEL_NAME: pulsatileoccurrence
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/pulsatileoccurrence
+        - MODEL_NAME: settings-accessibility
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/settings-accessibility
+        - MODEL_NAME: settings-broadcasting
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/settings-broadcasting
+        - MODEL_NAME: settings-sound
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/settings-sound
+        - MODEL_NAME: settings-support
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/settings-support
+        - MODEL_NAME: smoke
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/smoke
+        - MODEL_NAME: threeAxis
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/threeAxis
+        - MODEL_NAME: valueconditional
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/Smart-Sensoring/dataModel.OCF/valueconditional
+
+- DOMAIN_NAME: Smart Aeronautics
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics
+  REPO_URL: https://github.com/smart-data-models/SmartAeronautics.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Aeronautics
+      SUBMODULE_NAME: dataModel.Aeronautics
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics
+      MODELS:
+        - MODEL_NAME: Aircraft
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/Aircraft
+        - MODEL_NAME: AircraftModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/AircraftModel
+        - MODEL_NAME: Airline
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/Airline
+        - MODEL_NAME: Airport
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/Airport
+        - MODEL_NAME: Flight
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/Flight
+        - MODEL_NAME: FlightNotification
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.Aeronautics/FlightNotification
+    - SUBMODULE_SHORT_NAME: UnmannedAerialVehicle
+      SUBMODULE_NAME: dataModel.UnmannedAerialVehicle
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle
+      MODELS:
+        - MODEL_NAME: UnmannedAerialVehicle
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicle
+        - MODEL_NAME: UnmannedAerialVehicleADSB
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleADSB
+        - MODEL_NAME: UnmannedAerialVehicleEvent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleEvent
+        - MODEL_NAME: UnmannedAerialVehicleModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleModel
+        - MODEL_NAME: UnmannedAerialVehicleTMS
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleTMS
+        - MODEL_NAME: UnmannedAerialVehicleTMSFlightMessage
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleTMSFlightMessage
+        - MODEL_NAME: UnmannedAerialVehicleTMSFlightMessageAgent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartAeronautics/dataModel.UnmannedAerialVehicle/UnmannedAerialVehicleTMSFlightMessageAgent
+
+- DOMAIN_NAME: Smart Destination
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination
+  REPO_URL: https://github.com/smart-data-models/SmartDestination.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: TourismDestinations
+      SUBMODULE_NAME: dataModel.TourismDestinations
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.TourismDestinations
+      MODELS:
+        - MODEL_NAME: Event
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.TourismDestinations/Event
+        - MODEL_NAME: TouristDestination
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.TourismDestinations/TouristDestination
+        - MODEL_NAME: TouristTrip
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.TourismDestinations/TouristTrip
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartDestination/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Cross Sector
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/CrossSector
+  REPO_URL: https://github.com/smart-data-models/CrossSector.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: Alert
+      SUBMODULE_NAME: dataModel.Alert
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Alert
+      MODELS:
+        - MODEL_NAME: Alert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Alert/Alert
+        - MODEL_NAME: Anomaly
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Alert/Anomaly
+    - SUBMODULE_SHORT_NAME: Battery
+      SUBMODULE_NAME: dataModel.Battery
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Battery
+      MODELS:
+        - MODEL_NAME: Battery
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Battery/Battery
+        - MODEL_NAME: BatteryStatus
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Battery/BatteryStatus
+        - MODEL_NAME: StorageBatteryDevice
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Battery/StorageBatteryDevice
+        - MODEL_NAME: StorageBatteryMeasurement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Battery/StorageBatteryMeasurement
+    - SUBMODULE_SHORT_NAME: CPSV-AP
+      SUBMODULE_NAME: dataModel.CPSV-AP
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP
+      MODELS:
+        - MODEL_NAME: BusinessEvent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/BusinessEvent
+        - MODEL_NAME: Cost
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/Cost
+        - MODEL_NAME: CriterionRequirement
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/CriterionRequirement
+        - MODEL_NAME: Evidence
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/Evidence
+        - MODEL_NAME: LifeEvent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/LifeEvent
+        - MODEL_NAME: PublicOrganization
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/PublicOrganization
+        - MODEL_NAME: PublicService
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/PublicService
+        - MODEL_NAME: Rule
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CPSV-AP/Rule
+    - SUBMODULE_SHORT_NAME: CallComplaints
+      SUBMODULE_NAME: dataModel.CallComplaints
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CallComplaints
+      MODELS:
+        - MODEL_NAME: CallUser
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CallComplaints/CallUser
+        - MODEL_NAME: Complaint
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CallComplaints/Complaint
+        - MODEL_NAME: ComplaintsCollection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CallComplaints/ComplaintsCollection
+        - MODEL_NAME: ComplaintsOrganization
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.CallComplaints/ComplaintsOrganization
+    - SUBMODULE_SHORT_NAME: DCAT-AP
+      SUBMODULE_NAME: dataModel.DCAT-AP
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP
+      MODELS:
+        - MODEL_NAME: AgentDCAT-AP
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/AgentDCAT-AP
+        - MODEL_NAME: CatalogueDCAT-AP
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/CatalogueDCAT-AP
+        - MODEL_NAME: CatalogueRecordDCAT-AP
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/CatalogueRecordDCAT-AP
+        - MODEL_NAME: DataServiceDCAT-AP
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/DataServiceDCAT-AP
+        - MODEL_NAME: Dataset
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/Dataset
+        - MODEL_NAME: DistributionDCAT-AP
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DCAT-AP/DistributionDCAT-AP
+    - SUBMODULE_SHORT_NAME: DigitalInnovationHub
+      SUBMODULE_NAME: dataModel.DigitalInnovationHub
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DigitalInnovationHub
+      MODELS:
+        - MODEL_NAME: DigitalInnovationHub
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DigitalInnovationHub/DigitalInnovationHub
+        - MODEL_NAME: DigitalInnovationHubService
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DigitalInnovationHub/DigitalInnovationHubService
+    - SUBMODULE_SHORT_NAME: DistributedLedgerTech
+      SUBMODULE_NAME: dataModel.DistributedLedgerTech
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DistributedLedgerTech
+      MODELS:
+        - MODEL_NAME: DLTtxReceipt
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.DistributedLedgerTech/DLTtxReceipt
+    - SUBMODULE_SHORT_NAME: FrictionlessData
+      SUBMODULE_NAME: dataModel.FrictionlessData
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.FrictionlessData
+      MODELS:
+        - MODEL_NAME: CSVDialectFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.FrictionlessData/CSVDialectFrictionlessData
+        - MODEL_NAME: DataPackageFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.FrictionlessData/DataPackageFrictionlessData
+        - MODEL_NAME: DataResourceFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.FrictionlessData/DataResourceFrictionlessData
+        - MODEL_NAME: TableSchemaFrictionlessData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.FrictionlessData/TableSchemaFrictionlessData
+    - SUBMODULE_SHORT_NAME: IT
+      SUBMODULE_NAME: dataModel.IT
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IT
+      MODELS:
+        - MODEL_NAME: CloudRegion
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IT/CloudRegion
+        - MODEL_NAME: ITTests
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IT/ITTests
+    - SUBMODULE_SHORT_NAME: IssueTracking
+      SUBMODULE_NAME: dataModel.IssueTracking
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IssueTracking
+      MODELS:
+        - MODEL_NAME: IssueReporting
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IssueTracking/IssueReporting
+        - MODEL_NAME: service_requests
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IssueTracking/service_requests
+        - MODEL_NAME: services
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.IssueTracking/services
+    - SUBMODULE_SHORT_NAME: KeyPerformanceIndicator
+      SUBMODULE_NAME: dataModel.KeyPerformanceIndicator
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.KeyPerformanceIndicator
+      MODELS:
+        - MODEL_NAME: KeyPerformanceIndicator
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.KeyPerformanceIndicator/KeyPerformanceIndicator
+    - SUBMODULE_SHORT_NAME: MachineLearning
+      SUBMODULE_NAME: dataModel.MachineLearning
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.MachineLearning
+      MODELS:
+        - MODEL_NAME: MLModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.MachineLearning/MLModel
+        - MODEL_NAME: MLProcessing
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.MachineLearning/MLProcessing
+        - MODEL_NAME: SubscriptionQuery
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.MachineLearning/SubscriptionQuery
+    - SUBMODULE_SHORT_NAME: Multimedia
+      SUBMODULE_NAME: dataModel.Multimedia
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Multimedia
+      MODELS:
+        - MODEL_NAME: MediaEvent
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Multimedia/MediaEvent
+    - SUBMODULE_SHORT_NAME: Organization
+      SUBMODULE_NAME: dataModel.Organization
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Organization
+      MODELS:
+        - MODEL_NAME: Organization
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Organization/Organization
+    - SUBMODULE_SHORT_NAME: PointOfInteraction
+      SUBMODULE_NAME: dataModel.PointOfInteraction
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInteraction
+      MODELS:
+        - MODEL_NAME: SmartPointOfInteraction
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInteraction/SmartPointOfInteraction
+        - MODEL_NAME: SmartSpot
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInteraction/SmartSpot
+    - SUBMODULE_SHORT_NAME: PointOfInterest
+      SUBMODULE_NAME: dataModel.PointOfInterest
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInterest
+      MODELS:
+        - MODEL_NAME: Beach
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInterest/Beach
+        - MODEL_NAME: Museum
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInterest/Museum
+        - MODEL_NAME: PointOfInterest
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInterest/PointOfInterest
+        - MODEL_NAME: Store
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PointOfInterest/Store
+    - SUBMODULE_SHORT_NAME: PublicAccountability
+      SUBMODULE_NAME: dataModel.PublicAccountability
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PublicAccountability
+      MODELS:
+        - MODEL_NAME: RevenueCollection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.PublicAccountability/RevenueCollection
+    - SUBMODULE_SHORT_NAME: QueueManagement
+      SUBMODULE_NAME: dataModel.QueueManagement
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.QueueManagement
+      MODELS:
+        - MODEL_NAME: QueueMonitor
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.QueueManagement/QueueMonitor
+    - SUBMODULE_SHORT_NAME: RiskManagement
+      SUBMODULE_NAME: dataModel.RiskManagement
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement
+      MODELS:
+        - MODEL_NAME: Asset
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Asset
+        - MODEL_NAME: CyberAnalysis
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/CyberAnalysis
+        - MODEL_NAME: Exposure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Exposure
+        - MODEL_NAME: GISData
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/GISData
+        - MODEL_NAME: Hazard
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Hazard
+        - MODEL_NAME: Measure
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Measure
+        - MODEL_NAME: Mitigation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Mitigation
+        - MODEL_NAME: NetworkServiceAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/NetworkServiceAlert
+        - MODEL_NAME: Risk
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Risk
+        - MODEL_NAME: Vulnerability
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.RiskManagement/Vulnerability
+    - SUBMODULE_SHORT_NAME: SatelliteImagery
+      SUBMODULE_NAME: dataModel.SatelliteImagery
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery
+      MODELS:
+        - MODEL_NAME: EOAnalysis
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EOAnalysis
+        - MODEL_NAME: EODataHub
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EODataHub
+        - MODEL_NAME: EOGeoDataLayer
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EOGeoDataLayer
+        - MODEL_NAME: EOInstrument
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EOInstrument
+        - MODEL_NAME: EOProduct
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EOProduct
+        - MODEL_NAME: EOSatellitePlatform
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SatelliteImagery/EOSatellitePlatform
+    - SUBMODULE_SHORT_NAME: SocialMedia
+      SUBMODULE_NAME: dataModel.SocialMedia
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia
+      MODELS:
+        - MODEL_NAME: SMAnalysis
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia/SMAnalysis
+        - MODEL_NAME: SMCollection
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia/SMCollection
+        - MODEL_NAME: SMPost
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia/SMPost
+        - MODEL_NAME: SMRefLocation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia/SMRefLocation
+        - MODEL_NAME: SMUser
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.SocialMedia/SMUser
+    - SUBMODULE_SHORT_NAME: User
+      SUBMODULE_NAME: dataModel.User
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.User
+      MODELS:
+        - MODEL_NAME: Activity
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.User/Activity
+        - MODEL_NAME: UserContext
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.User/UserContext
+    - SUBMODULE_SHORT_NAME: Weather
+      SUBMODULE_NAME: dataModel.Weather
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Weather
+      MODELS:
+        - MODEL_NAME: SeaConditions
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Weather/SeaConditions
+        - MODEL_NAME: WeatherAlert
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Weather/WeatherAlert
+        - MODEL_NAME: WeatherForecast
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Weather/WeatherForecast
+        - MODEL_NAME: WeatherObserved
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/CrossSector/dataModel.Weather/WeatherObserved
+
+- DOMAIN_NAME: Smart Robotics
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics
+  REPO_URL: https://github.com/smart-data-models/SmartRobotics.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: AutonomousMobileRobot
+      SUBMODULE_NAME: dataModel.AutonomousMobileRobot
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.AutonomousMobileRobot
+      MODELS:
+    - SUBMODULE_SHORT_NAME: OPCUA
+      SUBMODULE_NAME: dataModel.OPCUA
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.OPCUA
+      MODELS:
+        - MODEL_NAME: MotionDeviceSystem
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.OPCUA/MotionDeviceSystem
+    - SUBMODULE_SHORT_NAME: RoboticIndustrialActivities
+      SUBMODULE_NAME: dataModel.RoboticIndustrialActivities
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities
+      MODELS:
+        - MODEL_NAME: Pallet
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities/Pallet
+        - MODEL_NAME: Piece
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities/Piece
+        - MODEL_NAME: RobotArm
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities/RobotArm
+        - MODEL_NAME: RoboticCell
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities/RoboticCell
+        - MODEL_NAME: VacuumPump
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartRobotics/dataModel.RoboticIndustrialActivities/VacuumPump
+
+- DOMAIN_NAME: Smart Health
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth
+  REPO_URL: https://github.com/smart-data-models/SmartHealth.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: COVID19
+      SUBMODULE_NAME: dataModel.COVID19
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.COVID19
+      MODELS:
+        - MODEL_NAME: EUProofOfVaccination
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.COVID19/EUProofOfVaccination
+        - MODEL_NAME: VaccinationCertificate
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.COVID19/VaccinationCertificate
+    - SUBMODULE_SHORT_NAME: Hl7
+      SUBMODULE_NAME: dataModel.Hl7
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.Hl7
+      MODELS:
+        - MODEL_NAME: Account
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.Hl7/Account
+        - MODEL_NAME: Patient
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartHealth/dataModel.Hl7/Patient
+
+- DOMAIN_NAME: Smart Manufacturing
+  PROJECT_SRC: /home/ctate/.local/src/smart-data-models/SmartManufacturing
+  REPO_URL: https://github.com/smart-data-models/SmartManufacturing.git
+  SUBMODULES:
+    - SUBMODULE_SHORT_NAME: ManufacturingMachine
+      SUBMODULE_NAME: dataModel.ManufacturingMachine
+      SUBMODULE_SRC: /home/ctate/.local/src/smart-data-models/SmartManufacturing/dataModel.ManufacturingMachine
+      MODELS:
+        - MODEL_NAME: ManufacturingMachine
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartManufacturing/dataModel.ManufacturingMachine/ManufacturingMachine
+        - MODEL_NAME: ManufacturingMachineModel
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartManufacturing/dataModel.ManufacturingMachine/ManufacturingMachineModel
+        - MODEL_NAME: ManufacturingMachineOperation
+          MODEL_SRC: /home/ctate/.local/src/smart-data-models/SmartManufacturing/dataModel.ManufacturingMachine/ManufacturingMachineOperation

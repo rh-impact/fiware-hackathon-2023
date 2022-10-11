@@ -1,0 +1,22 @@
+---
+- name: "Get columns"
+  uri:
+    timeout: 90
+    url: "https://api.github.com/projects/{{ PROJECT.id }}/columns"
+    return_content: true
+    headers:
+      Authorization: "token {{ GITHUB_TOKEN }}"
+      Accept: "application/vnd.github.inertia-preview+json"
+  register: COLUMNS_JSON
+- name: "Setup GitHub columns JSON string"
+  set_fact:
+    COLUMNS_JSON_STR: "{{ ('{\"' + PROJECT.name + '_COLUMNS\":' + (COLUMNS_JSON.json | string) + '}') }}"
+- name: "Create columns"
+  include_role:
+    name: inspire_column
+  vars: 
+    COLUMN_NAME: "{{ ANSIBLE_COLUMN.COLUMN_NAME }}"
+    COLUMNS: "{{ COLUMNS_JSON.json }}"
+  loop: "{{ ANSIBLE_PROJECT.ANSIBLE_COLUMNS }}"
+  loop_control:
+    loop_var: ANSIBLE_COLUMN

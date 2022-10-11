@@ -1,0 +1,21 @@
+---
+- name: "Get projects"
+  uri:
+    timeout: 90
+    url: "https://api.github.com/orgs/{{ GITHUB_ORG }}/projects"
+    return_content: true
+    headers:
+      Authorization: "token {{ GITHUB_TOKEN }}"
+      Accept: "application/vnd.github.inertia-preview+json"
+  register: PROJECTS_JSON
+- name: "Setup GitHub projects JSON string"
+  set_fact:
+    PROJECTS_JSON_STR: "{{ ('{\"PROJECTS\":' + (PROJECTS_JSON.json | string) + '}') }}"
+- name: "Create projects"
+  include_role:
+    name: inspire_project
+  vars: 
+    PROJECTS: "{{ PROJECTS_JSON.json }}"
+  loop: "{{ANSIBLE_PROJECTS}}"
+  loop_control:
+    loop_var: ANSIBLE_PROJECT

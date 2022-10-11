@@ -1,0 +1,6 @@
+---
+- name: Generate the FIWARE Smart Data Models data from Git Repos
+  hosts: localhost
+  connection: local
+  roles:
+    - fiware_data

@@ -1,0 +1,19 @@
+---
+- name: Check for GITHUB_TOKEN var
+  fail: 
+    msg: "Make sure you have correctly configured a GITHUB_TOKEN: '...' in your ansible vault. You will want to configure a Github token with 'admin:org' and 'repo' scopes (https://github.com/settings/tokens). "
+  when: GITHUB_TOKEN is not defined
+  tags: github_token
+- name: Check for GITHUB_ORG var
+  fail: 
+    msg: "Make sure you have correctly configured a GITHUB_ORG: '...' in your ansible vault. This should be a Github organization that your user and token have access to (https://github.com/organizations/plan). "
+  when: GITHUB_ORG is not defined
+  tags: github_org
+
+############
+# Projects #
+############
+
+- name: "Create projects"
+  include_role:
+    name: inspire_projects

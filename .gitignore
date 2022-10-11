@@ -1,0 +1,6 @@
+vaults/*/key
+**/*.retry
+**/*.swp
+.project
+.settings
+

@@ -1,0 +1,75 @@
+---
+TEAM_ID: "..."
+# The name of the Github organization for the course. 
+GITHUB_ORG: "..."
+# The github token of the instructor's Github account. See Github Settings, Developer Settings, Personal access tokens. 
+# Make sure the token has the following roles (admin:org, repo): https://github.com/settings/tokens
+GITHUB_TOKEN: "..."
+# The name of the forked Github repository for the course containing the ansible scripts and ansible vaults for the project. 
+GITHUB_REPO_NAME: "..."
+# The path to the cloned repository. 
+GITHUB_REPO_PATH: "/usr/local/src/{{ GITHUB_REPO_NAME }}"
+# The SSH URL to the git repository. 
+GITHUB_REPO: "git@github.com:{{ GITHUB_ORG }}/{{ GITHUB_REPO_NAME }}.git"
+# The Web URL to the git repository. 
+GITHUB_REPO_WEB: "https://github.com/{{ GITHUB_ORG }}/{{ GITHUB_REPO_NAME }}"
+# The Ansible inventory name. 
+ANSIBLE_INVENTORY_NAME: "..."
+# The path to the Ansible vault. 
+GITHUB_VAULT_PATH: "{{ GITHUB_REPO_PATH }}/vaults/{{ ANSIBLE_INVENTORY_NAME }}"
+# The same repository name or a different one if the Ansible vaults are kept in a private repository. 
+ANSIBLE_REPO_NAME: "{{ GITHUB_REPO_NAME }}"
+# The same repository path or a different one if the Ansible vaults are kept in a private repository. 
+ANSIBLE_REPO_PATH: "/usr/local/src/{{ ANSIBLE_REPO_NAME }}"
+# The same repository SSH URL or a different one if the Ansible vaults are kept in a private repository. 
+ANSIBLE_REPO: "git@github.com:{{ GITHUB_ORG }}/{{ ANSIBLE_REPO_NAME }}.git"
+# The display name of the Github project. 
+PROJECT_NAME: "Team-19 Hackathon 2021"
+# The description of the Github project. 
+PROJECT_DESCRIPTION: "A Team-19 Hackathon. "
+# The name of the application to deploy. 
+APP_NAME: "..."
+# The git repository name of the application to deploy. 
+APP_REPO_NAME: "{{ APP_NAME }}"
+# The path to the cloned repository of the application to deploy. 
+APP_REPO_PATH: "/usr/local/src/{{ APP_REPO_NAME }}"
+# The SSH URL to the repository of the application to deploy. 
+APP_REPO: "git@github.com:{{ GITHUB_ORG }}/{{ APP_REPO_NAME }}.git"
+# The Ansible friendly name of the the repository of the application to deploy. 
+APP_NAME_ANSIBLE: "{{ APP_NAME | regex_replace('-', '_') }}"
+
+# The URL to the OpenShift cluster to deploy. 
+REDHAT_OPENSHIFT_HOST: https://console.rh-us-east-1.openshift.com
+# The URL to manage the OpenShift cluster to deploy. 
+REDHAT_OPENSHIFT_MANAGE_HOST: https://employee.openshift.com
+# The OpenShift project name that will be used. 
+REDHAT_OPENSHIFT_NAMESPACE: school
+# The OpenShift login IDs that will be managing the OpenShift cluster. 
+REDHAT_OPENSHIFT_LOGIN_IDS: 
+  - christophertate
+
+FIWARE_SMART_DATA_MODEL_DOMAIN_REPOS:
+  - DOMAIN_NAME: Smart Cities
+    REPO_URL: https://github.com/smart-data-models/SmartCities
+  - DOMAIN_NAME: Smart Agrifood
+    REPO_URL: https://github.com/smart-data-models/SmartAgrifood
+  - DOMAIN_NAME: Smart Water
+    REPO_URL: https://github.com/smart-data-models/SmartWater
+  - DOMAIN_NAME: Smart Energy
+    REPO_URL: https://github.com/smart-data-models/SmartEnergy
+  - DOMAIN_NAME: Smart Environment
+    REPO_URL: https://github.com/smart-data-models/SmartEnvironment
+  - DOMAIN_NAME: Smart Sensoring
+    REPO_URL: https://github.com/smart-data-models/Smart-Sensoring
+  - DOMAIN_NAME: Smart Aeronautics
+    REPO_URL: https://github.com/smart-data-models/SmartAeronautics
+  - DOMAIN_NAME: Smart Destination
+    REPO_URL: https://github.com/smart-data-models/SmartDestination
+  - DOMAIN_NAME: Cross Sector
+    REPO_URL: https://github.com/smart-data-models/CrossSector
+  - DOMAIN_NAME: Smart Robotics
+    REPO_URL: https://github.com/smart-data-models/SmartRobotics
+  - DOMAIN_NAME: Smart Health
+    REPO_URL: https://github.com/smart-data-models/SmartHealth
+  - DOMAIN_NAME: Smart Manufacturing
+    REPO_URL: https://github.com/smart-data-models/SmartManufacturing

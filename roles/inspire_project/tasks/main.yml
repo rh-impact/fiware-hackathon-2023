@@ -1,0 +1,61 @@
+---
+- name: "Get project by name {{ ANSIBLE_PROJECT.PROJECT_NAME | default(omit) }}"
+  set_fact: {"PROJECT_{{ ANSIBLE_PROJECT.PROJECT_NAME | regex_replace('[^\\w]', '_') }}": "{{ PROJECTS | json_query(QUERY) | first | default(omit) }}"}
+  vars: 
+    QUERY: "[?name=='{{ ANSIBLE_PROJECT.PROJECT_NAME | default(omit) }}']"
+- block:
+    - name: "Create project by name {{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+      connection: local
+      uri:
+        timeout: 90
+        url: "https://api.github.com/orgs/{{ GITHUB_ORG }}/projects"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+          Authorization: "token {{ GITHUB_TOKEN }}"
+          Accept: "application/vnd.github.inertia-preview+json"
+        body_format: json
+        body: 
+          name: "{{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+          body: "{{ ANSIBLE_PROJECT.PROJECT_DESCRIPTION }}"
+        return_content: true
+        status_code: 
+          - 200
+          - 201
+      when: lookup('vars', 'PROJECT', default='') == ''
+      register: PROJECT_CREATE_YML
+      tags: project_name
+    - name: "Update project by name {{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+      connection: local
+      uri:
+        timeout: 90
+        url: "https://api.github.com/projects/{{ PROJECT.id }}"
+        method: PATCH
+        headers:
+          Content-Type: "application/json"
+          Authorization: "token {{ GITHUB_TOKEN }}"
+          Accept: "application/vnd.github.inertia-preview+json"
+        body_format: json
+        return_content: true
+        body: 
+          name: "{{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+          body: "{{ ANSIBLE_PROJECT.PROJECT_DESCRIPTION }}"
+          private: false
+      when: >
+        lookup('vars', 'PROJECT', default='') != ''
+
+    - name: "Generate static classes"
+      include_role:
+        name: generate_static_classes
+      loop: "{{ ANSIBLE_PROJECT.STATIC_PATHS }}"
+      loop_control:
+        loop_var: STATIC_PATH
+      when: FILTER_STATIC is defined and FILTER_STATIC == 'true'
+    
+    - name: "Create columns"
+      include_role:
+        name: inspire_columns
+      when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
+  vars:
+    PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.PROJECT_NAME | regex_replace('[^\\w]', '_'))) | default(omit) }}"
+  when: FILTER_PROJECT is not defined or FILTER_PROJECT == ANSIBLE_PROJECT.PROJECT_NAME

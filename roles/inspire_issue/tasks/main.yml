@@ -1,0 +1,74 @@
+---
+- name: "Get issue by name {{ ISSUE_LABEL | default(omit) }}"
+  set_fact: {"ISSUE_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(omit) }}"}
+  vars: 
+    QUERY: "[?labels[?name == '{{ ISSUE_LABEL }}']]"
+- name: "Generate body of issue"
+  set_fact:
+    GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"
+  when: OVERRIDE_ISSUE_BODY is not defined
+- name: "Generate body of issue"
+  set_fact:
+    GENERATED_ISSUE_BODY: "{{ OVERRIDE_ISSUE_BODY }}"
+  when: OVERRIDE_ISSUE_BODY is defined
+- block:
+    - name: "Create issue by name {{ ISSUE_LABEL }}"
+      connection: local
+      uri:
+        timeout: 90
+        url: "https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+          Authorization: "token {{ GITHUB_TOKEN }}"
+          Accept: "application/vnd.github.inertia-preview+json"
+        body_format: json
+        body: 
+          labels: "{{ (ANSIBLE_ISSUE.ISSUE_LABELS | default([])) + [ANSIBLE_ISSUE.ISSUE_LABEL] }}"
+          title: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }}"
+          body: "{{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') }}"
+        return_content: true
+        status_code: 
+          - 200
+          - 201
+      when: lookup('vars', 'ISSUE', default='') == ''
+      register: ISSUE_CREATE_YML
+      tags: issue_name
+    - name: "Update issue by name {{ ANSIBLE_ISSUE.ISSUE_LABEL }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
+      connection: local
+      uri:
+        timeout: 90
+        url: "https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
+        method: PATCH
+        headers:
+          Content-Type: "application/json"
+          Authorization: "token {{ GITHUB_TOKEN }}"
+          Accept: "application/vnd.github.inertia-preview+json"
+        body_format: json
+        return_content: true
+        body: 
+          labels: "{{ (ANSIBLE_ISSUE.ISSUE_LABELS | default([])) + [ANSIBLE_ISSUE.ISSUE_LABEL] }}"
+          title: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }}"
+          body: "{{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') }}"
+      when: lookup('vars', 'ISSUE', default='') != ''
+      register: ISSUE_UPDATE_YML
+      tags: issue_name
+    
+    - name: Create card
+      include_role: 
+        name: inspire_card
+      vars: 
+        ISSUE_NUMBER: "{{ ISSUE_CREATE_YML.json.number }}"
+        CARD_CONTENT_ID: "{{ ISSUE_CREATE_YML.json.id }}"
+        CARD_CONTENT_TYPE: "Issue"
+      when: lookup('vars', 'ISSUE', default='') == ''
+    - name: Create card
+      include_role: 
+        name: inspire_card
+      vars: 
+        ISSUE_NUMBER: "{{ ISSUE.number }}"
+        CARD_CONTENT_ID: "{{ ISSUE.id }}"
+        CARD_CONTENT_TYPE: "Issue"
+      when: lookup('vars', 'ISSUE', default='') != ''
+  vars:
+    ISSUE: "{{ lookup('vars', 'ISSUE_' + (ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_'))) | default(omit) }}"

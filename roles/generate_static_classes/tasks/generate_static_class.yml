@@ -1,0 +1,18 @@
+---
+- set_fact:
+    hackathonLabel: "{{ FILE_BODY | regex_search(' *hackathonLabel: *(.+)','\\1') | default([], true) | first | default('create_java_class_' ~ CLASS_SIMPLE_NAME) }}"
+- set_fact:
+    hackathonMission: "{{ FILE_BODY | regex_search(' *hackathonMission: *(.+)','\\1') | default([], true) | first | default(NAMES[0]) | default('Create the file ' ~ FILE_RELATIVE_PATH) }}"
+- set_fact:
+    hackathonTitle: "{{ FILE_BODY | regex_search(' *hackathonTitle: *(.+)','\\1') | default([], true) | first | default(hackathonMission) }}"
+- set_fact:
+    hackathonColumn: "{{ FILE_BODY | regex_search(' *hackathonColumn: *(.+)','\\1') | default([], true) | first | default('') }}"
+- set_fact:
+    hackathonLabels: "{{ FILE_BODY | regex_search(' *hackathonLabels: *(.+)','\\1') | default([], true) | first | default('') }}"
+- name: Create the class {{ CLASS_DEST }}/{{ CLASS_SIMPLE_NAME }}.java
+  connection: local
+  vars:
+    NAMES: "{{ FILE_BODY | regex_findall('TODO: (.*)') }}"
+  template:
+    src: java.java
+    dest: "{{ CLASS_DEST }}/{{ CLASS_SIMPLE_NAME }}.java"

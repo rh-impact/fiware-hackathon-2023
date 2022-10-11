@@ -1,0 +1,31 @@
+---
+- name: "Get card for issue {{ ISSUE_TITLE }}"
+  set_fact: {"CARD_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ CARDS | json_query(QUERY) | first | default(omit) }}"}
+  vars: 
+    QUERY: "[?content_url=='https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}/issues/{{ ISSUE_NUMBER | default(omit) }}']"
+- block:
+    - name: "Create card for issue {{ ISSUE_TITLE }}"
+      connection: local
+      uri:
+        timeout: 90
+        url: "https://api.github.com/projects/columns/{{ COLUMN.id }}/cards"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+          Authorization: "token {{ GITHUB_TOKEN }}"
+          Accept: "application/vnd.github.inertia-preview+json"
+        body_format: json
+        body: "{ \"content_id\": {{ CARD_CONTENT_ID }}, \"content_type\": \"{{ CARD_CONTENT_TYPE }}\" }"
+        return_content: true
+        status_code: 
+          - 200
+          - 201
+      when: lookup('vars', 'CARD', default='') == ''
+      register: CARD_CREATE_YML
+      ignore_errors: true
+      tags: card_name
+    - name: "Get new card for issue {{ ISSUE_TITLE }}"
+      set_fact: {"CARD_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ CARD_CREATE_YML.json }}"}
+      when: lookup('vars', 'CARD', default='') == ''
+  vars:
+    CARD: "{{ lookup('vars', 'CARD_' + (ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_'))) | default(omit) }}"
