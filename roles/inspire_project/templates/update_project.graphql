@@ -1,0 +1,23 @@
+mutation {
+	updateProjectV2(input:{
+		, projectId: "{{ PROJECT.id }}"
+		, title: "{{ ANSIBLE_PROJECT.title }}"
+		, shortDescription: "{{ ANSIBLE_PROJECT.shortDescription }}"
+		, public: {{ ANSIBLE_PROJECT.public | lower | default(false) }}
+	}) {
+		projectV2 {
+			closedAt
+			createdAt
+			databaseId
+			number
+			public
+			readme
+			resourcePath
+			shortDescription
+			title
+			updatedAt
+			url
+			viewerCanUpdate
+		}
+	}
+}

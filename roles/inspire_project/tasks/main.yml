@@ -1,46 +1,49 @@
 ---
-- name: "Get project by name {{ ANSIBLE_PROJECT.PROJECT_NAME | default(omit) }}"
-  set_fact: {"PROJECT_{{ ANSIBLE_PROJECT.PROJECT_NAME | regex_replace('[^\\w]', '_') }}": "{{ PROJECTS | json_query(QUERY) | first | default(omit) }}"}
+- name: "Get project by name {{ ANSIBLE_PROJECT.title | default(omit) }}"
+  set_fact: {"PROJECT_{{ ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_') }}": "{{ PROJECTS | json_query(QUERY) | first | default(omit) }}"}
   vars: 
-    QUERY: "[?name=='{{ ANSIBLE_PROJECT.PROJECT_NAME | default(omit) }}']"
+    QUERY: "[?title=='{{ ANSIBLE_PROJECT.title | default(omit) }}']"
 - block:
-    - name: "Create project by name {{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+    - name: "Create project by name {{ ANSIBLE_PROJECT.title }}"
       connection: local
-      uri:
+      ansible.builtin.uri:
         timeout: 90
-        url: "https://api.github.com/orgs/{{ GITHUB_ORG }}/projects"
-        method: POST
-        headers:
-          Content-Type: "application/json"
-          Authorization: "token {{ GITHUB_TOKEN }}"
-          Accept: "application/vnd.github.inertia-preview+json"
-        body_format: json
-        body: 
-          name: "{{ ANSIBLE_PROJECT.PROJECT_NAME }}"
-          body: "{{ ANSIBLE_PROJECT.PROJECT_DESCRIPTION }}"
+        url: "https://api.github.com/graphql"
         return_content: true
+        headers:
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
+        method: POST
+        body_format: json
+        body:
+          query: '{{ lookup("template", "create_project.graphql") }}'
         status_code: 
           - 200
           - 201
       when: lookup('vars', 'PROJECT', default='') == ''
       register: PROJECT_CREATE_YML
       tags: project_name
-    - name: "Update project by name {{ ANSIBLE_PROJECT.PROJECT_NAME }}"
+    - debug:
+        var: PROJECT_CREATE_YML
+      when: lookup('vars', 'PROJECT', default='') == ''
+    - name: "Update project by name {{ ANSIBLE_PROJECT.title }}"
       connection: local
       uri:
         timeout: 90
-        url: "https://api.github.com/projects/{{ PROJECT.id }}"
-        method: PATCH
+        url: "https://api.github.com/graphql"
+        method: POST
         headers:
-          Content-Type: "application/json"
-          Authorization: "token {{ GITHUB_TOKEN }}"
-          Accept: "application/vnd.github.inertia-preview+json"
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
         body_format: json
         return_content: true
         body: 
-          name: "{{ ANSIBLE_PROJECT.PROJECT_NAME }}"
-          body: "{{ ANSIBLE_PROJECT.PROJECT_DESCRIPTION }}"
-          private: false
+          query: '{{ lookup("template", "update_project.graphql") }}'
+        status_code: 
+          - 200
+      register: PROJECT_UPDATE_YML
+      when: >
+        lookup('vars', 'PROJECT', default='') != ''
+    - debug:
+        var: PROJECT_UPDATE_YML
       when: >
         lookup('vars', 'PROJECT', default='') != ''
 
@@ -52,10 +55,10 @@
         loop_var: STATIC_PATH
       when: FILTER_STATIC is defined and FILTER_STATIC == 'true'
     
-    - name: "Create columns"
-      include_role:
-        name: inspire_columns
-      when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
+#    - name: "Create columns"
+#      include_role:
+#        name: inspire_columns
+#      when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
   vars:
-    PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.PROJECT_NAME | regex_replace('[^\\w]', '_'))) | default(omit) }}"
-  when: FILTER_PROJECT is not defined or FILTER_PROJECT == ANSIBLE_PROJECT.PROJECT_NAME
+    PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_'))) | default(omit) }}"
+  when: FILTER_PROJECT is not defined or FILTER_PROJECT == ANSIBLE_PROJECT.title

@@ -1,21 +1,24 @@
 ---
 - name: "Get projects"
-  uri:
+  ansible.builtin.uri:
     timeout: 90
-    url: "https://api.github.com/orgs/{{ GITHUB_ORG }}/projects"
+    url: "https://api.github.com/graphql"
     return_content: true
     headers:
-      Authorization: "token {{ GITHUB_TOKEN }}"
-      Accept: "application/vnd.github.inertia-preview+json"
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_projects.graphql") }}'
   register: PROJECTS_JSON
-- name: "Setup GitHub projects JSON string"
-  set_fact:
-    PROJECTS_JSON_STR: "{{ ('{\"PROJECTS\":' + (PROJECTS_JSON.json | string) + '}') }}"
+- debug:
+    var: PROJECTS_JSON.json
 - name: "Create projects"
   include_role:
     name: inspire_project
   vars: 
-    PROJECTS: "{{ PROJECTS_JSON.json }}"
+    PROJECTS: "{{ PROJECTS_JSON.json.data.organization.projectsV2.nodes }}"
+    ORGANIZATION_ID: "{{ PROJECTS_JSON.json.data.organization.id }}"
   loop: "{{ANSIBLE_PROJECTS}}"
   loop_control:
     loop_var: ANSIBLE_PROJECT

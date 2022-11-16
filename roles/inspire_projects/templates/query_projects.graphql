@@ -1,0 +1,23 @@
+query {
+	organization(login:"rh-impact") {
+		id
+		projectsV2(first:100) {
+			nodes {
+				id
+				closed
+				closedAt
+				createdAt
+				databaseId
+				number
+				public
+				readme
+				resourcePath
+				shortDescription
+				title
+				updatedAt
+				url
+				viewerCanUpdate
+			}
+		}
+	}
+}

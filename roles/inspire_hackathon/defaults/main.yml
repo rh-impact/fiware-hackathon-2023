@@ -24,9 +24,9 @@ ANSIBLE_REPO_PATH: "/usr/local/src/{{ ANSIBLE_REPO_NAME }}"
 # The same repository SSH URL or a different one if the Ansible vaults are kept in a private repository. 
 ANSIBLE_REPO: "git@github.com:{{ GITHUB_ORG }}/{{ ANSIBLE_REPO_NAME }}.git"
 # The display name of the Github project. 
-PROJECT_NAME: "Team-19 Hackathon 2021"
+PROJECT_NAME: "Red Hat Impact Hackathon 2021"
 # The description of the Github project. 
-PROJECT_DESCRIPTION: "A Team-19 Hackathon. "
+PROJECT_DESCRIPTION: "A Red Hat Impact Hackathon. "
 # The name of the application to deploy. 
 APP_NAME: "..."
 # The git repository name of the application to deploy. 
@@ -73,3 +73,62 @@ FIWARE_SMART_DATA_MODEL_DOMAIN_REPOS:
     REPO_URL: https://github.com/smart-data-models/SmartHealth
   - DOMAIN_NAME: Smart Manufacturing
     REPO_URL: https://github.com/smart-data-models/SmartManufacturing
+HACKATHON_LOCATIONS:
+  - REGION: Europe
+    SMART_DATA_MODELS:
+      - Building
+      - BuildingOperation
+      - BicycleParkingStation
+      - ResourceReport
+  - REGION: North America
+    SMART_DATA_MODELS:
+      - Building
+      - BuildingOperation
+      - BicycleParkingStation
+      - ResourceReport
+      - 
+ANSIBLE_PROJECTS:
+  - title: FIWARE NA 2023 Hackathon
+    shortDescription: Work with Smart Data Models and the FIWARE Context broker in North America
+    public: true
+    GITHUB_REPO_NAME: fiware-hackathon-2023
+    GITHUB_README: https://github.com/rh-impact/fiware-hackathon-2023/blob/main/README.md
+    SOLR_APP_NAME: fiware-hackathon-2023
+    ANSIBLE_COLUMNS:
+      - COLUMN_NAME: Bicycle Parking Stations
+        DOMAIN_NAME: Smart Cities
+        SUBMODULE_SHORT_NAME: OSLO
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: BicycleParkingStation
+            ISSUE_MISSION: using the BicycleParkingStation Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment
+            ISSUE_TITLE: BicycleParkingStation Smart Data Model
+            ISSUE_DESCRIPTION: Using the BicycleParkingStation Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment. 
+            ISSUE_SKILLS: YAML, OpenShift, REST APIs
+            ISSUE_LABELS:
+              - Smart Cities
+              - OSLO
+            ISSUE_BODY: |
+              
+              Using the BicycleParkingStation Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment. 
+  - title: FIWARE EMEA 2023 Hackathon
+    shortDescription: Work with Smart Data Models and the FIWARE Context broker in Europe
+    public: true
+    GITHUB_REPO_NAME: fiware-hackathon-2023
+    GITHUB_README: https://github.com/rh-impact/fiware-hackathon-2023/blob/main/README.md
+    SOLR_APP_NAME: fiware-hackathon-2023
+    ANSIBLE_COLUMNS:
+      - COLUMN_NAME: Agrifood
+        DOMAIN_NAME: Smart Agrifood
+        SUBMODULE_SHORT_NAME: AgriCrop
+        ANSIBLE_ISSUES:
+          - ISSUE_LABEL: AgriCrop
+            ISSUE_MISSION: using the AgriCrop Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment
+            ISSUE_TITLE: AgriCrop Smart Data Model
+            ISSUE_DESCRIPTION: Using the AgriCrop Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment. 
+            ISSUE_SKILLS: YAML, OpenShift, REST APIs
+            ISSUE_LABELS:
+              - Smart Agrifood
+              - AgriCrop
+            ISSUE_BODY: |
+              
+              Using the AgriCrop Smart Data Model, import, visualize, and document the data deployed on your teams own OpenShift Local environment. 
