@@ -1,42 +1,12 @@
 ---
 - name: "Get column by name {{ COLUMN_NAME | default(omit) }}"
-  set_fact: {"COLUMN_{{ ANSIBLE_COLUMN.COLUMN_NAME | regex_replace('[^\\w]', '_') }}": "{{ COLUMNS | json_query(QUERY) | first | default(omit) }}"}
+  set_fact: {"COLUMN_{{ ANSIBLE_COLUMN.name | regex_replace('[^\\w]', '_') }}": "{{ COLUMNS | json_query(QUERY) | first | default(omit) }}"}
   vars: 
     QUERY: "[?name == '{{ COLUMN_NAME }}']"
-- debug:
-    var: FILTER_COLUMN
-- debug:
-    var: COLUMN_NAME
-- block:
-    - name: "Create column by name {{ COLUMN_NAME }}"
-      uri:
-        timeout: 90
-        url: "https://api.github.com/projects/{{ PROJECT.id }}/columns"
-        method: POST
-        headers:
-          Content-Type: "application/json"
-          Authorization: "token {{ GITHUB_TOKEN }}"
-          Accept: "application/vnd.github.inertia-preview+json"
-        body_format: json
-        body: 
-          name: "{{ COLUMN_NAME }}"
-        return_content: true
-        status_code: 
-          - 200
-          - 201
-      when: lookup('vars', 'COLUMN', default='') == ''
-      register: COLUMN_CREATE_YML
-      tags: column_name
-    - name: "Get new column by name {{ COLUMN_NAME | default(omit) }}"
-      set_fact: {"COLUMN_{{ ANSIBLE_COLUMN.COLUMN_NAME | regex_replace('[^\\w]', '_') }}": "{{ COLUMN_CREATE_YML.json }}"}
-      when: lookup('vars', 'COLUMN', default='') == ''
-  vars:
-    COLUMN: "{{ lookup('vars', 'COLUMN_' + (ANSIBLE_COLUMN.COLUMN_NAME | regex_replace('[^\\w]', '_'))) | default(omit) }}"
-  when: FILTER_COLUMN is not defined or FILTER_COLUMN == COLUMN_NAME
 
 - name: "Get cards"
   include_role:
     name: inspire_cards
   vars: 
-    COLUMN: "{{ lookup('vars', 'COLUMN_' + (ANSIBLE_COLUMN.COLUMN_NAME | regex_replace('[^\\w]', '_'))) | default(omit) }}"
+    COLUMN: "{{ lookup('vars', 'COLUMN_' + (ANSIBLE_COLUMN.name | regex_replace('[^\\w]', '_'))) | default(omit) }}"
   when: FILTER_COLUMN is not defined or FILTER_COLUMN == COLUMN_NAME

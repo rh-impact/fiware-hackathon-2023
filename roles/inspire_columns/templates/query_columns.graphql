@@ -1,0 +1,18 @@
+query {
+	organization(login:"rh-impact") {
+		id
+		projectV2(number:{{ PROJECT.number }}) {
+			field(name:"Status") {
+				... on ProjectV2SingleSelectField {
+					id
+					name
+					dataType
+					options {
+						id
+						name
+					}
+				}
+			}
+		}
+	}
+}

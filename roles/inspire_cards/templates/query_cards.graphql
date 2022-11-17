@@ -1,0 +1,26 @@
+query {
+	organization(login:"rh-impact") {
+		id
+		projectV2(number:{{ PROJECT.number }}) {
+			items(first:100) {
+				nodes {
+					type
+					content {
+						... on Issue {
+							number
+							title
+							url
+							bodyText
+							labels(first:100) {
+								nodes {
+									color
+									name
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

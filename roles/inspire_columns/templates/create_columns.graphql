@@ -1,0 +1,23 @@
+mutation {
+	updateProjectV2ItemFieldValue(input:{
+		fieldId: "Status"
+		, itemId: "options"
+		, projectId: "{{ ANSIBLE_PROJECT.id }}"
+		, value: "{{ PROJECT_COLUMNS_STR | to_json }}"
+	}) {
+		projectV2Item {
+			closedAt
+			createdAt
+			databaseId
+			number
+			public
+			readme
+			resourcePath
+			shortDescription
+			title
+			updatedAt
+			url
+			viewerCanUpdate
+		}
+	}
+}

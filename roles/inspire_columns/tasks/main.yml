@@ -1,22 +1,25 @@
 ---
 - name: "Get columns"
-  uri:
+  ansible.builtin.uri:
     timeout: 90
-    url: "https://api.github.com/projects/{{ PROJECT.id }}/columns"
+    url: "https://api.github.com/graphql"
     return_content: true
     headers:
-      Authorization: "token {{ GITHUB_TOKEN }}"
-      Accept: "application/vnd.github.inertia-preview+json"
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_columns.graphql") }}'
   register: COLUMNS_JSON
 - name: "Setup GitHub columns JSON string"
   set_fact:
-    COLUMNS_JSON_STR: "{{ ('{\"' + PROJECT.name + '_COLUMNS\":' + (COLUMNS_JSON.json | string) + '}') }}"
-- name: "Create columns"
+    COLUMNS_JSON_STR: "{{ ('{\"' + PROJECT.title + '_COLUMNS\":' + (COLUMNS_JSON.json.data.organization.projectV2.field.options | string) + '}') }}"
+- name: "Get column"
   include_role:
     name: inspire_column
   vars: 
-    COLUMN_NAME: "{{ ANSIBLE_COLUMN.COLUMN_NAME }}"
-    COLUMNS: "{{ COLUMNS_JSON.json }}"
+    COLUMN_NAME: "{{ ANSIBLE_COLUMN.name }}"
+    COLUMNS: "{{ COLUMNS_JSON.json.data.organization.projectV2.field.options }}"
   loop: "{{ ANSIBLE_PROJECT.ANSIBLE_COLUMNS }}"
   loop_control:
     loop_var: ANSIBLE_COLUMN

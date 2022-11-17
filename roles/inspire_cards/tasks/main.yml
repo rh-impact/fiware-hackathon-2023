@@ -1,17 +1,22 @@
 ---
+- debug:
+    msg: '{{ lookup("template", "query_cards.graphql") }}'
 - name: "Get cards"
-  uri:
+  ansible.builtin.uri:
     timeout: 90
-    url: "https://api.github.com/projects/columns/{{ COLUMN.id }}/cards?per_page=100"
+    url: "https://api.github.com/graphql"
     return_content: true
     headers:
-      Authorization: "token {{ GITHUB_TOKEN }}"
-      Accept: "application/vnd.github.inertia-preview+json"
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_cards.graphql") }}'
   register: CARDS_JSON
 - name: "Get column by name {{ COLUMN_NAME | default(omit) }}"
-  set_fact: {"{{ PROJECT.name }}_COLUMN_{{ COLUMN.id }}_CARDS": "{{ CARDS_JSON.json }}"}
+  set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_COLUMN_{{ COLUMN.id }}_CARDS": "{{ CARDS_JSON.json.data.organization.projectV2.items.nodes | default([]) }}"}
 - name: "Create issues for column"
   include_role:
     name: inspire_issues
   vars: 
-    CARDS: "{{ lookup('vars', PROJECT.name + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
+    CARDS: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_') ) + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"

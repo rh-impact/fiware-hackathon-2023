@@ -38,6 +38,6 @@
   include_role:
     name: inspire_mission_impossible
   vars: 
-    CARDS: "{{ lookup('vars', PROJECT.name + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
+    CARDS: "{{ lookup('vars', PROJECT.title + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
     ISSUES: "{{ lookup('vars', ANSIBLE_PROJECT.PROJECT_NAME + '_ISSUES') }}"
   when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined

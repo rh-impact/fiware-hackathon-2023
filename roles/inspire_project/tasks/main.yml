@@ -22,12 +22,9 @@
       when: lookup('vars', 'PROJECT', default='') == ''
       register: PROJECT_CREATE_YML
       tags: project_name
-    - debug:
-        var: PROJECT_CREATE_YML
-      when: lookup('vars', 'PROJECT', default='') == ''
     - name: "Update project by name {{ ANSIBLE_PROJECT.title }}"
       connection: local
-      uri:
+      ansible.builtin.uri:
         timeout: 90
         url: "https://api.github.com/graphql"
         method: POST
@@ -42,10 +39,6 @@
       register: PROJECT_UPDATE_YML
       when: >
         lookup('vars', 'PROJECT', default='') != ''
-    - debug:
-        var: PROJECT_UPDATE_YML
-      when: >
-        lookup('vars', 'PROJECT', default='') != ''
 
     - name: "Generate static classes"
       include_role:
@@ -55,10 +48,10 @@
         loop_var: STATIC_PATH
       when: FILTER_STATIC is defined and FILTER_STATIC == 'true'
     
-#    - name: "Create columns"
-#      include_role:
-#        name: inspire_columns
-#      when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
+    - name: "Create columns"
+      include_role:
+        name: inspire_columns
+      when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
   vars:
     PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_'))) | default(omit) }}"
   when: FILTER_PROJECT is not defined or FILTER_PROJECT == ANSIBLE_PROJECT.title

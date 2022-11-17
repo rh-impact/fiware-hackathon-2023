@@ -11,8 +11,6 @@
     body:
       query: '{{ lookup("template", "query_projects.graphql") }}'
   register: PROJECTS_JSON
-- debug:
-    var: PROJECTS_JSON.json
 - name: "Create projects"
   include_role:
     name: inspire_project

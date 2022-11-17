@@ -95,7 +95,7 @@ ANSIBLE_PROJECTS:
     GITHUB_README: https://github.com/rh-impact/fiware-hackathon-2023/blob/main/README.md
     SOLR_APP_NAME: fiware-hackathon-2023
     ANSIBLE_COLUMNS:
-      - COLUMN_NAME: Bicycle Parking Stations
+      - name: Bicycle Parking Stations
         DOMAIN_NAME: Smart Cities
         SUBMODULE_SHORT_NAME: OSLO
         ANSIBLE_ISSUES:
@@ -117,7 +117,7 @@ ANSIBLE_PROJECTS:
     GITHUB_README: https://github.com/rh-impact/fiware-hackathon-2023/blob/main/README.md
     SOLR_APP_NAME: fiware-hackathon-2023
     ANSIBLE_COLUMNS:
-      - COLUMN_NAME: Agrifood
+      - name: Agrifood
         DOMAIN_NAME: Smart Agrifood
         SUBMODULE_SHORT_NAME: AgriCrop
         ANSIBLE_ISSUES:
