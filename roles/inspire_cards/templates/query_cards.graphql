@@ -2,7 +2,7 @@ query {
 	organization(login:"rh-impact") {
 		id
 		projectV2(number:{{ PROJECT.number }}) {
-			items(first:100) {
+			items(first:100, filterBy: { labels:  ["{{ COLUMN_NAME }}"}"] }) {
 				nodes {
 					type
 					content {
