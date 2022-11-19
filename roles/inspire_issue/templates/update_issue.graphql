@@ -1,0 +1,34 @@
+mutation {
+	updateProjectV2(input:{
+		id: "{{ ISSUE.id }}"
+		, assigneeIds: []
+		, body: "{{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') }}"
+		, labelIds: {{ (ANSIBLE_ISSUE.ISSUE_LABELS | default([])) + [ANSIBLE_ISSUE.ISSUE_LABEL] }}
+		, projectIds: "{{ PROJECT.id }}"
+		, title: "{{ ISSUE_TITLE }}"
+	}) {
+		issue {
+			id
+			assignees(first:10) {
+				nodes: {
+					login
+					name
+				}
+				body
+				closed
+				createdAt
+				labels(first:100) {
+					nodes {
+						color
+						description
+						name
+					}
+				}
+				number
+				title
+				updatedAt
+				url
+			}
+		}
+	}
+}

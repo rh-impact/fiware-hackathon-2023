@@ -22,11 +22,12 @@
 - name: Append {{ MODEL_NAME }} submodule data to fiware_domain/defaults/main.yml
   lineinfile:
     line: |-2
-              - MODEL_NAME: {{ MODEL_NAME }}
-              - MODEL_DESCRIPTION: {{ MODEL_SPEC[ MODEL_NAME ].description | from_yaml }}
-              - MODEL_ADOPTERS: 
-                  {{ MODEL_ADOPTERS | to_yaml | indent(width=12) }}
-              - MODEL_DOCUMENTATION: {{ MODEL_DOCUMENTATION | to_json }}
+                {{ MODEL_NAME }}:
+                  MODEL_NAME: {{ MODEL_NAME }}
+                  MODEL_DESCRIPTION: {{ MODEL_SPEC[ MODEL_NAME ].description | from_yaml }}
+                  MODEL_ADOPTERS: 
+                    {{ MODEL_ADOPTERS | to_yaml | indent(width=16) }}
+                  MODEL_DOCUMENTATION: {{ MODEL_DOCUMENTATION | to_json }}
     path: "{{ DOMAIN_DEFAULTS_PATH }}"
     insertbefore: EOF
   when: STAT_MODEL_ADOPTERS.stat.exists 

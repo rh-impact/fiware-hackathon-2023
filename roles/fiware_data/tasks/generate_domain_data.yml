@@ -19,11 +19,11 @@
   when: not SITE_GIT_DIR.stat.exists and not SITE_README.stat.exists
 - name: Append {{ DOMAIN_DATA.PROJECT_SRC }} domain data to fiware_domain/defaults/main.yml
   lineinfile:
-    line: |-
-      
-      - DOMAIN_NAME: {{ DOMAIN_DATA.DOMAIN_NAME }}
-        REPO_URL: {{ DOMAIN_DATA.REPO_URL }}
-        SUBMODULES:
+    line: |-2
+        {{ DOMAIN_DATA.DOMAIN_NAME }}:
+          DOMAIN_NAME: {{ DOMAIN_DATA.DOMAIN_NAME }}
+          REPO_URL: {{ DOMAIN_DATA.REPO_URL }}
+          SUBMODULES:
     path: "{{ DOMAIN_DEFAULTS_PATH }}"
     insertbefore: EOF
 - name: Get all submodules of {{ DOMAIN_DATA.DOMAIN_NAME }}

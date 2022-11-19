@@ -3,6 +3,18 @@
   set_fact: {"PROJECT_{{ ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_') }}": "{{ PROJECTS | json_query(QUERY) | first | default(omit) }}"}
   vars: 
     QUERY: "[?title=='{{ ANSIBLE_PROJECT.title | default(omit) }}']"
+- name: "Get repo"
+  ansible.builtin.uri:
+    timeout: 90
+    url: "https://api.github.com/graphql"
+    return_content: true
+    headers:
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_repo.graphql") }}'
+  register: REPO_JSON
 - block:
     - name: "Create project by name {{ ANSIBLE_PROJECT.title }}"
       connection: local
@@ -54,4 +66,5 @@
       when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
   vars:
     PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_'))) | default(omit) }}"
+    REPO: "{{ REPO_JSON.json.data.organization.repository }}"
   when: FILTER_PROJECT is not defined or FILTER_PROJECT == ANSIBLE_PROJECT.title

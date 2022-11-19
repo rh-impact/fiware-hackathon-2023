@@ -3,6 +3,7 @@
   copy:
     content: |+
       ---
+      FIWARE_SMART_DATA_MODELS:
     dest: "{{ DOMAIN_DEFAULTS_PATH }}"
     force: true
 - name: Loop on FIWARE Smart Data Model Domains
@@ -10,25 +11,3 @@
   vars:
     DOMAIN_DATA: "{{ item }}"
   loop: "{{ FIWARE_SMART_DATA_MODEL_DOMAIN_REPOS }}"
-#- name: Find Static files
-#  find:
-#    paths: "{{ STATIC_PATH.path }}"
-#    recurse: true
-#    file_type: file
-#    use_regex: yes
-#    patterns: "{{ STATIC_PATH.patterns }}"
-#  register: STATIC_FILES
-#- name: Create the Java destination directory {{ STATIC_PATH.java_path }}
-#  file:
-#    name: "{{ STATIC_PATH.java_path }}"
-#    state: directory
-#- name: Generate static classes
-#  vars:
-#    CLASS_SIMPLE_NAME: "{{ item.path | regex_replace(STATIC_PATH.base_path + '/', '') | regex_replace('\\.\\w+$', '') | regex_replace('[^\\w]', '_') | capitalize }}"
-#    FILE_ABSOLUTE_PATH: "{{ item.path }}"
-#    FILE_RELATIVE_PATH: "{{ item.path | regex_replace('/usr/local/src/', '') }}"
-#    FILE_BODY: "{{ lookup('file', item.path) | string }}"
-#    CLASS_DEST: "{{ STATIC_PATH.java_path }}"
-#    CLASS_PACKAGE: "{{ STATIC_PATH.java_package }}"
-#  include_tasks: generate_static_class.yml
-#  loop: "{{ STATIC_FILES.files }}"

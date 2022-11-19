@@ -4,16 +4,6 @@
   # Software Development #
   ########################
 
-- name: Query Apache Solr for all Java classes
-  uri: 
-    url: "http://localhost:8983/solr/computate/select?rows=1000&q=*:*&fq=partEstClasse_indexed_boolean:true&fq=appliNom_indexed_string:{{ ANSIBLE_PROJECT.SOLR_APP_NAME }}&fq=hackathonColumn_indexed_string:\"{{ ANSIBLE_COLUMN.COLUMN_NAME | urlencode  }}\"{% if FILTER_CLASS is defined %}&fq=classeNomSimple_enUS_indexed_string:{{ FILTER_CLASS }}{% endif %}"
-  register: JAVA_CLASSES
-  when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
-- name: "Create issues for the {{ JAVA_CLASSES.json.response.docs | length }} Java classes"
+- name: "Create issues for the hackathon"
   include_role: 
     name: inspire_mission_impossible_issue
-  vars: 
-    JAVA_CLASS: "{{ item }}"
-    CLASS_DISPLAY_NAME: "{{ item.classeNomAffichage_enUS_stored_string | default('') | regex_replace('\\{([\\{%])', '\\\\{\\\\1') | regex_replace('([\\}%])\\}', '\\\\1\\\\}') }}"
-  loop: "{{ JAVA_CLASSES.json.response.docs }}"
-  when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined

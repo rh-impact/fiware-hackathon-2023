@@ -2,8 +2,9 @@
 - name: Append {{ SUBMODULE_SHORT_NAME }} submodule data to fiware_domain/defaults/main.yml
   lineinfile:
     line: |-2
-          - SUBMODULE_SHORT_NAME: {{ SUBMODULE_SHORT_NAME }}
-            MODELS:
+            {{ SUBMODULE_SHORT_NAME }}:
+              SUBMODULE_SHORT_NAME: {{ SUBMODULE_SHORT_NAME }}
+              MODELS:
     path: "{{ DOMAIN_DEFAULTS_PATH }}"
     insertbefore: EOF
 - name: Get all models of {{ SUBMODULE_SHORT_NAME }}

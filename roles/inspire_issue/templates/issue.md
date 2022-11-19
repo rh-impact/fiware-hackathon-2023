@@ -1,7 +1,7 @@
 
 ![Hackathon Task for {{ PROJECT_NAME }}](https://github.com/team19hackathon2021/team19-hackathon-2021/raw/master/static/png/image.png "Hackathon Task for {{ PROJECT_NAME }}")
 
-# {{ ANSIBLE_ISSUE.ISSUE_TITLE }}
+# {{ ISSUE_TITLE }}
 
 ## Hackathon Task for {{ PROJECT_NAME }}
 

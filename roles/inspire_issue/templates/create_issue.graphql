@@ -1,0 +1,27 @@
+mutation {
+	createIssue(input:{
+		assigneeIds: []
+		, body: {{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') | to_json }}
+#		, labelIds: [ "{{ ISSUE_LABEL }}" ]
+		, repositoryId: "{{ REPO.id }}"
+		, title: "{{ ISSUE_TITLE }}"
+	}) {
+		issue {
+			id
+			body
+			closed
+			createdAt
+			labels(first:100) {
+				nodes {
+					color
+					description
+					name
+				}
+			}
+			number
+			title
+			updatedAt
+			url
+		}
+	}
+}

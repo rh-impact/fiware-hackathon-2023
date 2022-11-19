@@ -1,9 +1,10 @@
-- name: Setup issue vars for Java Class {{ JAVA_CLASS.classeNomSimple_enUS_stored_string }}
+---
+- name: Setup issue vars for the issue
   set_fact: 
-    ISSUE_LABEL: "{{ JAVA_CLASS.hackathonLabel_stored_string | default('create_java_class_' ~ JAVA_CLASS.classeNomSimple_enUS_stored_string) }}"
-    ISSUE_TITLE: "{{ JAVA_CLASS.hackathonTitle_stored_string | default(JAVA_CLASS.hackathonMission_stored_string) }}"
-    ISSUE_MISSION: "{{ JAVA_CLASS.hackathonMission_stored_string | default(JAVA_CLASS.classeNomSimple_enUS_stored_string) }}"
-    ISSUE_LABELS: "{{ JAVA_CLASS.hackathonLabels_stored_string | default('') | regex_findall('\\w[^,]*\\w') }}"
+    ISSUE_LABEL: "{{ SMART_DATA_MODEL.MODEL_NAME }}"
+    ISSUE_TITLE: "{{ DEFAULT_ISSUE_TITLE }}"
+    ISSUE_MISSION: "{{ DEFAULT_ISSUE_MISSION }}"
+    ISSUE_LABELS: []
 - name: Setup ANSIBLE_ISSUE var
   set_fact: 
     ANSIBLE_ISSUE:
@@ -12,13 +13,9 @@
       ISSUE_MISSION: "{{ ISSUE_MISSION }}"
       ISSUE_LABELS: "{{ ISSUE_LABELS }}"
 - name: "Get issue by name {{ ISSUE_LABEL | default(omit) }}"
-  set_fact: {"ISSUE_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(omit) }}"}
+  set_fact: {"ISSUE_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
   vars: 
     QUERY: "[?labels[?name == '{{ ISSUE_LABEL }}']]"
-- name: Query Apache Solr for all Java class parts
-  uri: 
-    url: "http://localhost:8983/solr/computate/select?rows=200&q=*:*&fq=-partEstClasse_indexed_boolean:true&fq={{ ANSIBLE_PROJECT.SOLR_APP_NAME }}&fq=classeNomCanonique_enUS_indexed_string:{{ JAVA_CLASS.classeNomCanonique_enUS_stored_string }}"
-  register: CLASS_PARTS_JSON
 - name: "Generate body of issue"
   set_fact:
     GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"
@@ -29,8 +26,6 @@
     ISSUE_LABEL: "{{ ANSIBLE_ISSUE.ISSUE_LABEL }}"
     ISSUE_TITLE: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }} Skills: ..."
     ISSUE_REPO_NAME: "{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}"
-    ISSUES: "{{ lookup('vars', ANSIBLE_PROJECT.PROJECT_NAME + '_ISSUES') }}"
+    ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
     OVERRIDE_ISSUE_BODY: "{{ GENERATED_ISSUE_BODY }}"
     ISSUE_LABELS: "{{ ANSIBLE_ISSUE.ISSUE_LABELS }}"
-  tags: 
-    - "class{{ JAVA_CLASS.classeNomSimple_enUS_stored_string }}"
