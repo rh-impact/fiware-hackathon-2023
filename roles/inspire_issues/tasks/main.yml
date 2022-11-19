@@ -1,15 +1,20 @@
 ---
 - name: "Get issues"
   uri:
-    timeout: 90
-    url: "https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}/issues?per_page=100"
+    timeout: 9
+    url: "https://api.github.com/graphql"
     return_content: true
     headers:
-      Authorization: "token {{ GITHUB_TOKEN }}"
-      Accept: "application/vnd.github.inertia-preview+json"
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_issues.graphql") }}'
   register: ISSUES_JSON
+- debug:
+    var: ISSUES_JSON
 - name: "Setup GitHub issues JSON string"
-  set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json | string }}"}
+  set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
 
 - name: "SETUP FIWARE String vars"
   set_fact:

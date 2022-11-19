@@ -12,10 +12,6 @@
       ISSUE_TITLE: "{{ ISSUE_TITLE }}"
       ISSUE_MISSION: "{{ ISSUE_MISSION }}"
       ISSUE_LABELS: "{{ ISSUE_LABELS }}"
-- name: "Get issue by name {{ ISSUE_LABEL | default(omit) }}"
-  set_fact: {"ISSUE_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
-  vars: 
-    QUERY: "[?labels[?name == '{{ ISSUE_LABEL }}']]"
 - name: "Generate body of issue"
   set_fact:
     GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"

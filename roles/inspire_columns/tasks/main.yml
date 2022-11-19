@@ -20,6 +20,6 @@
   vars: 
     COLUMN_NAME: "{{ ANSIBLE_COLUMN.name }}"
     COLUMNS: "{{ COLUMNS_JSON.json.data.organization.projectV2.field.options }}"
-  loop: "{{ ANSIBLE_PROJECT.ANSIBLE_COLUMNS }}"
+  loop: "{{ COLUMNS_JSON.json.data.organization.projectV2.field.options }}"
   loop_control:
     loop_var: ANSIBLE_COLUMN

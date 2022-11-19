@@ -1,34 +1,27 @@
 mutation {
-	updateProjectV2(input:{
+	updateIssue(input:{
 		id: "{{ ISSUE.id }}"
-		, assigneeIds: []
-		, body: "{{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') }}"
-		, labelIds: {{ (ANSIBLE_ISSUE.ISSUE_LABELS | default([])) + [ANSIBLE_ISSUE.ISSUE_LABEL] }}
-		, projectIds: "{{ PROJECT.id }}"
+		, body: {{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') | to_json }}
+		, labelIds: [ "{{ LABEL.id }}" ]
+		, repositoryId: "{{ REPO.id }}"
 		, title: "{{ ISSUE_TITLE }}"
 	}) {
 		issue {
 			id
-			assignees(first:10) {
-				nodes: {
-					login
+			body
+			closed
+			createdAt
+			labels(first:100) {
+				nodes {
+					color
+					description
 					name
 				}
-				body
-				closed
-				createdAt
-				labels(first:100) {
-					nodes {
-						color
-						description
-						name
-					}
-				}
-				number
-				title
-				updatedAt
-				url
 			}
+			number
+			title
+			updatedAt
+			url
 		}
 	}
 }

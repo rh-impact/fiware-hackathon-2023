@@ -4,9 +4,9 @@
   vars: 
     QUERY: "[?name == '{{ COLUMN_NAME }}']"
 
-- name: "Get cards"
+- name: "Create label"
   include_role:
-    name: inspire_cards
+    name: inspire_labels
   vars: 
     COLUMN: "{{ lookup('vars', 'COLUMN_' + (ANSIBLE_COLUMN.name | regex_replace('[^\\w]', '_'))) | default(omit) }}"
   when: FILTER_COLUMN is not defined or FILTER_COLUMN == COLUMN_NAME

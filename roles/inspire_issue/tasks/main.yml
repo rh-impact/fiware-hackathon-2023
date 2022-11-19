@@ -1,8 +1,8 @@
 ---
-- name: "Get issue by name {{ ISSUE_LABEL | default(omit) }}"
-  set_fact: {"ISSUE_{{ ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
+- name: "Get issue by name {{ LABEL.name | default(omit) }}"
+  set_fact: {"ISSUE_{{ LABEL.name | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
   vars: 
-    QUERY: "[?labels[?name == '{{ ISSUE_LABEL }}']]"
+    QUERY: "[?labels.nodes[?name == '{{ LABEL.name }}']]"
 - name: "Generate body of issue"
   set_fact:
     GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"
@@ -12,7 +12,7 @@
     GENERATED_ISSUE_BODY: "{{ OVERRIDE_ISSUE_BODY }}"
   when: OVERRIDE_ISSUE_BODY is defined
 - block:
-    - name: "Create issue by name {{ ISSUE_LABEL }}"
+    - name: "Create issue by name {{ LABEL.name }}"
       connection: local
       ansible.builtin.uri:
         timeout: 90
@@ -30,7 +30,7 @@
       when: lookup('vars', 'ISSUE', default='') == ''
       register: ISSUE_CREATE_YML
       tags: issue_name
-    - name: "Update issue by name {{ ANSIBLE_ISSUE.ISSUE_LABEL }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
+    - name: "Update issue by name {{ LABEL.name }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
       connection: local
       ansible.builtin.uri:
         timeout: 90
@@ -48,12 +48,6 @@
       register: ISSUE_UPDATE_YML
       tags: issue_name
     
-    - debug:
-        var: ISSUE_CREATE_YML.json
-      when: lookup('vars', 'ISSUE', default='') == ''
-    - debug:
-        var: ISSUE_UPDATE_YML.json
-      when: lookup('vars', 'ISSUE', default='') != ''
 #    - name: Create card
 #      include_role: 
 #        name: inspire_card
@@ -71,4 +65,4 @@
 #        CARD_CONTENT_TYPE: "Issue"
 #      when: lookup('vars', 'ISSUE', default='') != ''
   vars:
-    ISSUE: "{{ lookup('vars', 'ISSUE_' + (ANSIBLE_ISSUE.ISSUE_LABEL | regex_replace('[^\\w]', '_'))) | default(omit) }}"
+    ISSUE: "{{ lookup('vars', 'ISSUE_' + (LABEL.name | regex_replace('[^\\w]', '_'))) | default(None) }}"

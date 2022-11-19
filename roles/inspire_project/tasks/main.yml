@@ -34,7 +34,7 @@
       when: lookup('vars', 'PROJECT', default='') == ''
       register: PROJECT_CREATE_YML
       tags: project_name
-    - name: "Update project by name {{ ANSIBLE_PROJECT.title }}"
+    - name: "Update project by name {{ ANSIBLE_PROJECT.id }}"
       connection: local
       ansible.builtin.uri:
         timeout: 90
