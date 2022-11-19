@@ -11,8 +11,6 @@
     body:
       query: '{{ lookup("template", "query_issues.graphql") }}'
   register: ISSUES_JSON
-- debug:
-    var: ISSUES_JSON
 - name: "Setup GitHub issues JSON string"
   set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
 

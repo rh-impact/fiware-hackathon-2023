@@ -1,6 +1,4 @@
 ---
-- debug:
-    msg: '{{ lookup("template", "query_cards.graphql") }}'
 - name: "Get cards"
   ansible.builtin.uri:
     timeout: 90

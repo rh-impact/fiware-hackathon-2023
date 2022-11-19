@@ -47,6 +47,23 @@
       when: lookup('vars', 'ISSUE', default='') != ''
       register: ISSUE_UPDATE_YML
       tags: issue_name
+    - name: "Add issue to project {{ LABEL.name }}"
+      connection: local
+      ansible.builtin.uri:
+        timeout: 90
+        url: "https://api.github.com/graphql"
+        method: POST
+        headers:
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
+        body_format: json
+        body: 
+          query: '{{ lookup("template", "add_issue_to_project.graphql") }}'
+        return_content: true
+        status_code: 
+          - 200
+      register: ADD_ISSUE_TO_PROJECT_YML
+    - debug:
+        var: ADD_ISSUE_TO_PROJECT_YML
     
 #    - name: Create card
 #      include_role: 
