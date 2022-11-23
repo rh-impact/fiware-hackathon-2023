@@ -1,4 +1,6 @@
 ---
+- debug:
+    var: LABEL
 - name: "Get issues"
   uri:
     timeout: 9

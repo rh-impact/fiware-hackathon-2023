@@ -1,4 +1,7 @@
 ---
+- name: set DOMAIN_NAME
+  set_fact:
+    DOMAIN_NAME: "{{ DOMAIN_DATA.DOMAIN_NAME }}"
 - name: Check for the {{ DOMAIN_DATA.DOMAIN_NAME }} .git directory
   stat:
     path: "{{ DOMAIN_DATA.PROJECT_SRC }}/.git"
