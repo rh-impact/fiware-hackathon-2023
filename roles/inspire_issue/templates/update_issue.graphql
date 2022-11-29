@@ -1,6 +1,6 @@
 mutation {
 	updateIssue(input:{
-		id: "{{ ISSUE.id }}"
+		id: "{{ ISSUE_TEST.id }}"
 		, body: {{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') | to_json }}
 		, labelIds: [ "{{ LABEL.id }}", "{{ ROLE_LABEL.id }}" ]
 		, title: "{{ ISSUE_TITLE }}"
