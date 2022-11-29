@@ -2,7 +2,6 @@
 - name: Create the fiware_domain/defaults/main.yml
   copy:
     content: |+
-      ---
       FIWARE_SMART_DATA_MODELS:
     dest: "{{ DOMAIN_DEFAULTS_PATH }}"
     force: true

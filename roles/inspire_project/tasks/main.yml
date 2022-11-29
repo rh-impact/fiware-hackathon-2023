@@ -51,6 +51,10 @@
       register: PROJECT_UPDATE_YML
       when: >
         lookup('vars', 'PROJECT', default='') != ''
+    - name: Set created project
+      set_fact:
+        PROJECT: "{{ PROJECT_CREATE_YML.json.data.createProjectV2.projectV2 }}"
+      when: lookup('vars', 'PROJECT', default='') == ''
 
     - name: "Generate static classes"
       include_role:
@@ -60,9 +64,9 @@
         loop_var: STATIC_PATH
       when: FILTER_STATIC is defined and FILTER_STATIC == 'true'
     
-    - name: "Create columns"
+    - name: "Get labels"
       include_role:
-        name: inspire_columns
+        name: inspire_labels
       when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'
   vars:
     PROJECT: "{{ lookup('vars', 'PROJECT_' + (ANSIBLE_PROJECT.title | regex_replace('[^\\w]', '_'))) | default(omit) }}"

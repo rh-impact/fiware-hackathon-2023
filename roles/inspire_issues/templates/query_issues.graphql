@@ -1,0 +1,33 @@
+query {
+	organization(login:"rh-impact") {
+		id
+		repository(name:"{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME | default(GITHUB_REPO) }}") {
+			id
+			createdAt
+			description
+			homepageUrl
+			name
+			updatedAt
+			url
+			visibility
+			issues(labels:[ "{{ ROLE_LABEL.name }}" ], first:100) {
+				nodes {
+					id
+					closed
+					createdAt
+					labels(first:100) {
+						nodes {
+							color
+							description
+							name
+						}
+					}
+					number
+					title
+					updatedAt
+					url
+				}
+			}
+		}
+	}
+}

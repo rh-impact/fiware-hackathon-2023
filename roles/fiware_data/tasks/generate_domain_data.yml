@@ -37,8 +37,9 @@
 - name: Loop on FIWARE Smart Data Submodules of {{ DOMAIN_DATA.DOMAIN_NAME }}
   include_tasks: generate_submodule_data.yml
   vars:
-    SUBMODULE_DATA: "{{ item }}"
-    SUBMODULE_SRC: "{{ item.path }}"
-    SUBMODULE_NAME: "{{ item.path | basename }}"
-    SUBMODULE_SHORT_NAME: "{{ item.path | basename | split('dataModel.') | last }}"
+    SUBMODULE_SRC: "{{ SUBMODULE_DATA.path }}"
+    SUBMODULE_NAME: "{{ SUBMODULE_DATA.path | basename }}"
+    SUBMODULE_SHORT_NAME: "{{ SUBMODULE_DATA.path | basename | split('dataModel.') | last }}"
   loop: "{{ SUBMODULE_DIRS.files }}"
+  loop_control:
+    loop_var: SUBMODULE_DATA

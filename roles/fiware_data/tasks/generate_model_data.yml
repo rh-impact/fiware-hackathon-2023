@@ -14,12 +14,12 @@
 - name: Find model description in {{ MODEL_SRC }}/model.yaml
   set_fact:
     MODEL_SPEC: "{{ lookup('file', MODEL_SRC + '/model.yaml') | from_yaml }}"
-    MODEL_ADOPTERS: "{{ lookup('file', MODEL_SRC + '/ADOPTERS.yaml') | from_yaml }}"
+    MODEL_ADOPTERS: "{{ lookup('file', MODEL_SRC + '/ADOPTERS.yaml') }}"
     MODEL_DOCUMENTATION: "{{ lookup('file', MODEL_SRC + '/doc/spec.md') }}"
   when: STAT_MODEL_ADOPTERS.stat.exists 
     and STAT_MODEL_DOC_SPEC.stat.exists 
     and STAT_MODEL_SPEC.stat.exists
-- name: Append {{ MODEL_NAME }} submodule data to fiware_domain/defaults/main.yml
+- name: Append {{ MODEL_NAME }} model data to fiware_domain/defaults/main.yml
   lineinfile:
     line: |-2
                 {{ MODEL_NAME }}:
@@ -27,7 +27,7 @@
                   SUBMODULE_SHORT_NAME: {{ SUBMODULE_SHORT_NAME }}
                   DOMAIN_NAME: {{ DOMAIN_NAME }}
                   COMBINED_NAME: {{ MODEL_NAME }} - {{ SUBMODULE_SHORT_NAME }} - {{ DOMAIN_NAME }}
-                  MODEL_DESCRIPTION: {{ MODEL_SPEC[ MODEL_NAME ].description | from_yaml }}
+                  MODEL_DESCRIPTION: {{ MODEL_SPEC[ MODEL_NAME ].description | default('') | to_json }}
                   MODEL_ADOPTERS: {{ MODEL_ADOPTERS | to_json }}
                   MODEL_DOCUMENTATION: {{ MODEL_DOCUMENTATION | to_json }}
     path: "{{ DOMAIN_DEFAULTS_PATH }}"

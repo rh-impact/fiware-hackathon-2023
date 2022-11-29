@@ -4,9 +4,39 @@
   vars: 
     QUERY: "[?name == '{{ COLUMN_NAME }}']"
 
-- name: "Create label"
-  include_role:
-    name: inspire_labels
-  vars: 
+- block:
+    - block:
+        
+        - name: "Create label"
+          include_role:
+            name: inspire_label
+          vars: 
+            LABEL_NAME: "{{ MODEL_NAME }} data specialist"
+            LABEL_DESCRIPTION: "to import Smart Model Data into a FIWARE context broker"
+            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+            FILTER_CARD: Ignore
+            CARD_NAME: None
+        
+        - name: "Create label"
+          include_role:
+            name: inspire_label
+          vars: 
+            LABEL_NAME: "{{ MODEL_NAME }} visualization specialist"
+            LABEL_DESCRIPTION: "to visualize Smart Model Data from a FIWARE context broker"
+            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+            FILTER_CARD: Ignore
+            CARD_NAME: None
+        
+        - name: "Create label"
+          include_role:
+            name: inspire_label
+          vars: 
+            LABEL_NAME: "{{ COLUMN.name }}"
+            LABEL_DESCRIPTION: "{{ COLUMN.name }}"
+            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+      vars:
+        MODEL_NAME: "{{ COLUMN.name | regex_search('^.*?(?=( - ))') }}"
+        SUBMODULE_SHORT_NAME: "{{ COLUMN.name | regex_search('^.*?(?=( - )) - (.*?)(?=( - ))', '\\2') | first }}"
+        DOMAIN_NAME: "{{ COLUMN.name | regex_search('^.*?(?=( - )) - .*?(?=( - )) - (.*)', '\\3') | first }}"
+  vars:
     COLUMN: "{{ lookup('vars', 'COLUMN_' + (ANSIBLE_COLUMN.name | regex_replace('[^\\w]', '_'))) | default(omit) }}"
-  when: FILTER_COLUMN is not defined or FILTER_COLUMN == COLUMN_NAME

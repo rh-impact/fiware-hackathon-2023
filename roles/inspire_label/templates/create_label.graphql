@@ -1,0 +1,18 @@
+mutation {
+	createLabel(input:{
+		color: "{{ LABEL_COLOR | default('707E7C') }}"
+		, name: "{{ LABEL_NAME }}"
+		, description: "{{ LABEL_DESCRIPTION }}"
+		, repositoryId: "{{ REPO.id }}"
+	}) {
+		label {
+			id
+			color
+			createdAt
+			description
+			isDefault
+			name
+			url
+		}
+	}
+}

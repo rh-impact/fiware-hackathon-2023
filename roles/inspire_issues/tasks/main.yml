@@ -1,34 +1,111 @@
 ---
-- debug:
-    var: LABEL
-- name: "Get issues"
-  uri:
-    timeout: 9
-    url: "https://api.github.com/graphql"
-    return_content: true
-    headers:
-      Authorization: "bearer {{ GITHUB_TOKEN }}"
-    method: POST
-    body_format: json
-    body:
-      query: '{{ lookup("template", "query_issues.graphql") }}'
-  register: ISSUES_JSON
-- name: "Setup GitHub issues JSON string"
-  set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
+- block:
+    - name: "Get labels"
+      uri:
+        timeout: 9
+        url: "https://api.github.com/graphql"
+        return_content: true
+        headers:
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
+        method: POST
+        body_format: json
+        body:
+          query: '{{ lookup("template", "query_labels.graphql") }}'
+      register: ROLE_LABELS_JSON
+    - name: "Get role label by name: {{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
+      set_fact: {"ROLE_LABEL_{{ MODEL_NAME | regex_replace('[^\\w]', '_') }}_{{ DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_') }}": "{{ ROLE_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
+      vars: 
+        QUERY: "[?name=='{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}']"
+    - block:
+        - debug:
+            var: ROLE_LABELS_JSON
+        - debug:
+            var: ROLE_LABEL
+        - name: "Get issues by label: {{ ROLE_LABEL.name }}"
+          uri:
+            timeout: 9
+            url: "https://api.github.com/graphql"
+            return_content: true
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            method: POST
+            body_format: json
+            body:
+              query: '{{ lookup("template", "query_issues.graphql") }}'
+          register: ISSUES_JSON
+        - debug:
+            var: ISSUES_JSON.json.data.organization.repository.issues.nodes
+        - name: "Setup GitHub issues JSON string"
+          set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
+        - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
+          include_role:
+            name: inspire_mission_impossible
+          vars: 
+            ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
+            SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
+            DEFAULT_ISSUE_TITLE: "{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
+            DEFAULT_ISSUE_MISSION: "to import {{ MODEL_NAME }} Smart Data into a FIWARE context broker"
+            DEFAULT_ISSUE_TEMPLATE: "data-specialist.md"
+            DEFAULT_ISSUE_LABELS: 
+              - "{{ LABEL.id }}"
+              - "{{ ROLE_LABEL.id }}"
+          when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
+      vars:
+        ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
+  vars:
+    DEFAULT_ISSUE_ROLE: data specialist
 
-- name: "SETUP FIWARE String vars"
-  set_fact:
-    MODEL_NAME: "{{ ANSIBLE_COLUMN.name | regex_search('^.*?(?=( - ))') }}"
-    SUBMODULE_SHORT_NAME: "{{ ANSIBLE_COLUMN.name | regex_search('^.*?(?=( - )) - (.*?)(?=( - ))', '\\2') | first }}"
-    DOMAIN_NAME: "{{ ANSIBLE_COLUMN.name | regex_search('^.*?(?=( - )) - .*?(?=( - )) - (.*)', '\\3') | first }}"
-
-- name: "Create mission impossible issues for column"
-  include_role:
-    name: inspire_mission_impossible
-  vars: 
-    CARDS: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
-    ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
-    SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
-    DEFAULT_ISSUE_TITLE: "Data specialist - {{ MODEL_NAME }}"
-    DEFAULT_ISSUE_MISSION: "Import for the {{ MODEL_NAME }} Smart Data Model"
-  when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
+- block:
+    - name: "Get labels"
+      uri:
+        timeout: 9
+        url: "https://api.github.com/graphql"
+        return_content: true
+        headers:
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
+        method: POST
+        body_format: json
+        body:
+          query: '{{ lookup("template", "query_labels.graphql") }}'
+      register: ROLE_LABELS_JSON
+    - name: "Get role label by name: {{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
+      set_fact: {"ROLE_LABEL_{{ MODEL_NAME | regex_replace('[^\\w]', '_') }}_{{ DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_') }}": "{{ ROLE_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
+      vars: 
+        QUERY: "[?name=='{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}']"
+    - block:
+        - name: "Get issues by label: {{ ROLE_LABEL.name }}"
+          uri:
+            timeout: 9
+            url: "https://api.github.com/graphql"
+            return_content: true
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            method: POST
+            body_format: json
+            body:
+              query: '{{ lookup("template", "query_issues.graphql") }}'
+          register: ISSUES_JSON
+        - debug:
+            var: ROLE_LABEL
+        - debug:
+            var: ISSUES_JSON.json.data.organization.repository.issues.nodes
+        - name: "Setup GitHub issues JSON string"
+          set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
+        - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
+          include_role:
+            name: inspire_mission_impossible
+          vars: 
+            CARDS: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
+            ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
+            SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
+            DEFAULT_ISSUE_TITLE: "{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
+            DEFAULT_ISSUE_MISSION: "to visualize {{ MODEL_NAME }} Smart Data from a FIWARE context broker"
+            DEFAULT_ISSUE_TEMPLATE: "visualization-specialist.md"
+            DEFAULT_ISSUE_LABELS: 
+              - "{{ LABEL.id }}"
+              - "{{ ROLE_LABEL.id }}"
+          when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
+      vars:
+        ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
+  vars:
+    DEFAULT_ISSUE_ROLE: visualization specialist

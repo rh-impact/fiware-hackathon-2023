@@ -1,0 +1,26 @@
+---
+
+- name: "Create labels"
+  include_role:
+    name: inspire_label
+  vars: 
+    LABEL_NAME: "data specialist"
+    LABEL_DESCRIPTION: "to import Smart Model Data into a FIWARE context broker"
+    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+    FILTER_CARD: Ignore
+    CARD_NAME: None
+
+- name: "Create labels"
+  include_role:
+    name: inspire_label
+  vars: 
+    LABEL_NAME: "visualization specialist"
+    LABEL_DESCRIPTION: "to visualize Smart Model Data from a FIWARE context broker"
+    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+    FILTER_CARD: Ignore
+    CARD_NAME: None
+
+- name: "Create columns"
+  include_role:
+    name: inspire_columns
+  when: FILTER_STATIC is not defined or FILTER_STATIC != 'true'

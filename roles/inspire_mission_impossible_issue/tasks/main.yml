@@ -1,27 +1,15 @@
 ---
-- name: Setup issue vars for the issue
-  set_fact: 
+- block:
+    - name: "Generate body of issue"
+      set_fact:
+        GENERATED_ISSUE_BODY: "{{ lookup('template', DEFAULT_ISSUE_TEMPLATE) }}"
+    - name: "Create issue"
+      include_role:
+        name: inspire_issue
+  vars: 
     ISSUE_LABEL: "{{ SMART_DATA_MODEL.MODEL_NAME }}"
     ISSUE_TITLE: "{{ DEFAULT_ISSUE_TITLE }}"
+    ISSUE_REPO_NAME: "{{ REPO.name }}"
     ISSUE_MISSION: "{{ DEFAULT_ISSUE_MISSION }}"
-    ISSUE_LABELS: []
-- name: Setup ANSIBLE_ISSUE var
-  set_fact: 
-    ANSIBLE_ISSUE:
-      ISSUE_LABEL: "{{ ISSUE_LABEL }}"
-      ISSUE_TITLE: "{{ ISSUE_TITLE }}"
-      ISSUE_MISSION: "{{ ISSUE_MISSION }}"
-      ISSUE_LABELS: "{{ ISSUE_LABELS }}"
-- name: "Generate body of issue"
-  set_fact:
-    GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"
-- name: "Create issue"
-  include_role:
-    name: inspire_issue
-  vars: 
-    ISSUE_LABEL: "{{ ANSIBLE_ISSUE.ISSUE_LABEL }}"
-    ISSUE_TITLE: "{{ ANSIBLE_ISSUE.ISSUE_TITLE }} Skills: ..."
-    ISSUE_REPO_NAME: "{{ ANSIBLE_PROJECT.GITHUB_REPO_NAME }}"
-    ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
     OVERRIDE_ISSUE_BODY: "{{ GENERATED_ISSUE_BODY }}"
-    ISSUE_LABELS: "{{ ANSIBLE_ISSUE.ISSUE_LABELS }}"
+    ISSUE_LABELS: "{{ DEFAULT_ISSUE_LABELS }}"

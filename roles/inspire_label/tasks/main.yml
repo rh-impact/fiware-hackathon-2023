@@ -1,0 +1,76 @@
+---
+- name: "Get labels"
+  uri:
+    timeout: 9
+    url: "https://api.github.com/graphql"
+    return_content: true
+    headers:
+      Authorization: "bearer {{ GITHUB_TOKEN }}"
+    method: POST
+    body_format: json
+    body:
+      query: '{{ lookup("template", "query_labels.graphql") }}'
+  register: LABELS_JSON
+- name: "Get label by name {{ LABEL_NAME | default(omit) }}"
+  set_fact: {"LABEL_{{ LABEL_NAME | regex_replace('[^\\w]', '_') }}": "{{ LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
+  vars: 
+    QUERY: "[?name=='{{ LABEL_NAME | default(omit) }}']"
+- block:
+    - block:
+        - name: "Create label by name {{ LABEL_NAME }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            return_content: true
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+              Accept: "application/vnd.github.bane-preview+json"
+            method: POST
+            body_format: json
+            body:
+              query: '{{ lookup("template", "create_label.graphql") }}'
+            status_code: 
+              - 200
+              - 201
+          register: LABEL_CREATE_YML
+          tags: label_name
+        - debug:
+            var: LABEL_CREATE_YML
+        - name: "Get cards"
+          include_role:
+            name: inspire_cards
+          vars:
+            LABEL: "{{ LABEL_CREATE_YML.json.data.createLabel.label }}"
+          when: FILTER_CARD is not defined or FILTER_CARD == CARD_NAME
+      when: lookup('vars', 'LABEL_TEST', default='') == ''
+    - block:
+        - name: "Update label by name {{ LABEL_NAME }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            method: POST
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+              Accept: "application/vnd.github.bane-preview+json"
+            body_format: json
+            return_content: true
+            body: 
+              query: '{{ lookup("template", "update_label.graphql") }}'
+            status_code: 
+              - 200
+          register: LABEL_UPDATE_YML
+        - debug:
+            var: LABEL_UPDATE_YML
+        - name: "Get cards"
+          include_role:
+            name: inspire_cards
+          vars:
+            LABEL: "{{ LABEL_UPDATE_YML.json.data.updateLabel.label }}"
+          when: FILTER_CARD is not defined or FILTER_CARD == CARD_NAME
+      when: >
+        lookup('vars', 'LABEL_TEST', default='') != ''
+  vars:
+    LABEL_TEST: "{{ lookup('vars', 'LABEL_' + (LABEL_NAME | regex_replace('[^\\w]', '_'))) | default(None) }}"
+  when: FILTER_LABEL is not defined or FILTER_LABEL == LABEL_NAME

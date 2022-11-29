@@ -1,0 +1,10 @@
+mutation {
+	addProjectV2ItemById(input:{
+		projectId: "{{ PROJECT.id }}"
+		, contentId: "{{ ISSUE.id }}"
+	}) {
+		item {
+			id
+		}
+	}
+}

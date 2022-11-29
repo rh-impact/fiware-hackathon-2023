@@ -1,18 +1,4 @@
 ---
-- name: "Get cards"
-  ansible.builtin.uri:
-    timeout: 90
-    url: "https://api.github.com/graphql"
-    return_content: true
-    headers:
-      Authorization: "bearer {{ GITHUB_TOKEN }}"
-    method: POST
-    body_format: json
-    body:
-      query: '{{ lookup("template", "query_cards.graphql") }}'
-  register: CARDS_JSON
-- name: "Get column by name {{ COLUMN_NAME | default(omit) }}"
-  set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_COLUMN_{{ COLUMN.id }}_CARDS": "{{ CARDS_JSON.json.data.organization.projectV2.items.nodes | default([]) }}"}
 - name: "Create issues for column"
   include_role:
     name: inspire_issues

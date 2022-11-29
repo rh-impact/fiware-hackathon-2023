@@ -1,8 +1,8 @@
 ---
-- name: "Get issue by name {{ LABEL.name | default(omit) }}"
-  set_fact: {"ISSUE_{{ LABEL.name | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
+- name: "Get issue by name {{ ROLE_LABEL.name | default(omit) }}"
+  set_fact: {"ISSUE_{{ ROLE_LABEL.name | regex_replace('[^\\w]', '_') }}": "{{ ISSUES | json_query(QUERY) | first | default(None) }}"}
   vars: 
-    QUERY: "[?labels.nodes[?name == '{{ LABEL.name }}']]"
+    QUERY: "[?(labels.nodes[?name == '{{ ROLE_LABEL.name }}'])]"
 - name: "Generate body of issue"
   set_fact:
     GENERATED_ISSUE_BODY: "{{ lookup('template', 'issue.md') }}"
@@ -11,59 +11,79 @@
   set_fact:
     GENERATED_ISSUE_BODY: "{{ OVERRIDE_ISSUE_BODY }}"
   when: OVERRIDE_ISSUE_BODY is defined
+- debug:
+    var: ISSUE
 - block:
-    - name: "Create issue by name {{ LABEL.name }}"
-      connection: local
-      ansible.builtin.uri:
-        timeout: 90
-        url: "https://api.github.com/graphql"
-        method: POST
-        headers:
-          Authorization: "bearer {{ GITHUB_TOKEN }}"
-        body_format: json
-        body: 
-          query: '{{ lookup("template", "create_issue.graphql") }}'
-        return_content: true
-        status_code: 
-          - 200
-          - 201
+    - block:
+        - name: "Create issue by name {{ ROLE_LABEL.name }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            method: POST
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            body_format: json
+            body: 
+              query: '{{ lookup("template", "create_issue.graphql") }}'
+            return_content: true
+            status_code: 
+              - 200
+              - 201
+          register: ISSUE_CREATE_YML
+          tags: issue_name
+        - name: "Add issue to project {{ ROLE_LABEL.name }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            method: POST
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            body_format: json
+            body: 
+              query: '{{ lookup("template", "add_issue_to_project.graphql") }}'
+            return_content: true
+            status_code: 
+              - 200
+          register: ADD_ISSUE_TO_PROJECT_YML
+          vars:
+            ISSUE: "{{ ISSUE_CREATE_YML.json.data.createIssue.issue | default(omit) }}"
       when: lookup('vars', 'ISSUE', default='') == ''
-      register: ISSUE_CREATE_YML
-      tags: issue_name
-    - name: "Update issue by name {{ LABEL.name }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
-      connection: local
-      ansible.builtin.uri:
-        timeout: 90
-        url: "https://api.github.com/graphql"
-        method: POST
-        headers:
-          Authorization: "bearer {{ GITHUB_TOKEN }}"
-        body_format: json
-        return_content: true
-        body: 
-          query: '{{ lookup("template", "update_issue.graphql") }}'
-        status_code: 
-          - 200
+    - block:
+        - name: "Update issue by name {{ ROLE_LABEL.name }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            method: POST
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            body_format: json
+            return_content: true
+            body: 
+              query: '{{ lookup("template", "update_issue.graphql") }}'
+            status_code: 
+              - 200
+          register: ISSUE_UPDATE_YML
+          tags: issue_name
+          when: lookup('vars', 'ISSUE', default='') != ''
+        - name: "Add issue to project {{ ROLE_LABEL.name }}"
+          connection: local
+          ansible.builtin.uri:
+            timeout: 90
+            url: "https://api.github.com/graphql"
+            method: POST
+            headers:
+              Authorization: "bearer {{ GITHUB_TOKEN }}"
+            body_format: json
+            body: 
+              query: '{{ lookup("template", "add_issue_to_project.graphql") }}'
+            return_content: true
+            status_code: 
+              - 200
+          register: ADD_ISSUE_TO_PROJECT_YML
       when: lookup('vars', 'ISSUE', default='') != ''
-      register: ISSUE_UPDATE_YML
-      tags: issue_name
-    - name: "Add issue to project {{ LABEL.name }}"
-      connection: local
-      ansible.builtin.uri:
-        timeout: 90
-        url: "https://api.github.com/graphql"
-        method: POST
-        headers:
-          Authorization: "bearer {{ GITHUB_TOKEN }}"
-        body_format: json
-        body: 
-          query: '{{ lookup("template", "add_issue_to_project.graphql") }}'
-        return_content: true
-        status_code: 
-          - 200
-      register: ADD_ISSUE_TO_PROJECT_YML
-    - debug:
-        var: ADD_ISSUE_TO_PROJECT_YML
     
 #    - name: Create card
 #      include_role: 
@@ -82,4 +102,4 @@
 #        CARD_CONTENT_TYPE: "Issue"
 #      when: lookup('vars', 'ISSUE', default='') != ''
   vars:
-    ISSUE: "{{ lookup('vars', 'ISSUE_' + (LABEL.name | regex_replace('[^\\w]', '_'))) | default(None) }}"
+    ISSUE: "{{ lookup('vars', 'ISSUE_' + (ROLE_LABEL.name | regex_replace('[^\\w]', '_'))) | default(None) }}"
