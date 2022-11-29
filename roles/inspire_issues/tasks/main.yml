@@ -17,10 +17,6 @@
       vars: 
         QUERY: "[?name=='{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}']"
     - block:
-        - debug:
-            var: ROLE_LABELS_JSON
-        - debug:
-            var: ROLE_LABEL
         - name: "Get issues by label: {{ ROLE_LABEL.name }}"
           uri:
             timeout: 9
@@ -33,8 +29,6 @@
             body:
               query: '{{ lookup("template", "query_issues.graphql") }}'
           register: ISSUES_JSON
-        - debug:
-            var: ISSUES_JSON.json.data.organization.repository.issues.nodes
         - name: "Setup GitHub issues JSON string"
           set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
         - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
@@ -49,7 +43,6 @@
             DEFAULT_ISSUE_LABELS: 
               - "{{ LABEL.id }}"
               - "{{ ROLE_LABEL.id }}"
-          when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
       vars:
         ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
   vars:
@@ -85,10 +78,6 @@
             body:
               query: '{{ lookup("template", "query_issues.graphql") }}'
           register: ISSUES_JSON
-        - debug:
-            var: ROLE_LABEL
-        - debug:
-            var: ISSUES_JSON.json.data.organization.repository.issues.nodes
         - name: "Setup GitHub issues JSON string"
           set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
         - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
@@ -104,7 +93,6 @@
             DEFAULT_ISSUE_LABELS: 
               - "{{ LABEL.id }}"
               - "{{ ROLE_LABEL.id }}"
-          when: ANSIBLE_PROJECT.SOLR_APP_NAME is defined
       vars:
         ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
   vars:

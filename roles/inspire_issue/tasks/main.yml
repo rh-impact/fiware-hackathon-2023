@@ -11,8 +11,6 @@
   set_fact:
     GENERATED_ISSUE_BODY: "{{ OVERRIDE_ISSUE_BODY }}"
   when: OVERRIDE_ISSUE_BODY is defined
-- debug:
-    var: ISSUE
 - block:
     - block:
         - name: "Create issue by name {{ ROLE_LABEL.name }}"
@@ -48,8 +46,8 @@
               - 200
           register: ADD_ISSUE_TO_PROJECT_YML
           vars:
-            ISSUE: "{{ ISSUE_CREATE_YML.json.data.createIssue.issue | default(omit) }}"
-      when: lookup('vars', 'ISSUE', default='') == ''
+            ISSUE: "{{ ISSUE_CREATE_YML.json.data.createIssue.issue }}"
+      when: lookup('vars', 'ISSUE_TEST', default='') == ''
     - block:
         - name: "Update issue by name {{ ROLE_LABEL.name }}: PATCH https://api.github.com/repos/{{ GITHUB_ORG }}/{{ ISSUE_REPO_NAME }}/issues/{{ ISSUE.number }}"
           connection: local
@@ -67,7 +65,6 @@
               - 200
           register: ISSUE_UPDATE_YML
           tags: issue_name
-          when: lookup('vars', 'ISSUE', default='') != ''
         - name: "Add issue to project {{ ROLE_LABEL.name }}"
           connection: local
           ansible.builtin.uri:
@@ -83,7 +80,9 @@
             status_code: 
               - 200
           register: ADD_ISSUE_TO_PROJECT_YML
-      when: lookup('vars', 'ISSUE', default='') != ''
+          vars:
+            ISSUE: "{{ ISSUE_UPDATE_YML.json.data.updateIssue.issue }}"
+      when: lookup('vars', 'ISSUE_TEST', default='') != ''
     
 #    - name: Create card
 #      include_role: 
@@ -102,4 +101,4 @@
 #        CARD_CONTENT_TYPE: "Issue"
 #      when: lookup('vars', 'ISSUE', default='') != ''
   vars:
-    ISSUE: "{{ lookup('vars', 'ISSUE_' + (ROLE_LABEL.name | regex_replace('[^\\w]', '_'))) | default(None) }}"
+    ISSUE_TEST: "{{ lookup('vars', 'ISSUE_' + (ROLE_LABEL.name | regex_replace('[^\\w]', '_'))) | default(None) }}"

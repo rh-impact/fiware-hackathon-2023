@@ -35,8 +35,6 @@
               - 201
           register: LABEL_CREATE_YML
           tags: label_name
-        - debug:
-            var: LABEL_CREATE_YML
         - name: "Get cards"
           include_role:
             name: inspire_cards
@@ -61,8 +59,6 @@
             status_code: 
               - 200
           register: LABEL_UPDATE_YML
-        - debug:
-            var: LABEL_UPDATE_YML
         - name: "Get cards"
           include_role:
             name: inspire_cards
