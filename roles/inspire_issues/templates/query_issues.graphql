@@ -10,7 +10,7 @@ query {
 			updatedAt
 			url
 			visibility
-			issues(labels:[ "{{ ROLE_LABEL.name }}" ], first:100) {
+			issues(labels:[ "{{ LABEL_SEARCH }}" ], first:100) {
 				nodes {
 					id
 					closed

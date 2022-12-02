@@ -17,7 +17,7 @@
     QUERY: "[?name=='{{ LABEL_NAME | default(omit) }}']"
 - block:
     - block:
-        - name: "Create label by name {{ LABEL_NAME }}"
+        - name: "Create label by name: {{ LABEL_NAME }}"
           connection: local
           ansible.builtin.uri:
             timeout: 90
@@ -35,15 +35,9 @@
               - 201
           register: LABEL_CREATE_YML
           tags: label_name
-        - name: "Get cards"
-          include_role:
-            name: inspire_cards
-          vars:
-            LABEL: "{{ LABEL_CREATE_YML.json.data.createLabel.label }}"
-          when: FILTER_CARD is not defined or FILTER_CARD == CARD_NAME
       when: lookup('vars', 'LABEL_TEST', default='') == ''
     - block:
-        - name: "Update label by name {{ LABEL_NAME }}"
+        - name: "Update label by name: {{ LABEL_NAME }}"
           connection: local
           ansible.builtin.uri:
             timeout: 90
@@ -59,12 +53,6 @@
             status_code: 
               - 200
           register: LABEL_UPDATE_YML
-        - name: "Get cards"
-          include_role:
-            name: inspire_cards
-          vars:
-            LABEL: "{{ LABEL_UPDATE_YML.json.data.updateLabel.label }}"
-          when: FILTER_CARD is not defined or FILTER_CARD == CARD_NAME
       when: >
         lookup('vars', 'LABEL_TEST', default='') != ''
   vars:

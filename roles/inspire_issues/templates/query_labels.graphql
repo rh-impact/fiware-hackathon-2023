@@ -10,7 +10,7 @@ query {
 			updatedAt
 			url
 			visibility
-			labels(query:"{{ MODEL_NAME }}", first:100) {
+			labels(query:"{{ LABEL_SEARCH }}", first:100) {
 				nodes {
 					id
 					color

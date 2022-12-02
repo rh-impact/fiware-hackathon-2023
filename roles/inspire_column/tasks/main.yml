@@ -6,34 +6,57 @@
 
 - block:
     - block:
+
+        # Create Role Labels
         
-        - name: "Create label"
+        - name: "Create role label"
           include_role:
             name: inspire_label
           vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} data specialist"
-            LABEL_DESCRIPTION: "to import Smart Model Data into a FIWARE context broker"
+            LABEL_NAME: "{{ MODEL_NAME }} data"
+            LABEL_DESCRIPTION: "to import {{ MODEL_NAME }} Smart Model Data into a FIWARE context broker"
             ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
             FILTER_CARD: Ignore
             CARD_NAME: None
         
-        - name: "Create label"
+        - name: "Create role label"
           include_role:
             name: inspire_label
           vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} visualization specialist"
-            LABEL_DESCRIPTION: "to visualize Smart Model Data from a FIWARE context broker"
+            LABEL_NAME: "{{ MODEL_NAME }} visualization"
+            LABEL_DESCRIPTION: "to visualize {{ MODEL_NAME }} Smart Model Data from a FIWARE context broker"
             ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
             FILTER_CARD: Ignore
             CARD_NAME: None
         
-        - name: "Create label"
+        - name: "Create role label"
           include_role:
             name: inspire_label
           vars: 
-            LABEL_NAME: "{{ COLUMN.name }}"
-            LABEL_DESCRIPTION: "{{ COLUMN.name }}"
+            LABEL_NAME: "{{ MODEL_NAME }} deployment"
+            LABEL_DESCRIPTION: "to deploy {{ MODEL_NAME }} Smart Model Data to a FIWARE context broker"
             ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+            FILTER_CARD: Ignore
+            CARD_NAME: None
+        
+        - name: "Create role label"
+          include_role:
+            name: inspire_label
+          vars: 
+            LABEL_NAME: "{{ MODEL_NAME }} documentation"
+            LABEL_DESCRIPTION: "to document a {{ MODEL_NAME }} Smart Data Model project"
+            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+            FILTER_CARD: Ignore
+            CARD_NAME: None
+
+        # Create cards for label
+        
+        - name: "Get cards for label: {{ LABEL_NAME }}"
+          include_role:
+            name: inspire_cards
+          vars:
+            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
+          when: FILTER_CARD is not defined or FILTER_CARD == CARD_NAME
       vars:
         MODEL_NAME: "{{ COLUMN.name | regex_search('^.*?(?=( - ))') }}"
         SUBMODULE_SHORT_NAME: "{{ COLUMN.name | regex_search('^.*?(?=( - )) - (.*?)(?=( - ))', '\\2') | first }}"

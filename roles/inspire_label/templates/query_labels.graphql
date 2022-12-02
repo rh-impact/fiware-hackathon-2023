@@ -10,7 +10,7 @@ query {
 			updatedAt
 			url
 			visibility
-			labels(query:"'{{ LABEL_NAME }}'", first:100) {
+			labels(query:"{{ LABEL_NAME.split(' ')[0] }}", first:100) {
 				nodes {
 					id
 					color

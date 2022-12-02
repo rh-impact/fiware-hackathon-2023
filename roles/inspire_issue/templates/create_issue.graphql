@@ -1,7 +1,7 @@
 mutation {
 	createIssue(input:{
 		body: {{ GENERATED_ISSUE_BODY | replace('\\{\\{\\#', '{{#') | replace('\\{\\{', '{{') | replace('\\}\\}', '}}') | to_json }}
-		, labelIds: [ "{{ LABEL.id }}", "{{ ROLE_LABEL.id }}" ]
+		, labelIds: [ "{{ SKILL_LABEL.id }}", "{{ ROLE_LABEL.id }}" ]
 		, repositoryId: "{{ REPO.id }}"
 		, title: "{{ ISSUE_TITLE }}"
 	}) {
