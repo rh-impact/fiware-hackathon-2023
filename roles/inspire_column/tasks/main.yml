@@ -13,41 +13,14 @@
           include_role:
             name: inspire_label
           vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} data"
-            LABEL_DESCRIPTION: "to import {{ MODEL_NAME }} Smart Model Data into a FIWARE context broker"
+            LABEL_NAME: "{{ MODEL_NAME }} {{ ROLE_DATA.ROLE_ID }}"
+            LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') }}"
             ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
             FILTER_CARD: Ignore
             CARD_NAME: None
-        
-        - name: "Create role label"
-          include_role:
-            name: inspire_label
-          vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} visualization"
-            LABEL_DESCRIPTION: "to visualize {{ MODEL_NAME }} Smart Model Data from a FIWARE context broker"
-            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-            FILTER_CARD: Ignore
-            CARD_NAME: None
-        
-        - name: "Create role label"
-          include_role:
-            name: inspire_label
-          vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} deployment"
-            LABEL_DESCRIPTION: "to deploy {{ MODEL_NAME }} Smart Model Data to a FIWARE context broker"
-            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-            FILTER_CARD: Ignore
-            CARD_NAME: None
-        
-        - name: "Create role label"
-          include_role:
-            name: inspire_label
-          vars: 
-            LABEL_NAME: "{{ MODEL_NAME }} documentation"
-            LABEL_DESCRIPTION: "to document a {{ MODEL_NAME }} Smart Data Model project"
-            ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-            FILTER_CARD: Ignore
-            CARD_NAME: None
+          loop: "{{ HACKATHON_ROLES }}"
+          loop_control:
+            loop_var: ROLE_DATA
 
         # Create cards for label
         

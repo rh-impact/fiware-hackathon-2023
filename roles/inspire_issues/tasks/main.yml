@@ -15,10 +15,10 @@
       vars:
         LABEL_SEARCH: "{{ MODEL_NAME }}"
       register: ROLE_LABELS_JSON
-    - name: "Get role label by name: {{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
-      set_fact: {"ROLE_LABEL_{{ MODEL_NAME | regex_replace('[^\\w]', '_') }}_{{ DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_') }}": "{{ ROLE_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
+    - name: "Get role label by name: {{ MODEL_NAME }} {{ ROLE_DATA.ROLE_ID }}"
+      set_fact: {"ROLE_LABEL_{{ MODEL_NAME | regex_replace('[^\\w]', '_') }}_{{ ROLE_DATA.ROLE_ID | regex_replace('[^\\w]', '_') }}": "{{ ROLE_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
       vars: 
-        QUERY: "[?name=='{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}']"
+        QUERY: "[?name=='{{ MODEL_NAME }} {{ ROLE_DATA.ROLE_ID }}']"
 
     - name: "Get skill labels"
       uri:
@@ -32,12 +32,12 @@
         body:
           query: '{{ lookup("template", "query_labels.graphql") }}'
       vars:
-        LABEL_SEARCH: "{{ SKILL_NAME }}"
+        LABEL_SEARCH: "{{ ROLE_DATA.SKILL_ID }}"
       register: SKILL_LABELS_JSON
-    - name: "Get role label by name: {{ SKILL_NAME }}"
-      set_fact: {"SKILL_LABEL_{{ SKILL_NAME | regex_replace('[^\\w]', '_') }}": "{{ SKILL_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
+    - name: "Get role label by name: {{ ROLE_DATA.SKILL_ID }}"
+      set_fact: {"SKILL_LABEL_{{ ROLE_DATA.SKILL_ID | regex_replace('[^\\w]', '_') }}": "{{ SKILL_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
       vars: 
-        QUERY: "[?name=='{{ SKILL_NAME }}']"
+        QUERY: "[?name=='{{ ROLE_DATA.SKILL_ID }}']"
 
     - block:
         - name: "Get issues by label: {{ ROLE_LABEL.name }}"
@@ -56,98 +56,18 @@
           register: ISSUES_JSON
         - name: "Setup GitHub issues JSON string"
           set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
-        - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
+        - name: "Create mission impossible issues for a {{ ROLE_DATA.ROLE_ID }}"
           include_role:
             name: inspire_mission_impossible
           vars: 
             ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
             SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
-            DEFAULT_ISSUE_TITLE: "{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
+            DEFAULT_ISSUE_TITLE: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') }}"
             DEFAULT_ISSUE_MISSION: "to import {{ MODEL_NAME }} Smart Data into a FIWARE context broker"
-            DEFAULT_ISSUE_TEMPLATE: "data-specialist.md"
+            DEFAULT_ISSUE_TEMPLATE: "{{ ROLE_DATA.ROLE_TEMPLATE }}"
             DEFAULT_ISSUE_LABELS: 
               - "{{ LABEL.id }}"
               - "{{ ROLE_LABEL.id }}"
       vars:
-        ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
-        SKILL_LABEL: "{{ lookup('vars', 'SKILL_LABEL_' + (SKILL_NAME | regex_replace('[^\\w]', '_'))) | default(None) }}"
-  vars:
-    DEFAULT_ISSUE_ROLE: data
-    SKILL_NAME: json-rest-apis-curl
-
-- block:
-
-    - name: "Get role labels"
-      uri:
-        timeout: 9
-        url: "https://api.github.com/graphql"
-        return_content: true
-        headers:
-          Authorization: "bearer {{ GITHUB_TOKEN }}"
-        method: POST
-        body_format: json
-        body:
-          query: '{{ lookup("template", "query_labels.graphql") }}'
-      vars:
-        LABEL_SEARCH: "{{ MODEL_NAME }}"
-      register: ROLE_LABELS_JSON
-    - name: "Get role label by name: {{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
-      set_fact: {"ROLE_LABEL_{{ MODEL_NAME | regex_replace('[^\\w]', '_') }}_{{ DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_') }}": "{{ ROLE_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
-      vars: 
-        QUERY: "[?name=='{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}']"
-
-    - name: "Get skill labels"
-      uri:
-        timeout: 9
-        url: "https://api.github.com/graphql"
-        return_content: true
-        headers:
-          Authorization: "bearer {{ GITHUB_TOKEN }}"
-        method: POST
-        body_format: json
-        body:
-          query: '{{ lookup("template", "query_labels.graphql") }}'
-      vars:
-        LABEL_SEARCH: "{{ SKILL_NAME }}"
-      register: SKILL_LABELS_JSON
-    - name: "Get role label by name: {{ SKILL_NAME }}"
-      set_fact: {"SKILL_LABEL_{{ SKILL_NAME | regex_replace('[^\\w]', '_') }}": "{{ SKILL_LABELS_JSON.json.data.organization.repository.labels.nodes | json_query(QUERY) | first | default(None) }}"}
-      vars: 
-        QUERY: "[?name=='{{ SKILL_NAME }}']"
-
-    - block:
-        - name: "Get issues by label: {{ ROLE_LABEL.name }}"
-          uri:
-            timeout: 9
-            url: "https://api.github.com/graphql"
-            return_content: true
-            headers:
-              Authorization: "bearer {{ GITHUB_TOKEN }}"
-            method: POST
-            body_format: json
-            body:
-              query: '{{ lookup("template", "query_issues.graphql") }}'
-          vars:
-            LABEL_SEARCH: "{{ ROLE_LABEL.name }}"
-          register: ISSUES_JSON
-        - name: "Setup GitHub issues JSON string"
-          set_fact: {"{{ PROJECT.title | regex_replace('[^\\w]', '_') }}_ISSUES": "{{ ISSUES_JSON.json.data.organization.repository.issues.nodes | string }}"}
-        - name: "Create mission impossible issues for a {{ DEFAULT_ISSUE_ROLE }}"
-          include_role:
-            name: inspire_mission_impossible
-          vars: 
-            CARDS: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
-            ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
-            SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
-            DEFAULT_ISSUE_TITLE: "{{ MODEL_NAME }} {{ DEFAULT_ISSUE_ROLE }}"
-            DEFAULT_ISSUE_MISSION: "to visualize {{ MODEL_NAME }} Smart Data from a FIWARE context broker"
-            DEFAULT_ISSUE_TEMPLATE: "visualization-specialist.md"
-            DEFAULT_ISSUE_LABELS: 
-              - "{{ SKILL_LABEL.id }}"
-              - "{{ ROLE_LABEL.id }}"
-      vars:
-        ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (DEFAULT_ISSUE_ROLE | regex_replace('[^\\w]', '_'))) | default(None) }}"
-        SKILL_LABEL: "{{ lookup('vars', 'SKILL_LABEL_' + (SKILL_NAME | regex_replace('[^\\w]', '_'))) | default(None) }}"
-  vars:
-    DEFAULT_ISSUE_ROLE: visualization
-    SKILL_NAME: ux-ui-containers
+        ROLE_LABEL: "{{ lookup('vars', 'ROLE_LABEL_' + (MODEL_NAME | regex_replace('[^\\w]', '_')) + '_' + (ROLE_DATA.ROLE_ID | regex_replace('[^\\w]', '_'))) | default(None) }}"
+        SKILL_LABEL: "{{ lookup('vars', 'SKILL_LABEL_' + (ROLE_DATA.SKILL_ID | regex_replace('[^\\w]', '_'))) | default(None) }}"

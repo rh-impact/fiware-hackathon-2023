@@ -4,3 +4,6 @@
     name: inspire_issues
   vars: 
     CARDS: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_') ) + '_COLUMN_' + (COLUMN.id | string) + '_CARDS') }}"
+  loop: "{{ HACKATHON_ROLES }}"
+  loop_control:
+    loop_var: ROLE_DATA

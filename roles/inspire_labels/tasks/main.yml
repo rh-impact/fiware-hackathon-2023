@@ -6,41 +6,14 @@
   include_role:
     name: inspire_label
   vars: 
-    LABEL_NAME: "data"
-    LABEL_DESCRIPTION: "to import Smart Model Data into a FIWARE context broker"
+    LABEL_NAME: "{{ ROLE_DATA.ROLE_ID }}"
+    LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION }}"
     ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
     FILTER_CARD: Ignore
     CARD_NAME: None
-
-- name: "Create role label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "visualization"
-    LABEL_DESCRIPTION: "to visualize Smart Model Data from a FIWARE context broker"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
-
-- name: "Create role label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "deployment"
-    LABEL_DESCRIPTION: "to deploy Smart Model Data to a FIWARE context broker"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
-
-- name: "Create role label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "documentation"
-    LABEL_DESCRIPTION: "to document a Smart Data Model project"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
+  loop: "{{ HACKATHON_ROLES }}"
+  loop_control:
+    loop_var: ROLE_DATA
 
 # Create Skill Labels
 
@@ -48,41 +21,14 @@
   include_role:
     name: inspire_label
   vars: 
-    LABEL_NAME: "json-rest-apis-curl"
-    LABEL_DESCRIPTION: "Suggested skills: JSON REST APIs, curl"
+    LABEL_NAME: "{{ ROLE_DATA.SKILL_ID }}"
+    LABEL_DESCRIPTION: "{{ ROLE_DATA.SKILL_DESCRIPTION }}"
     ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
     FILTER_CARD: Ignore
     CARD_NAME: None
-
-- name: "Create skill label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "ux-ui-containers"
-    LABEL_DESCRIPTION: "Suggested skills: UX, UI, containers"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
-
-- name: "Create skill label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "OpenShift, containers"
-    LABEL_DESCRIPTION: "Suggested skills: OpenShift, containers"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
-
-- name: "Create skill label"
-  include_role:
-    name: inspire_label
-  vars: 
-    LABEL_NAME: "github-admin-documentation"
-    LABEL_DESCRIPTION: "Suggested skills: GitHub admin, documentation"
-    ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
-    FILTER_CARD: Ignore
-    CARD_NAME: None
+  loop: "{{ HACKATHON_ROLES }}"
+  loop_control:
+    loop_var: ROLE_DATA
 
 - name: "Create columns"
   include_role:
