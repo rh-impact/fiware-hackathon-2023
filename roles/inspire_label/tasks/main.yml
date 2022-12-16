@@ -35,6 +35,8 @@
               - 201
           register: LABEL_CREATE_YML
           tags: label_name
+        - debug:
+            var: LABEL_CREATE_YML
       when: lookup('vars', 'LABEL_TEST', default='') == ''
     - block:
         - name: "Update label by name: {{ LABEL_NAME }}"

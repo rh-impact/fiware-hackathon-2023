@@ -2,7 +2,7 @@
 - block:
     - name: "Generate body of issue"
       set_fact:
-        GENERATED_ISSUE_BODY: "{{ lookup('template', DEFAULT_ISSUE_TEMPLATE) }}"
+        GENERATED_ISSUE_BODY: "{{ lookup('template', DEFAULT_ISSUE_TEMPLATE) | truncate(60000, True) }}"
     - name: "Create issue"
       include_role:
         name: inspire_issue

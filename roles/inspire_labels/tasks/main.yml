@@ -2,7 +2,7 @@
 
 # Create Role Labels
 
-- name: "Create role label"
+- name: "Create role label {{ ROLE_DATA.ROLE_ID }}"
   include_role:
     name: inspire_label
   vars: 
@@ -17,7 +17,7 @@
 
 # Create Skill Labels
 
-- name: "Create skill label"
+- name: "Create skill label {{ ROLE_DATA.SKILL_ID }}"
   include_role:
     name: inspire_label
   vars: 
