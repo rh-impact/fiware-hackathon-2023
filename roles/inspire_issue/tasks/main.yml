@@ -30,8 +30,6 @@
               - 201
           register: ISSUE_CREATE_YML
           tags: issue_name
-        - debug:
-            var: ISSUE_CREATE_YML
         - name: "Add issue to project {{ ROLE_LABEL.name }}"
           connection: local
           ansible.builtin.uri:
@@ -67,8 +65,6 @@
               - 200
           register: ISSUE_UPDATE_YML
           tags: issue_name
-        - debug:
-            var: ISSUE_UPDATE_YML
         - name: "Add issue to project {{ ROLE_LABEL.name }}"
           connection: local
           ansible.builtin.uri:

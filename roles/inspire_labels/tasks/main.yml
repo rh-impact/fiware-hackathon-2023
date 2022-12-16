@@ -7,7 +7,7 @@
     name: inspire_label
   vars: 
     LABEL_NAME: "{{ ROLE_DATA.ROLE_ID }}"
-    LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION }}"
+    LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION | truncate(94, True) }}"
     ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
     FILTER_CARD: Ignore
     CARD_NAME: None
@@ -22,7 +22,7 @@
     name: inspire_label
   vars: 
     LABEL_NAME: "{{ ROLE_DATA.SKILL_ID }}"
-    LABEL_DESCRIPTION: "{{ ROLE_DATA.SKILL_DESCRIPTION }}"
+    LABEL_DESCRIPTION: "{{ ROLE_DATA.SKILL_DESCRIPTION | truncate(94, True) }}"
     ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
     FILTER_CARD: Ignore
     CARD_NAME: None

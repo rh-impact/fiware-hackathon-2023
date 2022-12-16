@@ -14,7 +14,7 @@
             name: inspire_label
           vars: 
             LABEL_NAME: "{{ MODEL_NAME }} {{ ROLE_DATA.ROLE_ID }}"
-            LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') }}"
+            LABEL_DESCRIPTION: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') | truncate(94, True) }}"
             ORGANIZATION_ID: "{{ REPO_JSON.json.data.organization.id }}"
             FILTER_CARD: Ignore
             CARD_NAME: None
