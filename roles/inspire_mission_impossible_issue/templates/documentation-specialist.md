@@ -17,6 +17,7 @@ Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}.
 - Work with your visualization specialist to document the deployment visualization tools to your OpenShift Local environment. 
 - Document how to visualize your data using your tools. 
 - Add any screenshots, videos or other visualizations you come up with to enhance your team's accomplishments. 
+- If you are not sure where obtain or how to visualize {{ MODEL_NAME }} data, you may want to use your imagination. Imagine if there was a {{ MODEL_NAME }} sensor in your actual city, or a {{ MODEL_NAME }} sensor in a small scale toy city that you could simulate. What kind of sensors could you use? How would you design such a simulation in an actual city or a toy city? How would you visualize {{ MODEL_NAME }} data in an actual city or a toy city? 
 
 ## The day of the operation is Thursday February 2nd, 2023
 

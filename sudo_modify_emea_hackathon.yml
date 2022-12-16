@@ -1,0 +1,12 @@
+---
+- name: sudo modify the EMEA hackathon
+  hosts: localhost
+  connection: local
+  roles:
+    - sudo_vpn_to_europe
+    - sudo_make_me_some_toast
+  tasks:
+    - name: "modifying the EMEA hackathon was successfully completed. "
+      debug:
+        msg: "completed"
+

@@ -15,6 +15,7 @@ Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}.
 - You can import as much or as little {{ MODEL_NAME }} data as you wish, but enough to help your visualization specialist create nice visualizations of the data. 
 - Your data specialist will work with your OpenShift deployment specialist to deploy the data to an Orion LD context broker. You will use the provided data to build visualizations with the tools of your choice. They could be command line tools, or containerized applications that can be deployed to an OpenShift local environment, or local programs in a programming language that you choose that process the data in the Orion LD context broker, or any other way to choose to make your visualizations. 
 - Work with your documentation specialist to document the visualizations you have built into the documentation of the project. 
+- If you are not sure how to visualize {{ MODEL_NAME }} data, you may want to use your imagination. Imagine if there was a {{ MODEL_NAME }} sensor in your actual city, or a {{ MODEL_NAME }} sensor in a small scale toy city that you could simulate. What kind of sensors could you use? How would you design such a simulation in an actual city or a toy city? How would you visualize {{ MODEL_NAME }} data in an actual city or a toy city? 
 
 ## The day of the operation is Thursday February 2nd, 2023
 

@@ -1,0 +1,47 @@
+---
+- name: Generate the FIWARE Smart Data Models data from Git Repos
+  hosts: localhost
+  connection: local
+  vars_files:
+    - "{{ lookup('env', 'HOME') }}/.local/src/fiware-hackathon-2023/vaults/fiware-2023/vault"
+  tasks:
+    - name: "Get labels"
+      uri:
+        timeout: 9
+        url: "https://api.github.com/graphql"
+        return_content: true
+        headers:
+          Authorization: "bearer {{ GITHUB_TOKEN }}"
+        method: POST
+        body_format: json
+        body:
+          query: |2
+            query {
+            	organization(login:"rh-impact") {
+            		id
+            		repository(name:"fiware-hackathon-2023") {
+            			id
+            			createdAt
+            			description
+            			homepageUrl
+            			name
+            			updatedAt
+            			url
+            			visibility
+            			labels(query:"'SeaConditions' AND 'visualization'", first:100) {
+            				nodes {
+            					id
+            					color
+            					createdAt
+            					description
+            					isDefault
+            					name
+            					url
+            				}
+            			}
+            		}
+            	}
+            }
+      register: ROLE_LABELS_JSON
+    - debug:
+        var: ROLE_LABELS_JSON

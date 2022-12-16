@@ -62,7 +62,7 @@
           vars: 
             ISSUES: "{{ lookup('vars', (PROJECT.title | regex_replace('[^\\w]', '_')) + '_ISSUES') }}"
             SMART_DATA_MODEL: "{{ FIWARE_SMART_DATA_MODELS[DOMAIN_NAME].SUBMODULES[SUBMODULE_SHORT_NAME].MODELS[MODEL_NAME] }}"
-            DEFAULT_ISSUE_TITLE: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') }}"
+            DEFAULT_ISSUE_TITLE: "{{ ROLE_DATA.ROLE_DESCRIPTION | regex_replace('( Smart )', ' ' + MODEL_NAME + ' Smart ') | regex_replace('^to ', '') }}"
             DEFAULT_ISSUE_MISSION: "to import {{ MODEL_NAME }} Smart Data into a FIWARE context broker"
             DEFAULT_ISSUE_TEMPLATE: "{{ ROLE_DATA.ROLE_TEMPLATE }}"
             DEFAULT_ISSUE_LABELS: 
