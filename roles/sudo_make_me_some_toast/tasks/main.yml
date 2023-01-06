@@ -1,6 +1,0 @@
-- name: sudo make me some toast
-  shell: sleep 2
-- name: TOASTING BREAD, PLEASE WAIT...
-  shell: sleep 10
-- name: TOAST IS DONE. 
-  shell: sleep 2

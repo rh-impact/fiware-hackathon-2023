@@ -15,6 +15,7 @@ Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}.
 - Work with your visualization specialist to deploy visualization tools to your OpenShift Local environment. 
 - Work with your documentation specialist to document the deployment of the OpenShift Local environment, the {{ MODEL_NAME }} data, and the visualization tools. 
 - If you are not sure what kind of applications you could deploy to gather {{ MODEL_NAME }} data, you may want to use your imagination. Imagine if there was a {{ MODEL_NAME }} sensor in your actual city, or a {{ MODEL_NAME }} sensor in a small scale toy city that you could simulate. What kind of sensors could you use? How would you design such a simulation in an actual city or a toy city? How would you visualize {{ MODEL_NAME }} data in an actual city or a toy city? 
+- To the `orion-ld` Deployment in the `fiware` namespace, I suggest adding an Environment Variable `ORIONLD_CORS_ALLOWED_ORIGIN` to `__ALL` so that the visualization specialist's application will be able to make requests to the Context Broker using JavaScript and AJAX. 
 
 ## The day of the operation is Thursday February 2nd, 2023
 

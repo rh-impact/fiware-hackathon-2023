@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-		<script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.2.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 		<script>
 
@@ -16,65 +16,50 @@
 						, type: 'GET'
 						, crossDomain: true
 				}).fail(function(data, textStatus) {
-							console.log(data);
+					console.log(data);
 				}).done(function( entities ) {
-					window['DEFAULT_MAP_LOCATION'] = {lat:'55.61888', lon:'13.548799'}
-					window['DEFAULT_MAP_ZOOM'] = "11";
 					var data = [];
 					var layout = {};
-								layout['showlegend'] = true;
-								layout['dragmode'] = 'zoom';
-								layout['uirevision'] = 'true';
-								layout['mapbox'] = { style: 'open-street-map', center: { lat: 55.61888, lon: 13.548799 }, zoom: 11 };
-								layout['margin'] = { r: 0, t: 0, b: 0, l: 0 };
-								var trace = {};
-								trace['showlegend'] = true;
-								trace['type'] = 'scattermapbox';
-								var colors = [];
-								var lat = [];
-								var lon = [];
-								var text = [];
-								var customdata = [];
-								trace['lat'] = lat;
-								trace['lon'] = lon;
-								trace['text'] = text;
-								trace['customdata'] = customdata;
-								entities.forEach((record) => {
-									var location = record.location;
-									if(location) {
-										var locationParts = location.value.coordinates;
-										text.push('pivot1Val');
-										lat.push(parseFloat(locationParts[0]));
-										lon.push(parseFloat(locationParts[1]));
-										colors.push('red');
-										var vals = {};
-										var hovertemplate = '';
-										//Object.entries(window.varsFq).forEach(([key, data]) => {
-										//	if(data.displayName) {
-										//		vals[data.var] = record.fields[data.varStored];
-										//		hovertemplate += '<b>' + data.displayName + ': %{customdata.' + data.var + '}</b><br>';
-										//	}
-										//	customdata.push(vals);
-										//});
-										customdata.push(vals);
-										trace['hovertemplate'] = hovertemplate;
-									}
-								});
-								trace['marker'] = { color: colors, size: 10 };
-								data.push(trace);
-								Plotly.react('htmBodyGraphBaseResultPage', data, layout);
+					layout['showlegend'] = true;
+					layout['dragmode'] = 'zoom';
+					layout['uirevision'] = 'true';
+					layout['mapbox'] = { style: 'open-street-map', center: { lat: 55.61888, lon: 13.548799 }, zoom: 1 };
+					layout['margin'] = { r: 0, t: 30, b: 0, l: 0 };
+					var trace = {};
+					trace['showlegend'] = true;
+					trace['type'] = 'scattermapbox';
+					var colors = [];
+					var lat = [];
+					var lon = [];
+					var text = [];
+					trace['lat'] = lat;
+					trace['lon'] = lon;
+					trace['text'] = text;
+					entities.forEach((record) => {
+						var location = record.location;
+						if(location) {
+							var locationParts = location.value.coordinates;
+							var t = 'type: ' + record.type + '<br>';
+							t += 'ID: ' + record.id + '<br>';
+							text.push(t);
+							lat.push(parseFloat(locationParts[0]));
+							lon.push(parseFloat(locationParts[1]));
+							colors.push('red');
+						}
+					});
+					trace['marker'] = { color: colors, size: 10 };
+					data.push(trace);
+					Plotly.react('PageGraph', data, layout);
 				});
 			}
 
 			$(document).ready(function() {
 				fiwareGraph();
 			});
-			window.DEFAULT_MAP_LOCATION = { lat: 55.61888, lon: 13.548799 };
-			window.DEFAULT_MAP_ZOOM = 11;
 		</script>
 
 	</head>
 	<body class="w3-light-grey " style="height: 100%;">
-		<div id="htmBodyGraphBaseResultPage" class="w3-content htmBodyGraph "></div>
+		<div id="PageGraph" class="w3-content htmBodyGraph "></div>
 	</body>
 </html>

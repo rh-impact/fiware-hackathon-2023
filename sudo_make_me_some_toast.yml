@@ -1,0 +1,8 @@
+---
+- name: sudo modify the EMEA hackathon
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - toast
+
