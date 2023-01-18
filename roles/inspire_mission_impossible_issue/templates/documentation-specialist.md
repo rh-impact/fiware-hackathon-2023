@@ -12,7 +12,6 @@ Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}.
 
 - Setup a `Fiware{{ MODEL_NAME }}` repository for your team's project inside the [`rh-impact` Github Organization here](https://github.com/orgs/rh-impact/repositories). 
 - Create a README.md in the root directory of your repository, and any other documentation files you see useful inside a subdirectory. 
-- Work with your deployment specialist to document the installation of OpenShift Local. 
 - Work with your data specialist to document how to import your {{ MODEL_NAME }} data into the FIWARE Context Broker. 
 - Work with your visualization specialist to document the deployment visualization tools to your OpenShift Local environment. 
 - Document how to visualize your data using your tools. 
