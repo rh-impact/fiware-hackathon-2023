@@ -24,6 +24,7 @@ These Youtube videos have been carefully prepared to help you with this data imp
 ## More details about your task
 
 - Deploy the [Orion LD Context Broker provided by FIWARE using these instructions](https://github.com/FIWARE-Ops/marinera/blob/main/documentation/LOCAL_MARINERA.md). 
+- Help your other team members who also wish to deploy the Orion LD Context Broker on their own OpenShift Local environment. 
 - Work with your data specialist to import your {{ MODEL_NAME }} data into the FIWARE Context Broker running in your OpenShift Local environment. 
 - Work with your visualization specialist to deploy visualization tools to your OpenShift Local environment. 
 - Work with your documentation specialist to document the deployment of the OpenShift Local environment, the {{ MODEL_NAME }} data, and the visualization tools. 
