@@ -10,6 +10,14 @@
 
 Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}. 
 
+## Walk through Youtube videos related to your task
+
+These Youtube videos have been carefully prepared to help you with this data import task: 
+
+- [POST and GET Smart Model Data with the Orion-LD Context Broker REST APIs for Smart Devices](https://youtu.be/3yIETFSa-pU)
+
+## More details about your task
+
 - You can import live {{ MODEL_NAME }} data if you can find it, or fake {{ MODEL_NAME }} data that your team can come up with (see the Example payloads below). 
 - You could also reach out to existing {{ MODEL_NAME }} adopters, who are organizations who already work with these models. You may find some {{ MODEL_NAME }} adopters listed below. 
 - Work with your visualization specialist to decide what kind of data will produce useful visualizations in the project. 

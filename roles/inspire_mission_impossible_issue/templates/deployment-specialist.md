@@ -10,6 +10,19 @@
 
 Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}. 
 
+## Walk through Youtube videos related to your task
+
+These Youtube videos have been carefully prepared to help you with this data import task: 
+
+- [Installing OpenShift Local for doing cloud computing on your personal computer!](https://youtu.be/8W8XniO1iCM)
+- [Install a Hashicorp Vault on OpenShift Local to easily secure your GitOps](https://youtu.be/kyKORZ4B6qY)
+- [Configure Vault token, policy, auth method, role, and secret to secure your GitOps](https://youtu.be/-sCdGAiKRA8)
+- [Install ArgoCD on Openshift Local to monitor the state of your GitOps and Applications](https://youtu.be/9CScwEWyo_M)
+- [Setup External Secret linked to Vault in OpenShift Local to keep your application passwords secure](https://youtu.be/91Yqz51i3xo)
+- [Deploy ArgoCD Apps to OpenShift Local like MongoDB and the Orion LD Context Broker](https://youtu.be/Xa9MBnVpaCQ)
+
+## More details about your task
+
 - Deploy the [Orion LD Context Broker provided by FIWARE using these instructions](https://github.com/FIWARE-Ops/marinera/blob/main/documentation/LOCAL_MARINERA.md). 
 - Work with your data specialist to import your {{ MODEL_NAME }} data into the FIWARE Context Broker running in your OpenShift Local environment. 
 - Work with your visualization specialist to deploy visualization tools to your OpenShift Local environment. 

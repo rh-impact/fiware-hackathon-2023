@@ -10,6 +10,14 @@
 
 Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}. 
 
+## Walk through Youtube videos related to your task
+
+These Youtube videos have been carefully prepared to help you with this data import task: 
+
+- [Hackathon non-technical tasks creating GitHub Repos and README documentation](https://youtu.be/FFLPQ6ia4dQ)
+
+## More details about your task
+
 - Setup a `Fiware{{ MODEL_NAME }}` repository for your team's project inside the [`rh-impact` Github Organization here](https://github.com/orgs/rh-impact/repositories). 
 - Create a README.md in the root directory of your repository, and any other documentation files you see useful inside a subdirectory. 
 - Work with your data specialist to document how to import your {{ MODEL_NAME }} data into the FIWARE Context Broker. 

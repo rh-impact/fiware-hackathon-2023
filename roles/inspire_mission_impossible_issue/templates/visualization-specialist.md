@@ -10,6 +10,14 @@
 
 Your mission, should you choose to accept it, is {{ ISSUE_MISSION }}. 
 
+## Walk through Youtube videos related to your task
+
+These Youtube videos have been carefully prepared to help you with this data import task: 
+
+- [Smart Model Data Frontend Map Dashboard Development](https://youtu.be/3TY4RWEEyYk)
+
+## More details about your task
+
 - Work with your data specialist to come up with useful {{ MODEL_NAME }} data that you can use to visualize the work your team has done in the project. 
 - You can import live {{ MODEL_NAME }} data if you can find it, or fake {{ MODEL_NAME }} data that your team can come up with (see the Example payloads below). 
 - You can import as much or as little {{ MODEL_NAME }} data as you wish, but enough to help your visualization specialist create nice visualizations of the data. 
